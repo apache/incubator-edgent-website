@@ -24,7 +24,7 @@ limitations under the License.
 
 {% include JB/setup %}
 
-## Apache SystemML
+## Quarks
 
 SystemML provides declarative large-scale machine learning (ML) that aims at flexible specification 
 of ML algorithms and automatic generation of hybrid runtime plans ranging from single node, 
