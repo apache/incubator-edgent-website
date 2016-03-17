@@ -19,6 +19,75 @@
 #      Main Configs       #
 # ----------------------- #
 
+project: mydoc_designers
+audience: designers
+product: doc
+platform: all
+version: all
+output: web
+destination: ../_site
+topnav_title: Quarks Documentation
+homepage_title: Quarks Documentation
+site_title: Quarks Documentation
+project_folder: docs
+company_name: Quarks
+footer_image_location: ../../common_images/company_logo.png
+github_editme_path: quarks-edge/quarks.documentation/blob/gh-pages
+disqus_shortname: idrbwjekyll
+# variables
+
+sidebar_tagline: Quarks
+sidebar_version: Version 0.3.0
+theme_file: theme-blue.css
+
+# the algolia entries here are experimental only.
+
+#gems:
+#  - algoliasearch-jekyll
+#algolia:
+#  application_id: 'HXUBJERYYB'
+#  index_name:     'documentation_theme_jekyll_designers'
+port: 4009
+
+exclude:
+  - _site
+  - _drafts
+  - configs/
+  - doc/mydoc_writers*
+# these settings should work, but they don't seem to apply the right highlighting
+
+#highlighter: rouge
+#markdown: kramdown
+#kramdown:
+#  input: GFM
+#  auto_ids: true
+#  hard_wrap: false
+#  syntax_highlighter: rouge
+
+
+
+collections:
+  tooltips:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+  -
+    scope:
+      path: ""
+      type: "tooltips"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      tooltip: true
 
 url: http://quarks.incubator.apache.org
 baseurl:
@@ -30,8 +99,12 @@ description: Quarks is an open source community for accelerating analytics at th
 # ----------------------- #
 
 # Build settings
-markdown: kramdown
-permalink: pretty
+markdown: redcarpet
+permalink: pygments
+
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
+
 
 # ----------------------- #
 #   3rd Party Settings    #

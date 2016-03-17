@@ -1,0 +1,62 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  subcategories:
+#    - title: Sample
+#      url: /mydoc/sample.html
+#      audience: writers, designers
+#      platform: all
+#      product: all
+#      version: all
+#      output: web
+
+    - title: Github Repos
+      external_url: https://github.com/quarks-edge
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+    - title: Javadoc
+      external_url: https://quarks-edge.github.io/quarks/docs/javadoc/index.html
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  subcategories:
+    - title: Quarks Resources
+      audience: writers, designers
+      platform: all
+      product: all
+      version: all
+      output: web
+      items:
+        - title: Download
+          external_url: https://github.com/quarks-edge/quarks/releases/latest
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all
+          output: web
+
+        - title: Samples
+          url: samples
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all
+          output: web
+
+        - title: FAQ
+          url: faq
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all
+          output: web
