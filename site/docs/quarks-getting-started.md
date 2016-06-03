@@ -25,7 +25,7 @@ Quarks' primary API is functional where streams are sourced, transformed, analyz
 
 ### Downloading Apache Quarks
 
-To use Quarks, you can either download the source code and build it yourself, or you can download an install a pre-built release. 
+To use Quarks, you can either download the source code and build it yourself, or you can download and install a pre-built release. 
 
 You can read more about building Quarks [here](https://github.com/apache/incubator-quarks/blob/master/DEVELOPMENT.md).
 
