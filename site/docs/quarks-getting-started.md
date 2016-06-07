@@ -30,6 +30,7 @@ To use Quarks, you can either download the source code and build it yourself, or
 You can read more about building Quarks [here](https://github.com/apache/incubator-quarks/blob/master/DEVELOPMENT.md).
 
 You can find pre-built releases [here](https://github.com/quarks-edge/quarks/releases).
+Please note:  While Apache Quarks is undergoing incubation at The Apache Software Foundation (ASF), these pre-release builds will be hosted directly on gitub, not at Apache.
 
 After you build or install the Quarks package, you can set up your environment.
 
