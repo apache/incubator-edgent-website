@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="getting_started,  ">
-<title> Apache Quarks Documentation   | Apache Quarks Documentation</title>
+<title> Apache Edgent Documentation   | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Introduction page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -565,7 +565,7 @@ $('#toc').on('click', 'a', function() {
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main"> Apache Quarks Documentation </h1>
+   <h1 class="post-title-main"> Apache Edgent Documentation </h1>
 </div>
 
 <div class="post-content">
@@ -599,24 +599,24 @@ $('#toc').on('click', 'a', function() {
 
     <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/docs/home.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <h2 id="apache-quarks-overview">Apache Quarks overview</h2>
+  <h2 id="apache-edgent-overview">Apache Edgent overview</h2>
 
 <p>Devices and sensors are everywhere, and more are coming online every day. You need a way to analyze all of the data coming from your devices, but it can be expensive to transmit all of the data from a sensor to your central analytics engine.</p>
 
-<p>Quarks is an open source programming model and runtime for edge devices that enables you to analyze data and events at the device. When you analyze on the edge, you can:</p>
+<p>Edgent is an open source programming model and runtime for edge devices that enables you to analyze data and events at the device. When you analyze on the edge, you can:</p>
 
 <ul>
 <li><p>Reduce the amount of data that you transmit to your analytics server</p></li>
 <li><p>Reduce the amount of data that you store</p></li>
 </ul>
 
-<p>A Quarks application uses analytics to determine when data needs to be sent to a back-end system for further analysis, action, or storage. For example, you can use Quarks to determine whether a system is running outside of normal parameters, such as an engine that is running too hot.</p>
+<p>An Edgent application uses analytics to determine when data needs to be sent to a back-end system for further analysis, action, or storage. For example, you can use Edgent to determine whether a system is running outside of normal parameters, such as an engine that is running too hot.</p>
 
-<p>If the system is running normally, you don’t need to send this data to your back-end system; it’s an added cost and an additional load on your system to process and store. However, if Quarks detects an issue, you can transmit that data to your back-end system to determine why the issue is occurring and how to resolve the issue.</p>
+<p>If the system is running normally, you don’t need to send this data to your back-end system; it’s an added cost and an additional load on your system to process and store. However, if Edgent detects an issue, you can transmit that data to your back-end system to determine why the issue is occurring and how to resolve the issue.</p>
 
-<p>Quarks enables you to shift from sending a continuous flow of trivial data to the server to sending only essential and meaningful data as it occurs. This is especially important when the cost of communication is high, such as when using a cellular network to transmit data, or when bandwidth is limited.</p>
+<p>Edgent enables you to shift from sending a continuous flow of trivial data to the server to sending only essential and meaningful data as it occurs. This is especially important when the cost of communication is high, such as when using a cellular network to transmit data, or when bandwidth is limited.</p>
 
-<p>The following use cases describe the primary situations in which you would use Quarks:</p>
+<p>The following use cases describe the primary situations in which you would use Edgent:</p>
 
 <ul>
 <li><strong>Internet of Things (IoT)</strong>: Analyze data on distributed edge devices and mobile devices to:
@@ -641,7 +641,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="edge-devices-and-back-end-systems">Edge devices and back-end systems</h3>
 
-<p>You can send data from an Apache Quarks application to your back-end system when you need to perform analysis that cannot be performed on the edge device, such as:</p>
+<p>You can send data from an Apache Edgent application to your back-end system when you need to perform analysis that cannot be performed on the edge device, such as:</p>
 
 <ul>
 <li>Running a complex analytic algorithm that requires more resources, such as CPU or memory, than are available on the edge device</li>
@@ -656,7 +656,7 @@ $('#toc').on('click', 'a', function() {
 </ul></li>
 </ul>
 
-<p>Quarks communicates with your back-end systems through the following message hubs:</p>
+<p>Edgent communicates with your back-end systems through the following message hubs:</p>
 
 <ul>
 <li>MQTT – The messaging standard for IoT</li>
@@ -719,14 +719,14 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

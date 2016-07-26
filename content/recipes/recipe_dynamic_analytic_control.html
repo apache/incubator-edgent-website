@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Dynamically Enabling Analytic Flows  | Apache Quarks Documentation</title>
+<title>Dynamically Enabling Analytic Flows  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Dynamically Enabling Analytic Flows page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -605,7 +605,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="valve">Valve</h2>
 
-<p>A <code>quarks.topology.plumbing.Valve</code> is a simple construct that can be inserted in stream flows to dynamically enable or disable downstream processing. A valve is either open or closed. When used as a <code>Predicate</code> to <code>TStream.filter()</code>, <code>filter</code> passes tuples only when the valve is open. Hence downstream processing is enabled when the valve is open and effectively disabled when the valve is closed.</p>
+<p>A <code>edgent.topology.plumbing.Valve</code> is a simple construct that can be inserted in stream flows to dynamically enable or disable downstream processing. A valve is either open or closed. When used as a <code>Predicate</code> to <code>TStream.filter()</code>, <code>filter</code> passes tuples only when the valve is open. Hence downstream processing is enabled when the valve is open and effectively disabled when the valve is closed.</p>
 
 <p>For example, consider a a topology consisting of 3 analytic processing flows that want to be dynamically enabled or disabled:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Valve</span><span class="o">&lt;</span><span class="n">Readings</span><span class="o">&gt;</span> <span class="n">flow1Valve</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Valve</span><span class="o">&lt;&gt;();</span>  <span class="c1">// default is open</span>
@@ -629,17 +629,17 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 <span class="o">});</span>
 </code></pre></div>
-<h2 id="loosely-coupled-quarks-applications">Loosely coupled Quarks applications</h2>
+<h2 id="loosely-coupled-edgent-applications">Loosely coupled Edgent applications</h2>
 
 <p>Another approach for achieving dynamic control over what analytics flows are running is to utilize loosely coupled applications.</p>
 
 <p>In this approach, the overall application is partitioned into multiple applications (topologies). In the above example there could be four applications: one that publishes the sensor <code>readings</code> stream, and one for each of the analytic flows.</p>
 
-<p>The separate applications can connect to each other&#39;s streams using the <code>quarks.connectors.pubsub.PublishSubscribe</code> connector.</p>
+<p>The separate applications can connect to each other&#39;s streams using the <code>edgent.connectors.pubsub.PublishSubscribe</code> connector.</p>
 
-<p>Rather than having all of the analytic applications running all of the time, applications can be registered with a <code>quarks.topology.services.ApplicationService</code>. Registered applications can then be started and stopped dynamically.</p>
+<p>Rather than having all of the analytic applications running all of the time, applications can be registered with a <code>edgent.topology.services.ApplicationService</code>. Registered applications can then be started and stopped dynamically.</p>
 
-<p>The <code>quarks.providers.iot.IotProvider</code> is designed to facilitate this style of use.</p>
+<p>The <code>edgent.providers.iot.IotProvider</code> is designed to facilitate this style of use.</p>
 
 
 <div class="tags">
@@ -672,14 +672,14 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

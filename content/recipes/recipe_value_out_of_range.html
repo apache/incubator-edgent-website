@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Detecting a sensor value out of expected range  | Apache Quarks Documentation</title>
+<title>Detecting a sensor value out of expected range  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Detecting a sensor value out of expected range page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -607,18 +607,18 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="setting-up-the-application">Setting up the application</h2>
 
-<p>We assume that the environment has been set up following the steps outlined in the <a href="../docs/quarks-getting-started">Getting started guide</a>. Let&#39;s begin by creating a <code>DirectProvider</code> and <code>Topology</code>. We also define the optimal temperature range.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">quarks</span><span class="o">.</span><span class="na">function</span><span class="o">.</span><span class="na">Functions</span><span class="o">.</span><span class="na">identity</span><span class="o">;</span>
+<p>We assume that the environment has been set up following the steps outlined in the <a href="../docs/edgent-getting-started">Getting started guide</a>. Let&#39;s begin by creating a <code>DirectProvider</code> and <code>Topology</code>. We also define the optimal temperature range.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">edgent</span><span class="o">.</span><span class="na">function</span><span class="o">.</span><span class="na">Functions</span><span class="o">.</span><span class="na">identity</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Filters</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Range</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Ranges</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Filters</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Range</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Ranges</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">DetectValueOutOfRange</span> <span class="o">{</span>
     <span class="cm">/**
@@ -647,7 +647,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="simple-filtering">Simple filtering</h2>
 
-<p>If the corn grower is interested in determining when the temperature is strictly out of the optimal range of 77°F and 91°F, a simple filter can be used. The <code>filter</code> method can be applied to <code>TStream</code> objects, where a filter predicate determines which tuples to keep for further processing. For its method declaration, refer to the <a href="http://quarks.incubator.apache.org/javadoc/lastest/quarks/topology/TStream.html#filter-quarks.function.Predicate-">Javadoc</a>.</p>
+<p>If the corn grower is interested in determining when the temperature is strictly out of the optimal range of 77°F and 91°F, a simple filter can be used. The <code>filter</code> method can be applied to <code>TStream</code> objects, where a filter predicate determines which tuples to keep for further processing. For its method declaration, refer to the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/TStream.html#filter-quarks.function.Predicate-">Javadoc</a>.</p>
 
 <p>In this case, we want to keep temperatures below the lower range value <em>or</em> above the upper range value. This is expressed in the filter predicate, which follows Java&#39;s syntax for <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax">lambda expressions</a>. Then, we terminate the stream (using <code>sink</code>) by printing out the warning to standard out. Note that <code>\u00b0</code> is the Unicode encoding for the degree (°) symbol.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">simpleFiltered</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span>
@@ -659,10 +659,10 @@ $('#toc').on('click', 'a', function() {
 
 <p>Alternatively, a deadband filter can be used to glean more information about temperature changes, such as extracting the in-range temperature immediately after a reported out-of-range temperature. For example, large temperature fluctuations could be investigated more thoroughly.</p>
 
-<p>The <code>deadband</code> filter is a part of the <code>quarks.analytics</code> package focused on handling sensor data. Let&#39;s look more closely at the method declaration below.</p>
+<p>The <code>deadband</code> filter is a part of the <code>edgent.analytics</code> package focused on handling sensor data. Let&#39;s look more closely at the method declaration below.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">deadband</span><span class="o">(</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">stream</span><span class="o">,</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span><span class="n">V</span><span class="o">&gt;</span> <span class="n">value</span><span class="o">,</span> <span class="n">Predicate</span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;</span> <span class="n">inBand</span><span class="o">)</span>
 </code></pre></div>
-<p>The first parameter is the stream to the filtered, which is <code>temp</code> in our scenario. The second parameter is the value to examine. Here, we use the <code>identity()</code> method to return a tuple on the stream. The last parameter is the predicate that defines the optimal range, that is, between 77°F and 91°F. it is important to note that this differs from the <code>TStream</code> version of <code>filter</code> in which one must explicitly specify the values that are out of range. The code snippet below demonstrates how the method call is pieced together. The <code>deadbandFiltered</code> stream contains temperature readings that follow the rules as described in the <a href="http://quarks.incubator.apache.org/javadoc/lastest/quarks/analytics/sensors/Filters.html#deadband-quarks.topology.TStream-quarks.function.Function-quarks.function.Predicate-">Javadoc</a>:</p>
+<p>The first parameter is the stream to the filtered, which is <code>temp</code> in our scenario. The second parameter is the value to examine. Here, we use the <code>identity()</code> method to return a tuple on the stream. The last parameter is the predicate that defines the optimal range, that is, between 77°F and 91°F. it is important to note that this differs from the <code>TStream</code> version of <code>filter</code> in which one must explicitly specify the values that are out of range. The code snippet below demonstrates how the method call is pieced together. The <code>deadbandFiltered</code> stream contains temperature readings that follow the rules as described in the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/analytics/sensors/Filters.html#deadband-quarks.topology.TStream-quarks.function.Function-quarks.function.Predicate-">Javadoc</a>:</p>
 
 <ul>
 <li>the value is outside of the optimal range (deadband)</li>
@@ -704,7 +704,7 @@ Temperature may not be optimal! It is 77.5°F!
 
 <h2 id="range-values">Range values</h2>
 
-<p>Filtering against a range of values is such a common analytic activity that the <code>quarks.analytics.sensors.Range</code> class is provided to assist with that.</p>
+<p>Filtering against a range of values is such a common analytic activity that the <code>edgent.analytics.sensors.Range</code> class is provided to assist with that.</p>
 
 <p>Using a <code>Range</code> can simplify and clarify your application code and lessen mistakes that may occur when writing expressions to deal with ranges. Though not covered in this recipe, <code>Range</code>s offer additional conveniences for creating applications with external range specifications and adaptable filters.</p>
 
@@ -722,17 +722,17 @@ Temperature may not be optimal! It is 77.5°F!
         <span class="n">identity</span><span class="o">(),</span> <span class="n">optimalTempRange</span><span class="o">);</span>
 </code></pre></div>
 <h2 id="the-final-application">The final application</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">quarks</span><span class="o">.</span><span class="na">function</span><span class="o">.</span><span class="na">Functions</span><span class="o">.</span><span class="na">identity</span><span class="o">;</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">static</span> <span class="n">edgent</span><span class="o">.</span><span class="na">function</span><span class="o">.</span><span class="na">Functions</span><span class="o">.</span><span class="na">identity</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Filters</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Range</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Ranges</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Filters</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Range</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Ranges</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="cm">/**
  * Detect a sensor value out of expected range.
@@ -816,14 +816,14 @@ Temperature may not be optimal! It is 77.5°F!
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

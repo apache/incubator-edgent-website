@@ -19,10 +19,10 @@
 
 
 {
-"title": "Common Quarks operations",
+"title": "Common Edgent operations",
 "tags": "",
 "keywords": "",
-"url": "../docs/common-quarks-operations",
+"url": "../docs/common-edgent-operations",
 "summary": ""
 },
 
@@ -30,7 +30,7 @@
 
 
 {
-"title": "Apache Quarks community",
+"title": "Apache Edgent community",
 "tags": "",
 "keywords": "",
 "url": "../docs/community",
@@ -45,6 +45,28 @@
 "tags": "",
 "keywords": "",
 "url": "../docs/console",
+"summary": ""
+},
+
+
+
+
+{
+"title": "Getting started with Apache Edgent",
+"tags": "",
+"keywords": "",
+"url": "../docs/edgent-getting-started",
+"summary": ""
+},
+
+
+
+
+{
+"title": "Apache Edgent documentation",
+"tags": "",
+"keywords": "",
+"url": "../docs/edgent_index",
 "summary": ""
 },
 
@@ -74,7 +96,7 @@
 
 
 {
-"title": "Quarks",
+"title": "Edgent",
 "tags": "",
 "keywords": "",
 "url": "../",
@@ -94,28 +116,6 @@
 
 
 
-
-
-
-
-{
-"title": "Getting started with Apache Quarks",
-"tags": "",
-"keywords": "",
-"url": "../docs/quarks-getting-started",
-"summary": ""
-},
-
-
-
-
-{
-"title": "Apache Quarks documentation",
-"tags": "",
-"keywords": "",
-"url": "../docs/quarks_index",
-"summary": ""
-},
 
 
 
@@ -220,10 +220,10 @@
 
 
 {
-"title": "Hello Quarks!",
+"title": "Hello Edgent!",
 "tags": "",
 "keywords": "",
-"url": "../recipes/recipe_hello_quarks",
+"url": "../recipes/recipe_hello_edgent",
 "summary": ""
 },
 

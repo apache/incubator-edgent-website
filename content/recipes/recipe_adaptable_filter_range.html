@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Changing a filter's range  | Apache Quarks Documentation</title>
+<title>Changing a filter's range  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Changing a filter's range page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -599,11 +599,11 @@ $('#toc').on('click', 'a', function() {
 
     <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/recipes/recipe_adaptable_filter_range.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="http://quarks.incubator.apache.org/javadoc/lastest//lastest/quarks/analytics/sensors/Range.html">Range</a>.</p>
+  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/analytics/sensors/Range.html">Range</a>.</p>
 
 <p>Oftentimes, a user wants a filter&#39;s behavior to be adaptable rather than static. A filter&#39;s range can be made changeable via commands from some external source or just changed as a result of some other local analytics.</p>
 
-<p>A Quarks <code>IotProvider</code> and <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set optimal temp range&quot; command stream.</p>
+<p>An Edgent <code>IotProvider</code> and <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set optimal temp range&quot; command stream.</p>
 
 <p>The string form of a <code>Range</code> is natural, consise, and easy to use. As such it&#39;s a convenient form to use as external range format. The range string can easily be converted back into a <code>Range</code>.</p>
 
@@ -644,12 +644,12 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicReference</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Range</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Ranges</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Range</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Ranges</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="cm">/**
  * Detect a sensor value out of expected range.
@@ -740,14 +740,14 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

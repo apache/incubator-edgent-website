@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Splitting a stream to apply different processing and combining the results into a single stream  | Apache Quarks Documentation</title>
+<title>Splitting a stream to apply different processing and combining the results into a single stream  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Splitting a stream to apply different processing and combining the results into a single stream page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -607,14 +607,14 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="setting-up-the-application">Setting up the application</h2>
 
-<p>We assume that the environment has been set up following the steps outlined in the <a href="../docs/quarks-getting-started">Getting started guide</a>.</p>
+<p>We assume that the environment has been set up following the steps outlined in the <a href="../docs/edgent-getting-started">Getting started guide</a>.</p>
 
 <p>First, we need to define a class for a heart monitor. We generate random blood pressure readings, each consisting of the systolic pressure (the top number) and the diastolic pressure (the bottom number). For example, with a blood pressure of 115/75 (read as &quot;115 over 75&quot;), the systolic pressure is 115 and the diastolic pressure is 75. These two pressures are stored in a <code>map</code>, and each call to <code>get()</code> returns new values.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.function.Supplier</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.function.Supplier</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HeartMonitorSensor</span> <span class="kd">implements</span> <span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
@@ -654,13 +654,13 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.console.server.HttpServer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.function.ToIntFunction</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.development.DevelopmentProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.HeartMonitorSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.console.server.HttpServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.function.ToIntFunction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.development.DevelopmentProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.HeartMonitorSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CombiningStreamsProcessingResults</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -687,7 +687,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="splitting-the-readings">Splitting the readings</h2>
 
-<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/lastest/quarks/topology/TStream.html#split-int-quarks.function.ToIntFunction-">Javadoc</a>.</p>
+<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/TStream.html#split-int-quarks.function.ToIntFunction-">Javadoc</a>.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">split</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">ToIntFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">splitter</span><span class="o">)</span>
 </code></pre></div>
 <p><code>split</code> returns a <code>List</code> of <code>TStream</code> objects, where each item in the list is one of the resulting output streams. In this case, one stream in the list will contain a flow of tuples where the blood pressure reading belongs to one of the five blood pressure categories. Another stream will contain a flow of tuples where the blood pressure reading belongs to a different blood pressure category, and so on.</p>
@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="combining-the-alert-streams">Combining the alert streams</h2>
 
-<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/lastest/quarks/topology/TStream.html#union-quarks.topology.TStream-">Javadoc</a>.</p>
+<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/TStream.html#union-quarks.topology.TStream-">Javadoc</a>.</p>
 
 <p>There are two ways to define a union. You can either union a <code>TStream</code> with another <code>TStream</code>, or with a set of streams (<code>Set&lt;TStream&lt;T&gt;&gt;</code>). In both cases, a single <code>TStream</code> is returned containing the tuples that flow on the input stream(s).</p>
 
@@ -871,14 +871,14 @@ EMERGENCY! SEE TO PATIENT IMMEDIATELY!
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

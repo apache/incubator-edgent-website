@@ -27,7 +27,7 @@
               
                       
                          
-                            http://quarks.incubator.apache.org/docs/quarks_index.html
+                            http://quarks.incubator.apache.org/docs/edgent_index.html
                                   
                         
                      
@@ -41,12 +41,12 @@
               
                       
                          
-                            http://quarks.incubator.apache.org/docs/quarks-getting-started.html
+                            http://quarks.incubator.apache.org/docs/edgent-getting-started.html
                                   
                         
                      
                          
-                            http://quarks.incubator.apache.org/docs/common-quarks-operations.html
+                            http://quarks.incubator.apache.org/docs/common-edgent-operations.html
                                   
                         
                      
@@ -55,7 +55,7 @@
               
                       
                          
-                            http://quarks.incubator.apache.org/recipes/recipe_hello_quarks.html
+                            http://quarks.incubator.apache.org/recipes/recipe_hello_edgent.html
                                   
                         
                      

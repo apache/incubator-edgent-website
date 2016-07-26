@@ -18,10 +18,10 @@
 
 
  
-/docs/quarks_index:
+/docs/edgent_index:
   title: "Introduction"
-  url: "../docs/quarks_index.html"
-  link: "<a href='../docs/quarks_index.html'>Introduction</a>"
+  url: "../docs/edgent_index.html"
+  link: "<a href='../docs/edgent_index.html'>Introduction</a>"
 
 
  
@@ -34,26 +34,26 @@
 
 
  
-/docs/quarks-getting-started:
+/docs/edgent-getting-started:
   title: "Getting started guide"
-  url: "../docs/quarks-getting-started.html"
-  link: "<a href='../docs/quarks-getting-started.html'>Getting started guide</a>"
+  url: "../docs/edgent-getting-started.html"
+  link: "<a href='../docs/edgent-getting-started.html'>Getting started guide</a>"
 
 
  
-/docs/common-quarks-operations:
+/docs/common-edgent-operations:
   title: "Common operations"
-  url: "../docs/common-quarks-operations.html"
-  link: "<a href='../docs/common-quarks-operations.html'>Common operations</a>"
+  url: "../docs/common-edgent-operations.html"
+  link: "<a href='../docs/common-edgent-operations.html'>Common operations</a>"
 
 
 
 
  
-/recipes/recipe_hello_quarks:
-  title: "Hello Quarks!"
-  url: "../recipes/recipe_hello_quarks.html"
-  link: "<a href='../recipes/recipe_hello_quarks.html'>Hello Quarks!</a>"
+/recipes/recipe_hello_edgent:
+  title: "Hello Edgent!"
+  url: "../recipes/recipe_hello_edgent.html"
+  link: "<a href='../recipes/recipe_hello_edgent.html'>Hello Edgent!</a>"
 
 
  

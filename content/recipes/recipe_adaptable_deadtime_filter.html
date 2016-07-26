@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Using an adaptable deadtime filter  | Apache Quarks Documentation</title>
+<title>Using an adaptable deadtime filter  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Using an adaptable deadtime filter page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -607,13 +607,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Note this is a different case than simply changing the polling frequency for the sensor as doing that would disable local continuous monitoring and analysis of the engine temperature.</p>
 
-<p>This case needs a <em>deadtime filter</em> and Quarks provides one for your use! In contrast to a <em>deadband filter</em>, which skips tuples based on a deadband value range, a deadtime filter skips tuples based on a <em>deadtime period</em> following a tuple that is allowed to pass through. For example, if the deadtime period is 30 minutes, after allowing a tuple to pass, the filter skips any tuples received for the next 30 minutes. The next tuple received after that is allowed to pass through, and a new deadtime period is begun.</p>
+<p>This case needs a <em>deadtime filter</em> and Edgent provides one for your use! In contrast to a <em>deadband filter</em>, which skips tuples based on a deadband value range, a deadtime filter skips tuples based on a <em>deadtime period</em> following a tuple that is allowed to pass through. For example, if the deadtime period is 30 minutes, after allowing a tuple to pass, the filter skips any tuples received for the next 30 minutes. The next tuple received after that is allowed to pass through, and a new deadtime period is begun.</p>
 
-<p>See <code>quarks.analytics.sensors.Filters.deadtime()</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Filters.java">GitHub</a>) and <code>quarks.analytics.sensors.Deadtime</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Deadtime.java">GitHub</a>).</p>
+<p>See <code>edgent.analytics.sensors.Filters.deadtime()</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Filters.java">GitHub</a>) and <code>edgent.analytics.sensors.Deadtime</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Deadtime.java">GitHub</a>).</p>
 
 <p>This recipe demonstrates how to use an adaptable deadtime filter.</p>
 
-<p>A Quarks <code>IotProvider</code> ad <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set deadtime period&quot; command stream.</p>
+<p>An Edgent <code>IotProvider</code> ad <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set deadtime period&quot; command stream.</p>
 
 <h2 id="create-a-polled-sensor-readings-stream">Create a polled sensor readings stream</h2>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="o">...;</span>
@@ -621,7 +621,7 @@ $('#toc').on('click', 'a', function() {
 <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">engineTemp</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span><span class="n">tempSensor</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">)</span>
                               <span class="o">.</span><span class="na">tag</span><span class="o">(</span><span class="s">"engineTemp"</span><span class="o">);</span>
 </code></pre></div>
-<p>It&#39;s also a good practice to add tags to streams to improve the usability of the development mode Quarks console.</p>
+<p>It&#39;s also a good practice to add tags to streams to improve the usability of the development mode Edgent console.</p>
 
 <h2 id="create-a-deadtime-filtered-stream-mdash-initially-no-deadtime">Create a deadtime filtered stream&mdash;initially no deadtime</h2>
 
@@ -652,13 +652,13 @@ $('#toc').on('click', 'a', function() {
 
 <span class="kn">import</span> <span class="nn">com.google.gson.JsonObject</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.analytics.sensors.Deadtime</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.console.server.HttpServer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.development.DevelopmentProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.analytics.sensors.Deadtime</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.console.server.HttpServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.development.DevelopmentProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.SimulatedTemperatureSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="cm">/**
  * A recipe for using an Adaptable Deadtime Filter.
@@ -766,14 +766,14 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

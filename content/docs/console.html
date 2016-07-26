@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Application console  | Apache Quarks Documentation</title>
+<title>Application console  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the Application console page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -601,19 +601,19 @@ $('#toc').on('click', 'a', function() {
     
   <h2 id="visualizing-and-monitoring-your-application">Visualizing and monitoring your application</h2>
 
-<p>The Quarks application console is a web application that enables you to visualize your application topology and monitor the tuples flowing through your application. The kind of oplets used in the topology, as well as the stream tags included in the topology, are also visible in the console.</p>
+<p>The Edgent application console is a web application that enables you to visualize your application topology and monitor the tuples flowing through your application. The kind of oplets used in the topology, as well as the stream tags included in the topology, are also visible in the console.</p>
 
 <h2 id="adding-the-console-web-app-to-your-application">Adding the console web app to your application</h2>
 
-<p>To use the console, you must use the Quarks classes that provide the service to access the console web application or directly call the <code>HttpServer</code> class itself, start the server and then obtain the console URL.</p>
+<p>To use the console, you must use the Edgent classes that provide the service to access the console web application or directly call the <code>HttpServer</code> class itself, start the server and then obtain the console URL.</p>
 
 <p>The easiest way to include the console in your application is to use the the <code>DevelopmentProvider</code> class. <code>DevelopmentProvider</code> is a subclass of <code>DirectProvider</code> and adds services such as access to the console web application and counter oplets used to determine tuple counts. You can get the URL for the console from the <code>DevelopmentProvider</code> using the <code>getService</code> method as shown in a hypothetical application shown below:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.console.server.HttpServer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.development.DevelopmentProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.console.server.HttpServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.development.DevelopmentProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensorApplication</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
@@ -657,13 +657,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>To see the features of the console in action and as a way to demonstrate how to monitor a topology in the console, let&#39;s look at the <code>ConsoleWaterDetector</code> sample (on <a href="https://github.com/apache/incubator-quarks/blob/master/samples/console/src/main/java/quarks/samples/console/ConsoleWaterDetector.java">GitHub</a>).</p>
 
-<p>Prior to running any console applications, the <code>console.war</code> file must be built as mentioned above. If you are building quarks from a Git repository, go to the top level Quarks directory and run <code>ant</code>.</p>
+<p>Prior to running any console applications, the <code>console.war</code> file must be built as mentioned above. If you are building Edgent from a Git repository, go to the top level Edgent directory and run <code>ant</code>.</p>
 
 <p>Here is an example in my environment:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:quarks susancline$ pwd
-/Users/susancline/git/quarks
-Susans-MacBook-Pro-247:quarks susancline$ ant
-Buildfile: /Users/susancline/git/quarks/build.xml
+<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:edgent susancline$ pwd
+/Users/susancline/git/edgent
+Susans-MacBook-Pro-247:edgent susancline$ ant
+Buildfile: /Users/susancline/git/edgent/build.xml
 
 setcommitversion:
 
@@ -680,10 +680,10 @@ compile:
 [javadoc] Constructing Javadoc information...
 [javadoc] Standard Doclet version 1.8.0_71
 [javadoc] Building tree for all the packages and classes...
-[javadoc] Generating /Users/susancline/git/quarks/target/docs/javadoc/quarks/analytics/sensors/package-summary.html...
-[javadoc] Copying file /Users/susancline/git/quarks/analytics/sensors/src/main/java/quarks/analytics/sensors/doc-files/deadband.png to directory /Users/susancline/git/quarks/target/docs/javadoc/quarks/analytics/sensors/doc-files...
-[javadoc] Generating /Users/susancline/git/quarks/target/docs/javadoc/quarks/topology/package-summary.html...
-[javadoc] Copying file /Users/susancline/git/quarks/api/topology/src/main/java/quarks/topology/doc-files/sources.html to directory /Users/susancline/git/quarks/target/docs/javadoc/quarks/topology/doc-files...
+[javadoc] Generating /Users/susancline/git/edgent/target/docs/javadoc/edgent/analytics/sensors/package-summary.html...
+[javadoc] Copying file /Users/susancline/git/edgent/analytics/sensors/src/main/java/edgent/analytics/sensors/doc-files/deadband.png to directory /Users/susancline/git/edgent/target/docs/javadoc/edgent/analytics/sensors/doc-files...
+[javadoc] Generating /Users/susancline/git/edgent/target/docs/javadoc/edgent/topology/package-summary.html...
+[javadoc] Copying file /Users/susancline/git/edgent/api/topology/src/main/java/edgent/topology/doc-files/sources.html to directory /Users/susancline/git/edgent/target/docs/javadoc/edgent/topology/doc-files...
 [javadoc] Building index for all the packages and classes...
 [javadoc] Building index for all classes...
 
@@ -693,16 +693,16 @@ BUILD SUCCESSFUL
 Total time: 3 seconds
 </code></pre></div>
 <p>This command will let you know that <code>console.war</code> was built and is in the correct place, under the <code>webapps</code> directory.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:quarks susancline$ find . -name console.war -print
+<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:edgent susancline$ find . -name console.war -print
 ./target/java8/console/webapps/console.war
 </code></pre></div>
 <p>Now we know we have built <code>console.war</code>, so we&#39;re good to go. To run this sample from the command line:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:quarks susancline$ pwd
-/Users/susancline/git/quarks
-Susans-MacBook-Pro-247:quarks susancline$ java -cp target/java8/samples/lib/quarks.samples.console.jar:. quarks.samples.console.ConsoleWaterDetector
+<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:edgent susancline$ pwd
+/Users/susancline/git/edgent
+Susans-MacBook-Pro-247:edgent susancline$ java -cp target/java8/samples/lib/edgent.samples.console.jar:. edgent.samples.console.ConsoleWaterDetector
 </code></pre></div>
 <p>If everything is successful, you&#39;ll start seeing output. You may have to scroll back up to get the URL of the console:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:quarks susancline$ java -cp target/java8/samples/lib/quarks.samples.console.jar:. quarks.samples.console.ConsoleWaterDetector
+<div class="highlight"><pre><code class="language-" data-lang="">Susans-MacBook-Pro-247:edgent susancline$ java -cp target/java8/samples/lib/edgent.samples.console.jar:. edgent.samples.console.ConsoleWaterDetector
 Mar 07, 2016 12:04:52 PM org.eclipse.jetty.util.log.Log initialized
 INFO: Logging initialized @176ms
 Mar 07, 2016 12:04:53 PM org.eclipse.jetty.server.Server doStart
@@ -844,15 +844,15 @@ Well3 alert, acidity value is 10
 <span class="o">}</span>
 </code></pre></div>
 <p>What this does is get all the counters in the <code>MetricRegistry</code> class and print out the name of the counter oplet they are monitoring along with the tuple count if it is zero. Here is some sample output:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_44 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_45 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_46 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_47 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_89 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_95 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_96 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_97 has a tuple count of zero!
-Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_98 has a tuple count of zero!
+<div class="highlight"><pre><code class="language-" data-lang="">Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_44 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_45 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_46 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_47 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_89 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_95 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_96 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_97 has a tuple count of zero!
+Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_98 has a tuple count of zero!
 </code></pre></div>
 <p>To summarize what the application is doing:</p>
 
@@ -903,7 +903,7 @@ Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_98 has a tuple count of zero!
 
 <p><img src='images/console_oplet_properties.jpg' alt='Displays a table showing the relationship between the oplets and vertices' width='100%'/></p>
 
-<p>Looking at the sixth line in the table, where the Name is &#39;OP_5&#39;, we can see that the Oplet kind is a <code>Map</code>, a <code>quarks.oplet.functional.Map</code>, the Tuple count is 0 (this is because the view is in Static flow mode - the graph does not show the number of tuples flowing in it), the source oplet is &#39;OP_55&#39;, the target oplet is &#39;OP_60&#39;, and there are no stream tags coming from the source or target streams. Relationships for all oplets can be viewed in this manner.</p>
+<p>Looking at the sixth line in the table, where the Name is &#39;OP_5&#39;, we can see that the Oplet kind is a <code>Map</code>, a <code>edgent.oplet.functional.Map</code>, the Tuple count is 0 (this is because the view is in Static flow mode - the graph does not show the number of tuples flowing in it), the source oplet is &#39;OP_55&#39;, the target oplet is &#39;OP_60&#39;, and there are no stream tags coming from the source or target streams. Relationships for all oplets can be viewed in this manner.</p>
 
 <p>Now, looking at the graph, if we want to see the relationships for a single oplet, we can hover over it. The image below shows the hover when we are over &#39;OP_5&#39;.</p>
 
@@ -974,12 +974,12 @@ Counter Op:TupleCounter.quarks.oplet.JOB_0.OP_98 has a tuple count of zero!
 
 <ul>
 <li>A <code>DevelopmentProvider</code> is used; this automatically inserts counters on the streams of the topology</li>
-<li>A <code>quarks.metrics.Metric.Counter</code> or <code>quarks.metrics.Metric.RateMeter</code> is added to an individual stream</li>
+<li>A <code>edgent.metrics.Metric.Counter</code> or <code>edgent.metrics.Metric.RateMeter</code> is added to an individual stream</li>
 </ul>
 
 <h2 id="counters">Counters</h2>
 
-<p>In the <code>ConsoleWaterDetector</code> application we used a <code>DevelopmentProvider</code>. Therefore, counters were added to most streams (edges) with the following exceptions (from the <a href="http://quarks.incubator.apache.org/javadoc/lastest/quarks/metrics/Metrics.html#counter-quarks.topology.TStream-">Javadoc</a> for <code>quarks.metrics.Metrics</code>):</p>
+<p>In the <code>ConsoleWaterDetector</code> application we used a <code>DevelopmentProvider</code>. Therefore, counters were added to most streams (edges) with the following exceptions (from the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/metrics/Metrics.html#counter-quarks.topology.TStream-">Javadoc</a> for <code>edgent.metrics.Metrics</code>):</p>
 
 <p><em>Oplets are only inserted upstream from a FanOut oplet.</em></p>
 
@@ -1057,7 +1057,7 @@ Metrics.rateMeter(individualAlerts3.get(0));
 <p>The intent of the information on this page is to help you understand the following:</p>
 
 <ul>
-<li>How to add the console application to a Quarks application</li>
+<li>How to add the console application to an Edgent application</li>
 <li>How to run the <code>ConsoleWaterDetector</code> sample</li>
 <li>The design/architecture in the <code>ConsoleWaterDetector</code> application</li>
 <li>The controls for the Topology graph are and what they do, including the different views of the graph</li>
@@ -1068,9 +1068,9 @@ Metrics.rateMeter(individualAlerts3.get(0));
 <li>How to correlate values from the metrics section with the topology graph</li>
 </ul>
 
-<p>The Quarks console will continue to evolve and improve. Please open an issue if you see a problem with the existing console, but more importantly add an issue if you have an idea of how to make the console better.</p>
+<p>The Edgent console will continue to evolve and improve. Please open an issue if you see a problem with the existing console, but more importantly add an issue if you have an idea of how to make the console better.</p>
 
-<p>The more folks write Quarks applications and view them in the console, the more information we can gather from the community about what is needed in the console. Please consider making a contribution if there is a feature in the console that would really help you and others!</p>
+<p>The more folks write Edgent applications and view them in the console, the more information we can gather from the community about what is needed in the console. Please consider making a contribution if there is a feature in the console that would really help you and others!</p>
 
 
 <div class="tags">
@@ -1103,14 +1103,14 @@ Metrics.rateMeter(individualAlerts3.get(0));
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is

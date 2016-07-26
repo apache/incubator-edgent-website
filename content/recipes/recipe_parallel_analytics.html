@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>How can I run analytics on several tuples in parallel?  | Apache Quarks Documentation</title>
+<title>How can I run analytics on several tuples in parallel?  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Quarks Documentation</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
 
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/lastest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                     
                     
                     
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quarks Resources<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
                         
@@ -156,7 +156,7 @@
                 <!-- Send feedback function -->
 <script>
 function SendLinkByMail(href) {
-var subject= "Apache Quarks Documentation feedback";
+var subject= "Apache Edgent Documentation feedback";
 var body = "I have some feedback about the How can I run analytics on several tuples in parallel? page: ";
 body += window.location.href;
 body += "";
@@ -257,7 +257,7 @@ window.location.href = uri;
 
         <ul id="mysidebar" class="nav">
 
-            <span class="siteTagline">Quarks</span>
+            <span class="siteTagline">Edgent</span>
             <span class="versionTagline">Version 0.3.0</span>
 
             
@@ -271,7 +271,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks_index.html">Introduction</a></li>
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
                     
 
                     
@@ -298,7 +298,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/quarks-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
                     
 
                     
@@ -308,7 +308,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/common-quarks-operations.html">Common operations</a></li>
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
                     
 
                     
@@ -319,13 +319,13 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Quarks Cookbook</a>
+            <li><a href="#">Edgent Cookbook</a>
                 <ul>
                     
                     
                     
                     
-                    <li><a href="../recipes/recipe_hello_quarks.html">Hello Quarks!</a></li>
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
                     
 
                     
@@ -676,20 +676,20 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
 <h2 id="the-final-application">The final application</h2>
 
 <p>When the application is run it prints out 5 (width) tuples every second. Without the parallel channels, it would only print one tuple each second.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">quarks</span><span class="o">.</span><span class="na">samples</span><span class="o">.</span><span class="na">topology</span><span class="o">;</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">edgent</span><span class="o">.</span><span class="na">samples</span><span class="o">.</span><span class="na">topology</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">quarks.console.server.HttpServer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.function.BiFunction</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.function.Functions</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.development.DevelopmentProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.providers.direct.DirectProvider</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.samples.utils.sensor.SimpleSimulatedSensor</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.TStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.Topology</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">quarks.topology.plumbing.PlumbingStreams</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.console.server.HttpServer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.function.BiFunction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.function.Functions</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.development.DevelopmentProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.samples.utils.sensor.SimpleSimulatedSensor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.TStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.edgent.topology.plumbing.PlumbingStreams</span><span class="o">;</span>
 
 <span class="cm">/**
  * A recipe for parallel analytics.
@@ -787,14 +787,14 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Jul 21, 2016 <br/>
+            generated: Jul 26, 2016 <br/>
 
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-md-12">
-            <p class="small">Apache Quarks is an effort undergoing Incubation at The Apache Software
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
                 Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
                 until a further review indicates that the infrastructure, communications, and decision making process
                 have stabilized in a manner consistent with other successful ASF projects. While incubation status is
