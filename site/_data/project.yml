@@ -24,11 +24,11 @@ description: Edgent is a community for accelerating analytics in edge devices.
 
 download: https://github.com/apache/incubator-quarks
 
-dev_list: dev@quarks.incubator.apache.org
-dev_list_subscribe: dev-subscribe@quarks.incubator.apache.org
-dev_list_unsubscribe: dev-unsubscribe@quarks.incubator.apache.org
-dev_list_archive: http://mail-archives.apache.org/mod_mbox/incubator-quarks-dev/
-dev_list_archive_mailarchive: https://www.mail-archive.com/dev@quarks.incubator.apache.org/
+dev_list: dev@edgent.apache.org
+dev_list_subscribe: dev-subscribe@edgent.apache.org
+dev_list_unsubscribe: dev-unsubscribe@edgent.apache.org
+dev_list_archive: http://mail-archives.apache.org/mod_mbox/edgent-dev/
+dev_list_archive_mailarchive: https://www.mail-archive.com/dev@edgent.apache.org/
 dev_list_archive_markmail:
 
 user_list:
@@ -38,14 +38,14 @@ user_list_archive:
 user_list_archive_mailarchive:
 user_list_archive_markmail:
 
-commits_list: commits@quarks.incubator.apache.org
-commits_list_subscribe: commits-subscribe@quarks.incubator.apache.org
-commits_list_unsubscribe: commits-unsubscribe@quarks.incubator.apache.org
-commits_list_archive: http://mail-archives.apache.org/mod_mbox/incubator-quarks-commits/
-commits_list_archive_mailarchive: https://www.mail-archive.com/commits@quarks.incubator.apache.org/
+commits_list: commits@edgent.apache.org
+commits_list_subscribe: commits-subscribe@edgent.apache.org
+commits_list_unsubscribe: commits-unsubscribe@edgent.apache.org
+commits_list_archive: http://mail-archives.apache.org/mod_mbox/edgent-commits/
+commits_list_archive_mailarchive: https://www.mail-archive.com/commits@edgent.apache.org/
 commits_list_archive_markmail:
 
-jira: QUARKS
+jira: EDGENT
 
 source_repository: https://git-wip-us.apache.org/repos/asf/incubator-quarks.git
 source_repository_mirror: https://github.com/apache/incubator-quarks
