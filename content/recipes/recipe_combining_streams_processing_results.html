@@ -85,13 +85,13 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks" target="_blank">Source code</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks-website" target="_blank">Website/Documentation</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
                         
                         
                         
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -126,7 +126,7 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks/releases" target="_blank">Download</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent/releases" target="_blank">Download</a></li>
                         
                         
                         
@@ -168,7 +168,7 @@ window.location.href = uri;
 }
 </script>
 
-<li><a href="mailto:dev@quarks.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+<li><a href="mailto:dev@edgent.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
 
 
                 <!--uncomment this block if you want simple search instead of algolia-->
@@ -597,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/recipes/recipe_combining_streams_processing_results.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_combining_streams_processing_results.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <p>In some cases, a developer might want to perform analytics taking into account the nature of the data. Say, for example, the data consists of log records each containing a level attribute. It would be logical to handle <em>fatal</em> log messages differently than <em>info</em> or <em>debug</em> messages. The same reasoning could also apply in the healthcare industry.</p>
 
@@ -687,7 +687,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="splitting-the-readings">Splitting the readings</h2>
 
-<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/TStream.html#split-int-quarks.function.ToIntFunction-">Javadoc</a>.</p>
+<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/topology/TStream.html#split-int-edgent.function.ToIntFunction-">Javadoc</a>.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">split</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">ToIntFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">splitter</span><span class="o">)</span>
 </code></pre></div>
 <p><code>split</code> returns a <code>List</code> of <code>TStream</code> objects, where each item in the list is one of the resulting output streams. In this case, one stream in the list will contain a flow of tuples where the blood pressure reading belongs to one of the five blood pressure categories. Another stream will contain a flow of tuples where the blood pressure reading belongs to a different blood pressure category, and so on.</p>
@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="combining-the-alert-streams">Combining the alert streams</h2>
 
-<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/TStream.html#union-quarks.topology.TStream-">Javadoc</a>.</p>
+<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/topology/TStream.html#union-edgent.topology.TStream-">Javadoc</a>.</p>
 
 <p>There are two ways to define a union. You can either union a <code>TStream</code> with another <code>TStream</code>, or with a set of streams (<code>Set&lt;TStream&lt;T&gt;&gt;</code>). In both cases, a single <code>TStream</code> is returned containing the tuples that flow on the input stream(s).</p>
 
@@ -817,7 +817,7 @@ $('#toc').on('click', 'a', function() {
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Terminate the stream by printing out alerts from all categories</span>
 <span class="n">allAlerts</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tuple</span><span class="o">));</span>
 </code></pre></div>
-<p>We end our application by submitting the <code>Topology</code>. Note that this application is available as a <a href="https://github.com/apache/incubator-quarks/blob/master/samples/topology/src/main/java/quarks/samples/topology/CombiningStreamsProcessingResults.java">sample</a>.</p>
+<p>We end our application by submitting the <code>Topology</code>. Note that this application is available as a <a href="https://github.com/apache/incubator-edgent/blob/master/samples/topology/src/main/java/edgent/samples/topology/CombiningStreamsProcessingResults.java">sample</a>.</p>
 
 <h2 id="observing-the-output">Observing the output</h2>
 
@@ -871,7 +871,7 @@ EMERGENCY! SEE TO PATIENT IMMEDIATELY!
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 4, 2016 <br/>
+            generated: Aug 11, 2016 <br/>
 
         </div>
     </div>

@@ -85,13 +85,13 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks" target="_blank">Source code</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks-website" target="_blank">Website/Documentation</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
                         
                         
                         
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -126,7 +126,7 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks/releases" target="_blank">Download</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent/releases" target="_blank">Download</a></li>
                         
                         
                         
@@ -168,7 +168,7 @@ window.location.href = uri;
 }
 </script>
 
-<li><a href="mailto:dev@quarks.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+<li><a href="mailto:dev@edgent.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
 
 
                 <!--uncomment this block if you want simple search instead of algolia-->
@@ -597,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/recipes/recipe_adaptable_polling_source.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_adaptable_polling_source.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <p>The <a href="recipe_source_function.html">Writing a source function</a> recipe introduced the basics of creating a source stream by polling a data source periodically.</p>
 
@@ -605,7 +605,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>An Edgent <code>IotProvider</code> and <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set poll period&quot; command stream.</p>
 
-<p>The <code>Topology.poll()</code> <a href="http://quarks.incubator.apache.org/javadoc/latest/quarks/topology/Topology.html#poll-quarks.function.Supplier-long-java.util.concurrent.TimeUnit-">documentation</a> describes how the poll period may be changed at runtime.</p>
+<p>The <code>Topology.poll()</code> <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/topology/Topology.html#poll-edgent.function.Supplier-long-java.util.concurrent.TimeUnit-">documentation</a> describes how the poll period may be changed at runtime.</p>
 
 <p>The mechanism is based on a more general Edgent runtime <code>edgent.execution.services.ControlService</code> service. The runtime registers &quot;control beans&quot; for entities that are controllable. These controls can be retrieved at runtime via the service.</p>
 
@@ -752,7 +752,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 4, 2016 <br/>
+            generated: Aug 11, 2016 <br/>
 
         </div>
     </div>

@@ -85,13 +85,13 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks" target="_blank">Source code</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks-website" target="_blank">Website/Documentation</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
                         
                         
                         
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -126,7 +126,7 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks/releases" target="_blank">Download</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent/releases" target="_blank">Download</a></li>
                         
                         
                         
@@ -168,7 +168,7 @@ window.location.href = uri;
 }
 </script>
 
-<li><a href="mailto:dev@quarks.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+<li><a href="mailto:dev@edgent.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
 
 
                 <!--uncomment this block if you want simple search instead of algolia-->
@@ -597,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/docs/edgent-getting-started.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/edgent-getting-started.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <h2 id="what-is-apache-edgent">What is Apache Edgent?</h2>
 
@@ -624,7 +624,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="downloading-apache-edgent">Downloading Apache Edgent</h3>
 
-<p>To use Edgent, access the source code and build it. You can read more about building Edgent <a href="https://github.com/apache/incubator-quarks/blob/master/DEVELOPMENT.md">here</a>.</p>
+<p>To use Edgent, access the source code and build it. You can read more about building Edgent <a href="https://github.com/apache/incubator-edgent/blob/master/DEVELOPMENT.md">here</a>.</p>
 
 <p>After you build the Edgent package, you can set up your environment.</p>
 
@@ -702,14 +702,14 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="specifying-a-provider">Specifying a provider</h3>
 
-<p>Your first step when you write an Edgent application is to create a <a href="http://quarks.incubator.apache.org/javadoc/latest/index.html?edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
+<p>Your first step when you write an Edgent application is to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 </code></pre></div>
 <p>A <code>Provider</code> is an object that contains information on how and where your Edgent application will run. A <code>DirectProvider</code> is a type of Provider that runs your application directly within the current virtual machine when its <code>submit()</code> method is called.</p>
 
 <h3 id="creating-a-topology">Creating a topology</h3>
 
-<p>Additionally a Provider is used to create a <a href="http://quarks.incubator.apache.org/javadoc/latest/index.html?edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
+<p>Additionally a Provider is used to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 </code></pre></div>
 <p>In Edgent, <code>Topology</code> is a container that describes the structure of your application:</p>
@@ -803,7 +803,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 4, 2016 <br/>
+            generated: Aug 11, 2016 <br/>
 
         </div>
     </div>

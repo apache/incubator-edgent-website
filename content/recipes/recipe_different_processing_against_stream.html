@@ -85,13 +85,13 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks" target="_blank">Source code</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks-website" target="_blank">Website/Documentation</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
                         
                         
                         
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -126,7 +126,7 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks/releases" target="_blank">Download</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent/releases" target="_blank">Download</a></li>
                         
                         
                         
@@ -168,7 +168,7 @@ window.location.href = uri;
 }
 </script>
 
-<li><a href="mailto:dev@quarks.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+<li><a href="mailto:dev@edgent.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
 
 
                 <!--uncomment this block if you want simple search instead of algolia-->
@@ -597,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/recipes/recipe_different_processing_against_stream.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_different_processing_against_stream.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <p>In the previous <a href="recipe_value_out_of_range">recipe</a>, we learned how to filter a stream to obtain the interesting sensor readings and ignore the mundane data. Typically, a user scenario is more involved, where data is processed using different stream operations. Consider the following scenario, for example.</p>
 
@@ -650,7 +650,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="generating-gas-mileage-sensor-readings">Generating gas mileage sensor readings</h2>
 
-<p>The next step is to simulate a stream of gas mileage readings using <a href="https://github.com/apache/incubator-quarks/blob/master/samples/utils/src/main/java/quarks/samples/utils/sensor/SimpleSimulatedSensor.java"><code>SimpleSimulatedSensor</code></a>. We set the initial gas mileage and delta factor in the first two arguments. The last argument ensures that the sensor reading falls in an acceptable range (between 7.0 mpg and 14.0 mpg). In our <code>main()</code>, we use the <code>poll()</code> method to generate a flow of tuples (readings), where each tuple arrives every second.</p>
+<p>The next step is to simulate a stream of gas mileage readings using <a href="https://github.com/apache/incubator-edgent/blob/master/samples/utils/src/main/java/edgent/samples/utils/sensor/SimpleSimulatedSensor.java"><code>SimpleSimulatedSensor</code></a>. We set the initial gas mileage and delta factor in the first two arguments. The last argument ensures that the sensor reading falls in an acceptable range (between 7.0 mpg and 14.0 mpg). In our <code>main()</code>, we use the <code>poll()</code> method to generate a flow of tuples (readings), where each tuple arrives every second.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Generate a stream of gas mileage sensor readings</span>
 <span class="n">SimpleSimulatedSensor</span> <span class="n">mpgSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleSimulatedSensor</span><span class="o">(</span><span class="n">INITIAL_MPG</span><span class="o">,</span>
         <span class="mf">0.4</span><span class="o">,</span> <span class="n">Ranges</span><span class="o">.</span><span class="na">closed</span><span class="o">(</span><span class="n">MPG_LOW</span><span class="o">,</span> <span class="n">MPG_HIGH</span><span class="o">));</span>
@@ -820,7 +820,7 @@ Gallons of gas: 9.1
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 4, 2016 <br/>
+            generated: Aug 11, 2016 <br/>
 
         </div>
     </div>

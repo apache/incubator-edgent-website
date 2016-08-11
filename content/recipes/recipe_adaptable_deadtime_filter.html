@@ -85,13 +85,13 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks" target="_blank">Source code</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks-website" target="_blank">Website/Documentation</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
                         
                         
                         
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li><a href="http://quarks.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
+                <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">Javadoc</a></li>
                 
                 
                 
@@ -126,7 +126,7 @@
                         
                         
                         
-                        <li><a href="https://github.com/apache/incubator-quarks/releases" target="_blank">Download</a></li>
+                        <li><a href="https://github.com/apache/incubator-edgent/releases" target="_blank">Download</a></li>
                         
                         
                         
@@ -168,7 +168,7 @@ window.location.href = uri;
 }
 </script>
 
-<li><a href="mailto:dev@quarks.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+<li><a href="mailto:dev@edgent.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
 
 
                 <!--uncomment this block if you want simple search instead of algolia-->
@@ -597,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-quarks-website/blob/master/site/recipes/recipe_adaptable_deadtime_filter.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_adaptable_deadtime_filter.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <p>Oftentimes, an application wants to control the frequency that continuously generated analytic results are made available to other parts of the application or published to other applications or an event hub.</p>
 
@@ -609,7 +609,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>This case needs a <em>deadtime filter</em> and Edgent provides one for your use! In contrast to a <em>deadband filter</em>, which skips tuples based on a deadband value range, a deadtime filter skips tuples based on a <em>deadtime period</em> following a tuple that is allowed to pass through. For example, if the deadtime period is 30 minutes, after allowing a tuple to pass, the filter skips any tuples received for the next 30 minutes. The next tuple received after that is allowed to pass through, and a new deadtime period is begun.</p>
 
-<p>See <code>edgent.analytics.sensors.Filters.deadtime()</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Filters.java">GitHub</a>) and <code>edgent.analytics.sensors.Deadtime</code> (on <a href="https://github.com/apache/incubator-quarks/blob/master/analytics/sensors/src/main/java/quarks/analytics/sensors/Deadtime.java">GitHub</a>).</p>
+<p>See <code>edgent.analytics.sensors.Filters.deadtime()</code> (on <a href="https://github.com/apache/incubator-edgent/blob/master/analytics/sensors/src/main/java/edgent/analytics/sensors/Filters.java">GitHub</a>) and <code>edgent.analytics.sensors.Deadtime</code> (on <a href="https://github.com/apache/incubator-edgent/blob/master/analytics/sensors/src/main/java/edgent/analytics/sensors/Deadtime.java">GitHub</a>).</p>
 
 <p>This recipe demonstrates how to use an adaptable deadtime filter.</p>
 
@@ -766,7 +766,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 4, 2016 <br/>
+            generated: Aug 11, 2016 <br/>
 
         </div>
     </div>
