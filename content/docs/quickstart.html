@@ -604,11 +604,11 @@ $('#toc').on('click', 'a', function() {
 <p>IoT devices running Edgent applications typically connect to back-end analytic systems through a message hub. Message hubs are used to isolate the back-end system from having to handle connections from thousands to millions of devices.</p>
 
 <p>An example of such a message hub designed for the Internet of Things is <a href="https://internetofthings.ibmcloud.com/">IBM Watson IoT Platform</a>. This cloud service runs on IBM&#39;s Bluemix cloud platform
-and Edgent provides a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/connectors/iotf/IotfDevice.html">connector</a>.</p>
+and Edgent provides a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/connectors/iotp/IotpDevice.html">connector</a>.</p>
 
-<p>You can test out the service without any registration by using its Quickstart service and the Edgent sample application: <a href="https://github.com/apache/incubator-edgent/blob/master/samples/connectors/src/main/java/edgent/samples/connectors/iotf/IotfQuickstart.java">code</a>, <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/samples/connectors/iotf/IotfQuickstart.html">Javadoc</a>.</p>
+<p>You can test out the service without any registration by using its Quickstart service and the Edgent sample application: <a href="https://github.com/apache/incubator-edgent/blob/master/samples/connectors/src/main/java/org/apache/edgent/samples/connectors/iotp/IotpQuickstart.java">code</a>, <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/samples/connectors/iotp/IotpQuickstart.html">Javadoc</a>.</p>
 
-<p>You can execute the class directly from Eclipse, or using the script: <a href="https://github.com/apache/incubator-edgent/blob/master/scripts/connectors/iotf/runiotfquickstart.sh"><code>edgent/java8/scripts/connectors/iotf/runiotfquickstart.sh</code></a></p>
+<p>You can execute the class directly from Eclipse, or using the script: <a href="https://github.com/apache/incubator-edgent/blob/master/scripts/connectors/iotp/runiotpquickstart.sh"><code>edgent/java8/scripts/connectors/iotp/runiotpquickstart.sh</code></a></p>
 
 <p>When run it produces output like this, with a URL as the third line.</p>
 
@@ -622,12 +622,12 @@ and Edgent provides a <a href="http://edgent.incubator.apache.org/javadoc/latest
 
 <h2 id="edgent-code">Edgent code</h2>
 
-<p>The full source is at: <a href="https://github.com/apache/incubator-edgent/blob/master/samples/connectors/src/main/java/edgent/samples/connectors/iotf/IotfQuickstart.java">IotfQuickstart.java</a>.</p>
+<p>The full source is at: <a href="https://github.com/apache/incubator-edgent/blob/master/samples/connectors/src/main/java/org/apache/edgent/samples/connectors/iotp/IotpQuickstart.java">IotpQuickstart.java</a>.</p>
 
 <p>The first step to is to create a <code>IotDevice</code> instance that represents the connection to IBM Watson IoT Platform Quickstart service.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Declare a connection to IoTF Quickstart service</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Declare a connection to IoTP Quickstart service</span>
 <span class="n">String</span> <span class="n">deviceId</span> <span class="o">=</span> <span class="s">"qs"</span> <span class="o">+</span> <span class="n">Long</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="k">new</span> <span class="n">Random</span><span class="o">().</span><span class="na">nextLong</span><span class="o">());</span>
-<span class="n">IotDevice</span> <span class="n">device</span> <span class="o">=</span> <span class="n">IotfDevice</span><span class="o">.</span><span class="na">quickstart</span><span class="o">(</span><span class="n">topology</span><span class="o">,</span> <span class="n">deviceId</span><span class="o">);</span>
+<span class="n">IotDevice</span> <span class="n">device</span> <span class="o">=</span> <span class="n">IotpDevice</span><span class="o">.</span><span class="na">quickstart</span><span class="o">(</span><span class="n">topology</span><span class="o">,</span> <span class="n">deviceId</span><span class="o">);</span>
 </code></pre></div>
 <p>Now any stream can send device events to the Quickstart service by simply calling its <code>events()</code> method. Here we map a stream of random numbers into JSON as the payload for a device event is typically JSON.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">json</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="o">{</span>
@@ -674,7 +674,7 @@ and Edgent provides a <a href="http://edgent.incubator.apache.org/javadoc/latest
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 24, 2016 <br/>
+            generated: Sep 6, 2016 <br/>
 
         </div>
     </div>

@@ -702,14 +702,14 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="specifying-a-provider">Specifying a provider</h3>
 
-<p>Your first step when you write an Edgent application is to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
+<p>Your first step when you write an Edgent application is to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 </code></pre></div>
 <p>A <code>Provider</code> is an object that contains information on how and where your Edgent application will run. A <code>DirectProvider</code> is a type of Provider that runs your application directly within the current virtual machine when its <code>submit()</code> method is called.</p>
 
 <h3 id="creating-a-topology">Creating a topology</h3>
 
-<p>Additionally a Provider is used to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
+<p>Additionally a Provider is used to create a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 </code></pre></div>
 <p>In Edgent, <code>Topology</code> is a container that describes the structure of your application:</p>
@@ -803,7 +803,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 24, 2016 <br/>
+            generated: Sep 6, 2016 <br/>
 
         </div>
     </div>

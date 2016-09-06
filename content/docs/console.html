@@ -641,7 +641,7 @@ $('#toc').on('click', 'a', function() {
 <span class="o">}</span>
 <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">topology</span><span class="o">);</span>
 </code></pre></div>
-<p>The other way to embed the console in your application is shown in the <code>HttpServerSample.java</code> example (on <a href="https://github.com/apache/incubator-edgent/blob/master/samples/console/src/main/java/edgent/samples/console/HttpServerSample.java">GitHub</a>). It gets the <code>HttpServer</code> instance, starts it, and prints out the console URL. Note that it does not submit a job, so when the console is displayed in the browser, there are no running jobs and therefore no topology graph. The example is meant to show how to get the <code>HttpServer</code> instance, start the console web app and get the URL of the console.</p>
+<p>The other way to embed the console in your application is shown in the <code>HttpServerSample.java</code> example (on <a href="https://github.com/apache/incubator-edgent/blob/master/samples/console/src/main/java/org/apache/edgent/samples/console/HttpServerSample.java">GitHub</a>). It gets the <code>HttpServer</code> instance, starts it, and prints out the console URL. Note that it does not submit a job, so when the console is displayed in the browser, there are no running jobs and therefore no topology graph. The example is meant to show how to get the <code>HttpServer</code> instance, start the console web app and get the URL of the console.</p>
 
 <h2 id="accessing-the-console">Accessing the console</h2>
 
@@ -655,7 +655,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="consolewaterdetector-sample">ConsoleWaterDetector sample</h2>
 
-<p>To see the features of the console in action and as a way to demonstrate how to monitor a topology in the console, let&#39;s look at the <code>ConsoleWaterDetector</code> sample (on <a href="https://github.com/apache/incubator-edgent/blob/master/samples/console/src/main/java/edgent/samples/console/ConsoleWaterDetector.java">GitHub</a>).</p>
+<p>To see the features of the console in action and as a way to demonstrate how to monitor a topology in the console, let&#39;s look at the <code>ConsoleWaterDetector</code> sample (on <a href="https://github.com/apache/incubator-edgent/blob/master/samples/console/src/main/java/org/apache/edgent/samples/console/ConsoleWaterDetector.java">GitHub</a>).</p>
 
 <p>Prior to running any console applications, the <code>console.war</code> file must be built as mentioned above. If you are building Edgent from a Git repository, go to the top level Edgent directory and run <code>ant</code>.</p>
 
@@ -979,7 +979,7 @@ Counter Op:TupleCounter.edgent.oplet.JOB_0.OP_98 has a tuple count of zero!
 
 <h2 id="counters">Counters</h2>
 
-<p>In the <code>ConsoleWaterDetector</code> application we used a <code>DevelopmentProvider</code>. Therefore, counters were added to most streams (edges) with the following exceptions (from the <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/metrics/Metrics.html#counter-edgent.topology.TStream-">Javadoc</a> for <code>edgent.metrics.Metrics</code>):</p>
+<p>In the <code>ConsoleWaterDetector</code> application we used a <code>DevelopmentProvider</code>. Therefore, counters were added to most streams (edges) with the following exceptions (from the <a href="http://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/metrics/Metrics.html#counter-org.apache.edgent.topology.TStream-">Javadoc</a> for <code>edgent.metrics.Metrics</code>):</p>
 
 <p><em>Oplets are only inserted upstream from a FanOut oplet.</em></p>
 
@@ -1103,7 +1103,7 @@ Metrics.rateMeter(individualAlerts3.get(0));
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 24, 2016 <br/>
+            generated: Sep 6, 2016 <br/>
 
         </div>
     </div>

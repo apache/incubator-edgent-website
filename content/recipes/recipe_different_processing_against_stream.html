@@ -650,7 +650,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="generating-gas-mileage-sensor-readings">Generating gas mileage sensor readings</h2>
 
-<p>The next step is to simulate a stream of gas mileage readings using <a href="https://github.com/apache/incubator-edgent/blob/master/samples/utils/src/main/java/edgent/samples/utils/sensor/SimpleSimulatedSensor.java"><code>SimpleSimulatedSensor</code></a>. We set the initial gas mileage and delta factor in the first two arguments. The last argument ensures that the sensor reading falls in an acceptable range (between 7.0 mpg and 14.0 mpg). In our <code>main()</code>, we use the <code>poll()</code> method to generate a flow of tuples (readings), where each tuple arrives every second.</p>
+<p>The next step is to simulate a stream of gas mileage readings using <a href="https://github.com/apache/incubator-edgent/blob/master/samples/utils/src/main/java/org/apache/edgent/samples/utils/sensor/SimpleSimulatedSensor.java"><code>SimpleSimulatedSensor</code></a>. We set the initial gas mileage and delta factor in the first two arguments. The last argument ensures that the sensor reading falls in an acceptable range (between 7.0 mpg and 14.0 mpg). In our <code>main()</code>, we use the <code>poll()</code> method to generate a flow of tuples (readings), where each tuple arrives every second.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Generate a stream of gas mileage sensor readings</span>
 <span class="n">SimpleSimulatedSensor</span> <span class="n">mpgSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleSimulatedSensor</span><span class="o">(</span><span class="n">INITIAL_MPG</span><span class="o">,</span>
         <span class="mf">0.4</span><span class="o">,</span> <span class="n">Ranges</span><span class="o">.</span><span class="na">closed</span><span class="o">(</span><span class="n">MPG_LOW</span><span class="o">,</span> <span class="n">MPG_HIGH</span><span class="o">));</span>
@@ -820,7 +820,7 @@ Gallons of gas: 9.1
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 24, 2016 <br/>
+            generated: Sep 6, 2016 <br/>
 
         </div>
     </div>

@@ -687,7 +687,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="splitting-the-readings">Splitting the readings</h2>
 
-<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/topology/TStream.html#split-int-edgent.function.ToIntFunction-">Javadoc</a>.</p>
+<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/TStream.html#split-int-org.apache.edgent.function.ToIntFunction-">Javadoc</a>.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">split</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">ToIntFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">splitter</span><span class="o">)</span>
 </code></pre></div>
 <p><code>split</code> returns a <code>List</code> of <code>TStream</code> objects, where each item in the list is one of the resulting output streams. In this case, one stream in the list will contain a flow of tuples where the blood pressure reading belongs to one of the five blood pressure categories. Another stream will contain a flow of tuples where the blood pressure reading belongs to a different blood pressure category, and so on.</p>
@@ -784,7 +784,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="combining-the-alert-streams">Combining the alert streams</h2>
 
-<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/edgent/topology/TStream.html#union-edgent.topology.TStream-">Javadoc</a>.</p>
+<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="http://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/TStream.html#union-org.apache.edgent.topology.TStream-">Javadoc</a>.</p>
 
 <p>There are two ways to define a union. You can either union a <code>TStream</code> with another <code>TStream</code>, or with a set of streams (<code>Set&lt;TStream&lt;T&gt;&gt;</code>). In both cases, a single <code>TStream</code> is returned containing the tuples that flow on the input stream(s).</p>
 
@@ -817,7 +817,7 @@ $('#toc').on('click', 'a', function() {
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Terminate the stream by printing out alerts from all categories</span>
 <span class="n">allAlerts</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tuple</span><span class="o">));</span>
 </code></pre></div>
-<p>We end our application by submitting the <code>Topology</code>. Note that this application is available as a <a href="https://github.com/apache/incubator-edgent/blob/master/samples/topology/src/main/java/edgent/samples/topology/CombiningStreamsProcessingResults.java">sample</a>.</p>
+<p>We end our application by submitting the <code>Topology</code>. Note that this application is available as a <a href="https://github.com/apache/incubator-edgent/blob/master/samples/topology/src/main/java/org/apache/edgent/samples/topology/CombiningStreamsProcessingResults.java">sample</a>.</p>
 
 <h2 id="observing-the-output">Observing the output</h2>
 
@@ -871,7 +871,7 @@ EMERGENCY! SEE TO PATIENT IMMEDIATELY!
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Aug 24, 2016 <br/>
+            generated: Sep 6, 2016 <br/>
 
         </div>
     </div>
