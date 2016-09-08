@@ -46,6 +46,11 @@
                         
                      
                          
+                            http://edgent.incubator.apache.org/docs/streaming-concepts.html
+                                  
+                        
+                     
+                         
                             http://edgent.incubator.apache.org/docs/common-edgent-operations.html
                                   
                         

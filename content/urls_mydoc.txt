@@ -41,6 +41,13 @@
 
 
  
+/docs/streaming-concepts:
+  title: "Streaming concepts"
+  url: "../docs/streaming-concepts.html"
+  link: "<a href='../docs/streaming-concepts.html'>Streaming concepts</a>"
+
+
+ 
 /docs/common-edgent-operations:
   title: "Common operations"
   url: "../docs/common-edgent-operations.html"
