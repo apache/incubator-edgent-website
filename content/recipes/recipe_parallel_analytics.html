@@ -280,7 +280,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 0.3.0</span>
+            <span class="versionTagline">Version 1.0.0</span>
 
             
             
@@ -678,7 +678,7 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
 <p>Many pipelines don&#39;t care what channel they&#39;re being constructed for. While the pipeline function typically yields the same pipeline processing for each channel there is no requirement for it to do so.</p>
 
 <p>In this simple recipe the pipeline receives a <code>TStream&lt;Double&gt;</code> as input and generates a <code>TStream&lt;String&gt;</code> as output.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">pipeline</span><span class="o">()</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">pipeline</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// a simple 4 stage pipeline simulating some amount of work by sleeping</span>
     <span class="k">return</span> <span class="o">(</span><span class="n">stream</span><span class="o">,</span> <span class="n">channel</span><span class="o">)</span> <span class="o">-&gt;</span> 
       <span class="o">{</span> 
@@ -731,7 +731,7 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
     <span class="cm">/**
      * Process several tuples in parallel in a replicated pipeline.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevelopmentProvider</span><span class="o">();</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"development console url: "</span>
@@ -764,7 +764,7 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
     <span class="o">}</span>
 
     <span class="cm">/** Function to create analytic pipeline and add it to a stream */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">Integer</span><span class="o">,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">pipeline</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">Integer</span><span class="o">,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">pipeline</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// a simple 3 stage pipeline simulating some amount of work by sleeping</span>
         <span class="k">return</span> <span class="o">(</span><span class="n">stream</span><span class="o">,</span> <span class="n">channel</span><span class="o">)</span> <span class="o">-&gt;</span> 
           <span class="o">{</span> 
@@ -778,11 +778,11 @@ stream -&gt; split(width,splitter) -&gt; |-&gt; isolate(10) -&gt; pipeline-ch1 -
           <span class="o">};</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RuntimeException</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RuntimeException</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">unit</span><span class="o">.</span><span class="na">toMillis</span><span class="o">(</span><span class="n">period</span><span class="o">));</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">"Interrupted"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Interrupted"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 

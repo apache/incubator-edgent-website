@@ -280,7 +280,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 0.3.0</span>
+            <span class="versionTagline">Version 1.0.0</span>
 
             
             
@@ -700,7 +700,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Double</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// Change the current temperature some random amount</span>
         <span class="kt">double</span> <span class="n">newTemp</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextGaussian</span><span class="o">()</span> <span class="o">+</span> <span class="n">currentTemp</span><span class="o">;</span>
         <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">newTemp</span><span class="o">;</span>
@@ -718,7 +718,7 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensorApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="n">TempSensor</span> <span class="n">sensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TempSensor</span><span class="o">();</span>
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
         <span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
