@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -641,7 +647,7 @@ $('#toc').on('click', 'a', function() {
 
     <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_adaptable_filter_range.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Range.html">Range</a>.</p>
+  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="https://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Range.html">Range</a>.</p>
 
 <p>Oftentimes, a user wants a filter&#39;s behavior to be adaptable rather than static. A filter&#39;s range can be made changeable via commands from some external source or just changed as a result of some other local analytics.</p>
 
@@ -659,7 +665,7 @@ $('#toc').on('click', 'a', function() {
         <span class="k">new</span> <span class="n">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="n">DEFAULT_TEMP_RANGE</span><span class="o">);</span>
 </code></pre></div>
 <h2 id="define-a-method-to-change-the-range">Define a method to change the range</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="p">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Using optimal temperature range: "</span> <span class="o">+</span> <span class="n">range</span><span class="o">);</span>
     <span class="n">optimalTempRangeRef</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">range</span><span class="o">);</span>
 <span class="o">}</span>
@@ -705,7 +711,7 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">static</span> <span class="n">AtomicReference</span><span class="o">&lt;</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;&gt;</span> <span class="n">optimalTempRangeRef</span> <span class="o">=</span>
             <span class="k">new</span> <span class="n">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="n">DEFAULT_TEMP_RANGE</span><span class="o">);</span>
 
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="n">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Using optimal temperature range: "</span> <span class="o">+</span> <span class="n">range</span><span class="o">);</span>
         <span class="n">optimalTempRangeRef</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">range</span><span class="o">);</span>
     <span class="o">}</span>
@@ -715,7 +721,7 @@ $('#toc').on('click', 'a', function() {
      * temperature readings (in Fahrenheit). Use a simple filter
      * to determine when the temperature is out of the optimal range.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 

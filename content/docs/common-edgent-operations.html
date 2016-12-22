@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -680,7 +686,7 @@ $('#toc').on('click', 'a', function() {
 <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">streamOfStrings</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="k">new</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="n">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
         <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
     <span class="o">}</span>

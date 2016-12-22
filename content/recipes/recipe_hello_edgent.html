@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -642,7 +648,7 @@ $('#toc').on('click', 'a', function() {
     <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_hello_edgent.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
   <p>Edgent&#39;s pure Java implementation is a powerful feature which allows it to be run on the majority of JVM-compatible systems. It also has the added benefit of enabling the developer to develop applications entirely within the Eclipse and IntelliJ ecosystems. For the purposes of this recipe, it will be assumed that the developer is using Eclipse. To begin the Hello Edgent recipe, create a new project and import the necessary libraries as outlined in the <a href="../docs/edgent-getting-started">Getting started guide</a>. Next, write the following template application:</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 
@@ -654,7 +660,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="using-topology-strings">Using <code>Topology.strings()</code></h2>
 
 <p>The primary abstraction in Edgent is the <code>TStream</code>. A <em><code>TStream</code></em> represents the flow of data in an Edgent application; for example, the periodic floating point readings from a temperature sensor. The data items which are sent through a <code>TStream</code> are Java objects &mdash; in the &quot;Hello Edgent!&quot; example, we are sending two strings. There are a number of ways to create a <code>TStream</code>, and <code>Topology.strings()</code> is the simplest. The user specifies a number of strings which will be used as the stream&#39;s data items.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 
@@ -668,7 +674,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="printing-to-output">Printing to output</h2>
 
 <p><code>TStream.print()</code> can be used to print the data items of a stream to standard output by invoking the <code>toString()</code> method of each data item. In this case the data items are already strings, but in principle <code>TStream.print()</code> can be called on any stream, regardless of the datatype carried by the stream.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 
@@ -682,7 +688,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="submitting-the-application">Submitting the application</h2>
 
 <p>The only remaining step is to submit the application, which is performed by the <code>DirectProvider</code>. Submitting an Edgent application initializes the threads which execute the <code>Topology</code>, and begins processing its data sources.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 

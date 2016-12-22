@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -648,7 +654,7 @@ $('#toc').on('click', 'a', function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note: </b> Edgent's API provides convenience methods for performing HTTP requests. For the sake of example we are writing a HTTP data source manually, but in principle there are easier methods. </div>
 
 <p>One example of a custom data source could be retrieving the contents of a web page and printing each line to output. For example, the user could be querying the Yahoo Finance website for the most recent stock price data of Bank of America, Cabot Oil &amp; Gas, and Freeport-McMoRan Inc.:</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
     <span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 
@@ -662,7 +668,7 @@ $('#toc').on('click', 'a', function() {
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">openStream</span><span class="o">();</span>
             <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-                    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">is</span><span class="o">));</span>
+                    <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">is</span><span class="o">));</span>
 
             <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span> <span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span>
                 <span class="n">lines</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
@@ -675,13 +681,15 @@ $('#toc').on('click', 'a', function() {
 <span class="o">}</span>
 </code></pre></div>
 <p>When invoking <code>Topology.source()</code>, we can use <code>queryWebsite</code> to return the required supplier, passing in the URL.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
     <span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 
     <span class="kd">final</span> <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"http://finance.yahoo.com/d/quotes.csv?s=BAC+COG+FCX&amp;f=snabl"</span><span class="o">);</span>
 
     <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">linesOfWebsite</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">source</span><span class="o">(</span><span class="n">queryWebsite</span><span class="o">(</span><span class="n">url</span><span class="o">));</span>
+
+    <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Source methods such as <code>Topology.source()</code> and <code>Topology.strings()</code> return a <code>TStream</code>. If we print the <code>linesOfWebsite</code> stream to standard output and run the application, we can see that it correctly generates the data and feeds it into the Edgent runtime:</p>
@@ -694,7 +702,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="polling-source-reading-data-periodically">Polling source: reading data periodically</h2>
 
 <p>A much more common scenario for a developer is the periodic generation of data from a source operator &mdash; a data source may need to be polled every 5 seconds, 3 hours, or any time frame. To this end, <code>Topology</code> exposes the <code>poll()</code> method which can be used to call a function at the frequency of the user&#39;s choosing. For example, a user might want to query Yahoo Finance every two seconds to retrieve the most up to date ticker price for a stock:</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
     <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
     <span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 

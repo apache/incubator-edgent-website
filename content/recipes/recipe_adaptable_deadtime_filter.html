@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -673,7 +679,7 @@ $('#toc').on('click', 'a', function() {
                               <span class="o">.</span><span class="na">tag</span><span class="o">(</span><span class="s">"deadtimeFilteredEngineTemp"</span><span class="o">);</span>
 </code></pre></div>
 <h2 id="define-a-quot-set-deadtime-period-quot-method">Define a &quot;set deadtime period&quot; method</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Setting deadtime period="</span><span class="o">+</span><span class="n">period</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">unit</span><span class="o">);</span>
     <span class="n">deadtime</span><span class="o">.</span><span class="na">setPeriod</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">unit</span><span class="o">);</span>
 <span class="o">}</span>
@@ -716,7 +722,7 @@ $('#toc').on('click', 'a', function() {
      * Respond to a simulated command stream to change the deadtime window
      * duration.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevelopmentProvider</span><span class="o">();</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"development console url: "</span>
@@ -750,12 +756,12 @@ $('#toc').on('click', 'a', function() {
         <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Setting deadtime period="</span><span class="o">+</span><span class="n">period</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">unit</span><span class="o">);</span>
         <span class="n">deadtime</span><span class="o">.</span><span class="na">setPeriod</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">unit</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="nf">simulatedSetDeadtimePeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">simulatedSetDeadtimePeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">AtomicInteger</span> <span class="n">lastPeriod</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
         <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
                 <span class="c1">// don't change on first invocation</span>

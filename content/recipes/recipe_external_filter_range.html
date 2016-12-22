@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -641,7 +647,7 @@ $('#toc').on('click', 'a', function() {
 
     <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_external_filter_range.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="http://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Range.html">Range</a>.</p>
+  <p>The <a href="recipe_value_out_of_range.html">Detecting a sensor value out of range</a> recipe introduced the basics of filtering as well as the use of a <a href="https://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Range.html">Range</a>.</p>
 
 <p>Oftentimes, a user wants to initialize a range specification from an external configuration file so the application code is more easily configured and reusable.</p>
 
@@ -698,7 +704,7 @@ optimalTempRange=[77.0..91.0]
     <span class="kd">static</span> <span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">optimalTempRange</span><span class="o">;</span>
 
     <span class="cm">/** Initialize the application's configuration */</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">initializeConfiguration</span><span class="o">(</span><span class="n">String</span> <span class="n">configFilePath</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="n">initializeConfiguration</span><span class="o">(</span><span class="n">String</span> <span class="n">configFilePath</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="c1">// Load the configuration file</span>
         <span class="n">Properties</span> <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Properties</span><span class="o">();</span>
         <span class="n">props</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">Files</span><span class="o">.</span><span class="na">newBufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">configFilePath</span><span class="o">).</span><span class="na">toPath</span><span class="o">()));</span>
@@ -715,9 +721,9 @@ optimalTempRange=[77.0..91.0]
      * temperature readings (in Fahrenheit). Use a simple filter
      * to determine when the temperature is out of the optimal range.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">args</span><span class="o">.</span><span class="na">length</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="o">(</span><span class="s">"missing pathname to configuration file"</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">(</span><span class="s">"missing pathname to configuration file"</span><span class="o">);</span>
         <span class="n">String</span> <span class="n">configFilePath</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>

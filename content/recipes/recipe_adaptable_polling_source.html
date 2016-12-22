@@ -165,6 +165,12 @@
                         
                         
                         
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
 
                     </ul>
                 </li>
@@ -280,7 +286,7 @@ window.location.href = uri;
         <ul id="mysidebar" class="nav">
 
             <span class="siteTagline">Edgent</span>
-            <span class="versionTagline">Version 1.0.0</span>
+            <span class="versionTagline">Version 1.0.0-incubating</span>
 
             
             
@@ -647,7 +653,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>An Edgent <code>IotProvider</code> and <code>IoTDevice</code> with its command streams would be a natural way to control the application. In this recipe we will just simulate a &quot;set poll period&quot; command stream.</p>
 
-<p>The <code>Topology.poll()</code> <a href="http://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/Topology.html#poll-org.apache.edgent.function.Supplier-long-java.util.concurrent.TimeUnit-">documentation</a> describes how the poll period may be changed at runtime.</p>
+<p>The <code>Topology.poll()</code> <a href="https://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/Topology.html#poll-org.apache.edgent.function.Supplier-long-java.util.concurrent.TimeUnit-">documentation</a> describes how the poll period may be changed at runtime.</p>
 
 <p>The mechanism is based on a more general Edgent runtime <code>edgent.execution.services.ControlService</code> service. The runtime registers &quot;control beans&quot; for entities that are controllable. These controls can be retrieved at runtime via the service.</p>
 
@@ -663,7 +669,7 @@ $('#toc').on('click', 'a', function() {
 <p>It&#39;s also a good practice to add tags to streams to improve the usability of the development mode Edgent console.</p>
 
 <h2 id="define-a-quot-set-poll-period-quot-method">Define a &quot;set poll period&quot; method</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setPollPeriod</span><span class="o">(</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pollStream</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setPollPeriod</span><span class="o">(</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pollStream</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// get the topology's runtime ControlService service</span>
     <span class="n">ControlService</span> <span class="n">cs</span> <span class="o">=</span> <span class="n">pollStream</span><span class="o">.</span><span class="na">topology</span><span class="o">().</span><span class="na">getRuntimeServiceSupplier</span><span class="o">()</span>
                                 <span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">getService</span><span class="o">(</span><span class="n">ControlService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -707,7 +713,7 @@ $('#toc').on('click', 'a', function() {
      * Poll a temperature sensor to periodically obtain temperature readings.
      * Respond to a simulated command stream to change the poll period.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 
@@ -733,7 +739,7 @@ $('#toc').on('click', 'a', function() {
         <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setPollPeriod</span><span class="o">(</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pollStream</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setPollPeriod</span><span class="o">(</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">pollStream</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
         <span class="c1">// get the topology's runtime ControlService service</span>
         <span class="n">ControlService</span> <span class="n">cs</span> <span class="o">=</span> <span class="n">pollStream</span><span class="o">.</span><span class="na">topology</span><span class="o">().</span><span class="na">getRuntimeServiceSupplier</span><span class="o">()</span>
                                     <span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">getService</span><span class="o">(</span><span class="n">ControlService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -746,7 +752,7 @@ $('#toc').on('click', 'a', function() {
         <span class="n">control</span><span class="o">.</span><span class="na">setPeriod</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">unit</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="nf">simulatedSetPollPeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">simulatedSetPollPeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">AtomicInteger</span> <span class="n">lastPeriod</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
         <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
                 <span class="c1">// toggle between 1 and 2 sec period</span>
