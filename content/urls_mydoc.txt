@@ -198,6 +198,11 @@
 
 
 
+downloads:
+  title: "Download"
+  url: "..downloads"
+  link: "<a href='..downloads'>Download</a>"
+
 
 
 samples:
