@@ -34,6 +34,13 @@
 
 
  
+/docs/downloads:
+  title: "Downloads"
+  url: "../docs/downloads.html"
+  link: "<a href='../docs/downloads.html'>Downloads</a>"
+
+
+ 
 /docs/edgent-getting-started:
   title: "Getting started guide"
   url: "../docs/edgent-getting-started.html"

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Mobile Pages  | Apache Edgent Documentation</title>
+<title>Downloads  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -179,7 +179,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Apache Edgent Documentation feedback";
-var body = "I have some feedback about the Mobile Pages page: ";
+var body = "I have some feedback about the Downloads page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -206,7 +206,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="Mobile Pages">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Downloads">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -320,7 +320,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/downloads.html">Downloads</a></li>
+                    <li class="active"><a href="../docs/downloads.html">Downloads</a></li>
                     
 
                     
@@ -607,7 +607,7 @@ $('#toc').on('click', 'a', function() {
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main">Mobile Pages</h1>
+   <h1 class="post-title-main">Downloads</h1>
 </div>
 
 <div class="post-content">
@@ -639,105 +639,50 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/tag_mobile.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/downloads.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>The following pages are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">mobile</button></p>
-    <table><thead><tr><th>Page</th><th>Excerpt</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-    
-</tbody>
-</table>
+  <h2 id="download-now">Download now.</h2>
+
+<p>Official Apache Edgent releases are available for download from the ASF distribution site. A release consists of a source code bundle and a convenience binary bundle. The Edgent ASF distribution site is <a href="http://www.apache.org/dyn/closer.cgi/incubator/edgent">here</a>. Information about verifying the integrity of the release bundles can also be found there.</p>
+
+<p>The Edgent source is also available from the Edgent ASF <a href="https://git-wip-us.apache.org/repos/asf/incubator-edgent.git">git repository</a>.</p>
+
+<p>If you just want to use Edgent, it is easiest to download and unpack a binary bundle. The bundle includes the release&#39;s javadoc. The javadoc is also accessible online. For more information, please refer to the <a href="edgent-getting-started">Getting started guide</a></p>
+
+<p>A source bundle contains a README describing how to build the sources.</p>
+
+<p>If you want access the latest unreleased Edgent source or to contribute to Edgent runtime development, using the <a href="https://github.com/apache/incubator-edgent">GitHub</a> repository is recommended. You can also select a particular release version by release tag (e.g., 1.0.0-incubating). See README.md and DEVELOPMENT.md in the repository for more information.</p>
+
+<p>See <a href="community.html">here</a> for more information about contributing to Edgent development.</p>
+
+<h2 id="apache-edgent-incubating-release-history">Apache Edgent (incubating) release history</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Version</th>
+<th style="text-align: center">Date</th>
+<th style="text-align: center">Source</th>
+<th style="text-align: center">Release Notes</th>
+<th style="text-align: center">Docs</th>
+<th style="text-align: center">GPG</th>
+<th style="text-align: center">MD5</th>
+<th style="text-align: center">SHA</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">1.0.0-incubating</td>
+<td style="text-align: center">2016-12-15</td>
+<td style="text-align: center"><a href="http://www.apache.org/dyn/closer.cgi/incubator/edgent/1.0.0-incubating">Download</a></td>
+<td style="text-align: center"><a href="https://github.com/apache/incubator-edgent/blob/1.0.0-incubating/RELEASE_NOTES">1.0.0 Release</a></td>
+<td style="text-align: center"><a href="http://edgent.incubator.apache.org/javadoc/r1.0.0/index.html">JavaDoc</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.0.0-incubating/apache-edgent-1.0.0-incubating-src.tgz.asc">ASC</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.0.0-incubating/apache-edgent-1.0.0-incubating-src.tgz.md5">MD5</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.0.0-incubating/apache-edgent-1.0.0-incubating-src.tgz.sha">SHA</a></td>
+</tr>
+</tbody></table>
+
+<p>Download the <a href="https://www.apache.org/dist/incubator/edgent/KEYS">KEYS file</a> to verify the Edgent artifact</p>
+
 
 <div class="tags">
     

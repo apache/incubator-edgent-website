@@ -41,6 +41,11 @@
               
                       
                          
+                            http://edgent.incubator.apache.org/docs/downloads.html
+                                  
+                        
+                     
+                         
                             http://edgent.incubator.apache.org/docs/edgent-getting-started.html
                                   
                         
