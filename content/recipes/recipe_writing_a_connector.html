@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>  | Apache Edgent Documentation</title>
+<title>Writing a Connector  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -185,7 +185,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Apache Edgent Documentation feedback";
-var body = "I have some feedback about the  page: ";
+var body = "I have some feedback about the Writing a Connector page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -212,7 +212,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Writing a Connector">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -493,7 +493,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../recipes/recipe_writing_a_connector.html">How do I write a connector?</a></li>
+                    <li class="active"><a href="../recipes/recipe_writing_a_connector.html">How do I write a connector?</a></li>
                     
 
                     
@@ -623,7 +623,7 @@ $('#toc').on('click', 'a', function() {
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main"></h1>
+   <h1 class="post-title-main">Writing a Connector</h1>
 </div>
 
 <div class="post-content">
@@ -655,26 +655,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/titlepage.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/recipes/recipe_writing_a_connector.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-      <div class="printTitleArea">
-        <div class="printTitle"></div>
-        <div class="printSubtitle"></div>
-        <div class="lastGeneratedDate">Last generated: December 23, 2016</div>
-        <hr />
+  <p>Edgent applications interface with other entities by way of a connector.  The other entity may be an IO device, an IoT messaging hub, a file, process, database, another Edgent application/topology, etc.  </p>
 
-        <div class="printTitleImage">
-            <img src="http://edgent.incubator.apache.org//common_images/company_logo_big.png"/>
-        </div>
+<p>Edgent includes several connectors -- see the &quot;Edgent Connectors&quot; package group in the <a href="https://edgent.incubator.apache.org/javadoc/latest">javadoc</a>. The <a href="https://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/connectors/command/CommandStreams">CommandStreams</a> connector can be particularly useful if commands already exist for getting data to or from an entity.  </p>
 
-        <div class="copyrightBoilerplate">
-           <p>&copy; 2015 Your company. This is a boilerplate copyright statement... All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
-           </p>
-
-        </div>
-
-    </div>
-
+<p>When your application needs something new or special <a href="https://cwiki.apache.org/confluence/display/EDGENT/Writing+Connectors+For+Edgent+Applications">Writing Connectors for Edgent Applications</a> tells you what you need to know!</p>
 
 
 <div class="tags">

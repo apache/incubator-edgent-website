@@ -147,6 +147,13 @@
   link: "<a href='../recipes/recipe_concurrent_analytics.html'>How can I run several analytics on a tuple concurrently?</a>"
 
 
+ 
+/recipes/recipe_writing_a_connector:
+  title: "How do I write a connector?"
+  url: "../recipes/recipe_writing_a_connector.html"
+  link: "<a href='../recipes/recipe_writing_a_connector.html'>How do I write a connector?</a>"
+
+
 
 
  

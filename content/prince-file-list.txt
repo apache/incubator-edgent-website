@@ -124,6 +124,11 @@
                                   
                         
                      
+                         
+                            http://edgent.incubator.apache.org/recipes/recipe_writing_a_connector.html
+                                  
+                        
+                     
               
           
               
