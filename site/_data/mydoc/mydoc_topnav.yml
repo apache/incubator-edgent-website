@@ -60,8 +60,8 @@ javadoc_dropdowns:
       version: all
       output: web
       items:
-        - title: lastest
-          external_url: http://edgent.incubator.apache.org/javadoc/latest/index.html
+        - title: latest
+          url: /..\/javadoc\/latest
           audience: writers, designers
           platform: all
           product: all
@@ -69,7 +69,7 @@ javadoc_dropdowns:
           output: web
 
         - title: 1.0.0
-          external_url: http://edgent.incubator.apache.org/javadoc/r1.0.0/index.html
+          url: /..\/javadoc\/r1.0.0
           audience: writers, designers
           platform: all
           product: all
@@ -77,7 +77,7 @@ javadoc_dropdowns:
           output: web
 
         - title: 0.4.0
-          external_url: http://edgent.incubator.apache.org/javadoc/r0.4.0/index.html
+          url: /..\/javadoc\/r0.4.0
           audience: writers, designers
           platform: all
           product: all
