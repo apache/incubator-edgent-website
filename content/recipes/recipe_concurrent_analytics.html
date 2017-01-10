@@ -112,19 +112,19 @@
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">lastest</a></li>
+                        <li><a href="..\javadoc\latest">latest</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r1.0.0/index.html" target="_blank">1.0.0</a></li>
+                        <li><a href="..\javadoc\r1.0.0">1.0.0</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r0.4.0/index.html" target="_blank">0.4.0</a></li>
+                        <li><a href="..\javadoc\r0.4.0">0.4.0</a></li>
                         
                         
                         
@@ -707,7 +707,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
 <p>In this recipe we&#39;ll just define some very simple pipelines and use sleep to simulate some long processing times.</p>
 
 <p>Here&#39;s the A3 pipeline builder:</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">a3pipeline</span><span class="o">()</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">a3pipeline</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// simple 3 stage pipeline simulating some amount of work by sleeping</span>
     <span class="k">return</span> <span class="n">stream</span> <span class="o">-&gt;</span> <span class="n">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="o">{</span>
         <span class="n">sleep</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
@@ -746,7 +746,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
      * Concurrently run a collection of long running independent
      * analytic pipelines on each tuple.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevelopmentProvider</span><span class="o">();</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"development console url: "</span>
@@ -785,7 +785,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
     <span class="o">}</span>
 
     <span class="cm">/** Function to create analytic pipeline a1 and add it to a stream */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">a1pipeline</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">a1pipeline</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// a simple 1 stage pipeline simulating some amount of work by sleeping</span>
         <span class="k">return</span> <span class="n">stream</span> <span class="o">-&gt;</span> <span class="n">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="o">{</span>
             <span class="n">sleep</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
@@ -794,7 +794,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
     <span class="o">}</span>
 
     <span class="cm">/** Function to create analytic pipeline a2 and add it to a stream */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">a2pipeline</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">a2pipeline</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// a simple 2 stage pipeline simulating some amount of work by sleeping</span>
         <span class="k">return</span> <span class="n">stream</span> <span class="o">-&gt;</span> <span class="n">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="o">{</span>
             <span class="n">sleep</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
@@ -804,7 +804,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
     <span class="o">}</span>
 
     <span class="cm">/** Function to create analytic pipeline a3 and add it to a stream */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">a3pipeline</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;,</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="nf">a3pipeline</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// a simple 3 stage pipeline simulating some amount of work by sleeping</span>
         <span class="k">return</span> <span class="n">stream</span> <span class="o">-&gt;</span> <span class="n">stream</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="o">{</span>
             <span class="n">sleep</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
@@ -814,11 +814,11 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
           <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">Functions</span><span class="o">.</span><span class="na">identity</span><span class="o">()).</span><span class="na">tag</span><span class="o">(</span><span class="s">"a3.stage3"</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RuntimeException</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="o">(</span><span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RuntimeException</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">unit</span><span class="o">.</span><span class="na">toMillis</span><span class="o">(</span><span class="n">period</span><span class="o">));</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">"Interrupted"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">"Interrupted"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
@@ -856,7 +856,7 @@ stream -&gt; |-&gt; isolate(1) -&gt; pipeline2 -&gt; |-&gt; barrier(10) -&gt; co
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Dec 23, 2016 <br/>
+            generated: Jan 10, 2017 <br/>
 
         </div>
     </div>

@@ -112,19 +112,19 @@
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">lastest</a></li>
+                        <li><a href="..\javadoc\latest">latest</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r1.0.0/index.html" target="_blank">1.0.0</a></li>
+                        <li><a href="..\javadoc\r1.0.0">1.0.0</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r0.4.0/index.html" target="_blank">0.4.0</a></li>
+                        <li><a href="..\javadoc\r0.4.0">0.4.0</a></li>
                         
                         
                         
@@ -726,7 +726,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Double</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// Change the current temperature some random amount</span>
         <span class="kt">double</span> <span class="n">newTemp</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextGaussian</span><span class="o">()</span> <span class="o">+</span> <span class="n">currentTemp</span><span class="o">;</span>
         <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">newTemp</span><span class="o">;</span>
@@ -744,7 +744,7 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensorApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="n">TempSensor</span> <span class="n">sensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TempSensor</span><span class="o">();</span>
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
         <span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
@@ -760,14 +760,14 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="specifying-a-provider">Specifying a provider</h3>
 
-<p>Your first step when you write an Edgent application is to create a <a href="https://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
+<p>Your first step when you write an Edgent application is to create a <a href="/javadoc/latest/index.html?org/apache/edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 </code></pre></div>
 <p>A <code>Provider</code> is an object that contains information on how and where your Edgent application will run. A <code>DirectProvider</code> is a type of Provider that runs your application directly within the current virtual machine when its <code>submit()</code> method is called.</p>
 
 <h3 id="creating-a-topology">Creating a topology</h3>
 
-<p>Additionally a Provider is used to create a <a href="https://edgent.incubator.apache.org/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
+<p>Additionally a Provider is used to create a <a href="/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 </code></pre></div>
 <p>In Edgent, <code>Topology</code> is a container that describes the structure of your application:</p>
@@ -862,7 +862,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Dec 23, 2016 <br/>
+            generated: Jan 10, 2017 <br/>
 
         </div>
     </div>

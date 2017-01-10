@@ -112,19 +112,19 @@
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/latest/index.html" target="_blank">lastest</a></li>
+                        <li><a href="..\javadoc\latest">latest</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r1.0.0/index.html" target="_blank">1.0.0</a></li>
+                        <li><a href="..\javadoc\r1.0.0">1.0.0</a></li>
                         
                         
                         
                         
                         
-                        <li><a href="http://edgent.incubator.apache.org/javadoc/r0.4.0/index.html" target="_blank">0.4.0</a></li>
+                        <li><a href="..\javadoc\r0.4.0">0.4.0</a></li>
                         
                         
                         
@@ -681,7 +681,7 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="n">Integer</span> <span class="n">currentDiastolic</span> <span class="o">=</span> <span class="mi">75</span><span class="o">;</span>
     <span class="n">Random</span> <span class="n">rand</span><span class="o">;</span>
 
-    <span class="kd">public</span> <span class="n">HeartMonitorSensor</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">HeartMonitorSensor</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">rand</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
     <span class="o">}</span>
 
@@ -690,7 +690,7 @@ $('#toc').on('click', 'a', function() {
      * pressure and a random diastolic pressure.
      */</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// Change the current pressure by some random amount between -2 and 2</span>
         <span class="n">Integer</span> <span class="n">newSystolic</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">currentSystolic</span><span class="o">;</span>
         <span class="n">currentSystolic</span> <span class="o">=</span> <span class="n">newSystolic</span><span class="o">;</span>
@@ -721,7 +721,7 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CombiningStreamsProcessingResults</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">HeartMonitorSensor</span> <span class="n">monitor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HeartMonitorSensor</span><span class="o">();</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevelopmentProvider</span><span class="o">();</span>
@@ -745,8 +745,8 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="splitting-the-readings">Splitting the readings</h2>
 
-<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="https://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/TStream.html#split-int-org.apache.edgent.function.ToIntFunction-">Javadoc</a>.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">split</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">ToIntFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">splitter</span><span class="o">)</span>
+<p>We are now ready to split the <code>readings</code> stream by the blood pressure category. Let&#39;s look more closely at the method declaration of <code>split</code> below. For more details about <code>split</code>, refer to the <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#split-int-org.apache.edgent.function.ToIntFunction-">Javadoc</a>.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="nf">split</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">ToIntFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">splitter</span><span class="o">)</span>
 </code></pre></div>
 <p><code>split</code> returns a <code>List</code> of <code>TStream</code> objects, where each item in the list is one of the resulting output streams. In this case, one stream in the list will contain a flow of tuples where the blood pressure reading belongs to one of the five blood pressure categories. Another stream will contain a flow of tuples where the blood pressure reading belongs to a different blood pressure category, and so on.</p>
 
@@ -842,7 +842,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <h2 id="combining-the-alert-streams">Combining the alert streams</h2>
 
-<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="https://edgent.incubator.apache.org/javadoc/latest/org/apache/edgent/topology/TStream.html#union-org.apache.edgent.topology.TStream-">Javadoc</a>.</p>
+<p>At this point, we have five streams of alerts. Suppose the doctors are interested in seeing a combination of the <em>Normal</em> alerts and <em>Prehypertension</em> alerts. Or, suppose that they would like to see all of the alerts from all categories together. Here, <code>union</code> comes in handy. For more details about <code>union</code>, refer to the <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#union-org.apache.edgent.topology.TStream-">Javadoc</a>.</p>
 
 <p>There are two ways to define a union. You can either union a <code>TStream</code> with another <code>TStream</code>, or with a set of streams (<code>Set&lt;TStream&lt;T&gt;&gt;</code>). In both cases, a single <code>TStream</code> is returned containing the tuples that flow on the input stream(s).</p>
 
@@ -929,7 +929,7 @@ EMERGENCY! SEE TO PATIENT IMMEDIATELY!
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Dec 23, 2016 <br/>
+            generated: Jan 10, 2017 <br/>
 
         </div>
     </div>
