@@ -20,7 +20,7 @@ An Edgent application is most useful when processing some sort of data. This pag
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 </style>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
     var filterSvgContainer = d3.select("#filter-demo").append("svg")
         .attr("width", 550)
