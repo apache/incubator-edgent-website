@@ -15,3 +15,5 @@ You can become a committer by contributing to Apache Edgent. Qualifications for 
 * **Quality of Contributions**: Potential committers should submit code that adds value to Edgent, including tests and documentation as needed. They should comment in a positive way on issues and pull requests, providing guidance and input to improve Edgent.
 
 * **Community Involvement**: Committers should participate in discussions in a positive way, triage and fix bugs, and interact with users who submit questions. They will remain courteous, and helpful, and encourage new members to join the Edgent community.
+
+When you have shown that you meet the qualifications above, the Edgent PMC will discuss and vote on your committer status.  You will receive an invitation to become a committer from a member of the PMC if the vote is positive.  All contributions are welcome, so participate as much as you can!
