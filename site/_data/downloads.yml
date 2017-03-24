@@ -34,7 +34,7 @@ edgent_1-0-0_bin_asc_location: 'https://archive.apache.org/dist/incubator/edgent
 edgent_1-0-0_bin_md5_location: 'https://archive.apache.org/dist/incubator/edgent/1.0.0-incubating/binaries/apache-edgent-1.0.0-incubating-bin.tgz.md5'
 edgent_1-0-0_bin_sha_location: 'https://archive.apache.org/dist/incubator/edgent/1.0.0-incubating/binaries/apache-edgent-1.0.0-incubating-bin.tgz.sha'
 
-edgent_1-1-0_release_note: 'https://www.apache.org/dyn/closer.cgi/incubator/edgent/1.1.0-incubating/RELEASE_NOTES'
+edgent_1-1-0_release_note: 'https://www.apache.org/dist/incubator/edgent/1.1.0-incubating/RELEASE_NOTES'
 edgent_1-1-0_doc_location: 'https://edgent.incubator.apache.org/javadoc/r1.1.0/index.html'
 edgent_1-1-0_dist_location: 'https://www.apache.org/dyn/closer.cgi/incubator/edgent/1.1.0-incubating'
 edgent_1-1-0_asc_location: 'https://www.apache.org/dist/incubator/edgent/1.1.0-incubating/apache-edgent-1.1.0-incubating-src.tgz.asc'
