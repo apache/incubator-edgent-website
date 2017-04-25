@@ -772,7 +772,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Double</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// Change the current temperature some random amount</span>
         <span class="kt">double</span> <span class="n">newTemp</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextGaussian</span><span class="o">()</span> <span class="o">+</span> <span class="n">currentTemp</span><span class="o">;</span>
         <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">newTemp</span><span class="o">;</span>
@@ -790,7 +790,7 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensorApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="n">TempSensor</span> <span class="n">sensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TempSensor</span><span class="o">();</span>
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
         <span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
@@ -908,7 +908,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Mar 24, 2017 <br/>
+            generated: Apr 25, 2017 <br/>
 
         </div>
     </div>
@@ -930,6 +930,13 @@ $('#toc').on('click', 'a', function() {
                 Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache
                 Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their
                 respective owners.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div>
+            <img class="img-responsive center-block" src="../img/edgent_incubation.png" style="display: block; margin: auto;"alt="">
         </div>
     </div>
 </footer>
