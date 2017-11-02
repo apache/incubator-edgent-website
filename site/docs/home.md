@@ -1,12 +1,6 @@
 ---
-title: Introduction
-tags: [getting_started]
-audience: field engineers, clients
-type: first_page
-homepage: true
+title: Apache Edgent Overview
 ---
-
-## Apache Edgent overview
 
 Devices and sensors are everywhere, and more are coming online every day. You need a way to analyze all of the data coming from your devices, but it can be expensive to transmit all of the data from a sensor to your central analytics engine.
 
