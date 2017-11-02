@@ -2,6 +2,8 @@
 title: Sample programs
 ---
 
+This information applies to Edgent releases prior to 1.2.0. See [Getting started guide](edgent-getting-started) for current releases.
+
 The [Getting started guide](edgent-getting-started) includes a step-by-step walkthrough of a simple Edgent application.
 
 Edgent also includes a number of sample Java applications that demonstrate different ways that you can use and implement Edgent.

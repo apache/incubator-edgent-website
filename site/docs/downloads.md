@@ -2,9 +2,11 @@
 title: Downloads
 ---
 
-Official Apache Edgent releases are available for download from the ASF distribution site. A release consists of a source code bundle and a convenience binary bundle. See the table below for a release's download links.
+Offical ASF Apache Edgent releases consist of source bundles and convenience binaries. There are two source bundles, one for the Edgent samples and one for the Edgent SDK/runtime.  Convenience binary jars for the Edgent SDK/runtime are available at the [ASF Nexus Releases Repository](https://repository.apache.org/content/repositories/releases/) and Maven Central.
 
-If you just want to use Edgent, it is easiest to download and unpack a binary bundle. The bundle includes the release's Javadoc. The Javadoc is also accessible online. For more information, please refer to the [Getting started guide](edgent-getting-started).
+If you just want to use Edgent, simply download the Samples source bundle and use it to jump-start your application development, leveraging the distributed Edgent SDK/runtime jars. The samples source bundle includes additional information regarding application development and deployment, and tools. For more information, see [Quickstart with Edgent Samples](edgent-getting-started-samples).
+
+Note, a separate binary bundle consisting of all of the Edgent jars is not released.  A tool is available in the samples source bundle that can create one.
 
 A source bundle contains a README describing how to build the sources.
 
@@ -13,6 +15,31 @@ If you want to access the latest unreleased Edgent source or contribute to the E
 See the [community](community) page for more information about contributing to Edgent development.
 
 ## Apache Edgent Releases
+
+| Version           | Docs |
+|:-----------------:|:----:|
+| 1.2.0-incubating  | [JAVA_SUPPORT]({{ site.data.downloads.edgent_1-2-0_java_support_doc_location }}), [Javadoc]({{ site.data.downloads.edgent_1-2-0_doc_location }})  |
+
+It is essential that you verify the integrity of a downloaded bundle.  See [how to verify]({{ site.data.downloads.generic_how_to_verify_location }}) for details on verifying using downloaded KEYS, PGP signature, MD5, or SHA information.
+
+Download the [KEYS]({{ site.data.downloads.edgent_keys_file_location }}) file for verifying a bundle's PGP signature.
+
+| Version           | Date           | Bundles | Release Notes | PGP | MD5 | SHA   |
+|:-----------------:|:--------------:|:-------:|:-------------:|:---:|:---:|:-----:|
+| 1.2.0-incubating  | 2017-??-??     | [Samples]({{ site.data.downloads.edgent_1-2-0_samples_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_samples_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_samples_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_samples_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_samples_sha_location }}) |
+|                   |                |         |               | [zip-ASC]({{ site.data.downloads.edgent_1-2-0_samples_zip_asc_location  }}) | [zip-MD5]({{  site.data.downloads.edgent_1-2-0_samples_zip_md5_location }}) | [zip-SHA]({{  site.data.downloads.edgent_1-2-0_samples_zip_sha_location }}) |
+|                   |                | [Source]({{ site.data.downloads.edgent_1-2-0_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_sha_location }}) |
+|                   |                |         |               | [zip-ASC]({{ site.data.downloads.edgent_1-2-0_zip_asc_location  }}) | [zip-MD5]({{  site.data.downloads.edgent_1-2-0_zip_md5_location }}) | [zip-SHA]({{  site.data.downloads.edgent_1-2-0_zip_sha_location }}) |
+
+## Releases Prior to 1.2.0
+
+Official Apache Edgent releases are available for download from the ASF distribution site. A release consists of a source code bundle and a convenience binary bundle. See the table below for a release's download links.
+
+There is not a separate samples source bundle and convenience binary jars are not distributed to the ASF Nexus Repository or Maven Central.
+
+If you just want to use Edgent, it is easiest to download and unpack a binary bundle. The bundle includes the release's Javadoc. The Javadoc is also accessible online. For more information, please refer to the [Getting started guide](edgent-getting-started).
+
+A source bundle contains a README describing how to build the sources.
 
 It is essential that you verify the integrity of a downloaded bundle.  See [how to verify]({{ site.data.downloads.generic_how_to_verify_location }}) for details on verifying using downloaded KEYS, PGP signature, MD5, or SHA information.
 
