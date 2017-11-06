@@ -10,6 +10,7 @@ run them from either the command line or from an IDE.
 
 Then, see the Additional Resources section at the end of this page!
 
+See [The Power of Edgent](power-of-edgent) to help you quickly start to get a sense of Edgent's capabilities.
 If you want more of an introduction to Edgent and tutorial first, see the [Getting Started Guide](edgent-getting-started).
 
 

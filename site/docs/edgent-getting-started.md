@@ -13,6 +13,8 @@ Edgent accellerates your development of applications to push data analytics and 
 
 For example, if your device takes temperature readings from a sensor 1,000 times per second, it is more efficient to process the data locally and send only interesting or unexpected results over the network.
 
+See [The Power of Edgent](power-of-edgent) to help you quickly start to get a sense of Edgent's capabilities.
+
 Releases of Edgent prior to 1.2.0 distributed Edgent and the samples differently than today.  See [Old Getting Started](old-edgent-getting-started) if you are trying to use an older version.
 
 There's a lot of information available to get started with Edgent and no "best order" for navigating it.  See the navigation sidebar on the left hand side of this page.  In particular it is recommended that you review and visit the various items under _Get Started_.
@@ -109,19 +111,19 @@ Let's review each line.
 
 ### Specifying a provider
 
-Your first step when you write an Edgent application is to create a _Provider_.  In this case we're using a [`DirectProvider`]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/providers/direct/DirectProvider.html):
+Your first step when you write an Edgent application is to create a _Provider_.  In this case we're using a [DirectProvider]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/providers/direct/DirectProvider.html):
 
 ```java
 DirectProvider dp = new DirectProvider();
 ```
 
-A `Provider` is an object that contains information on how and where your Edgent application will run. A `DirectProvider` is a type of Provider that runs your application directly within the current virtual machine when its [`submit()`]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/providers/direct/DirectProvider.html#submit-org.apache.{{ site.data.project.unix_name }}.topology.Topology-) method is called.
+A `Provider` is an object that contains information on how and where your Edgent application will run. A `DirectProvider` is a type of Provider that runs your application directly within the current virtual machine when its [submit()]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/providers/direct/DirectProvider.html#submit-org.apache.{{ site.data.project.unix_name }}.topology.Topology-) method is called.
 
-The [`IotProvider`]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/providers/iot/IotProvider.html) is an alternative that offers very useful and powerful capabilities.
+The [IotProvider]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/providers/iot/IotProvider.html) is an alternative that offers very useful and powerful capabilities.
 
 ### Creating a topology
 
-The Provider is used to create a [`Topology`]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/topology/Topology.html) instance:
+The Provider is used to create a [Topology]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/topology/Topology.html) instance:
 
 ```java
 Topology topology = dp.newTopology();
@@ -136,7 +138,7 @@ Our application then composes the topology's progessing graph.
 
 ### Creating a source `TStream`
 
-In the `TempSensorApplication` class above, we have exactly one data source: the `TempSensor` object. We define the source stream by calling [`topology.poll()`]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/Topology.html#poll-org.apache.{{ site.data.project.unix_name }}.function.Supplier-long-java.util.concurrent.TimeUnit-), which takes both a [`Supplier`]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/function/Supplier.html) function and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:
+In the `TempSensorApplication` class above, we have exactly one data source: the `TempSensor` object. We define the source stream by calling [topology.poll()]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/Topology.html#poll-org.apache.{{ site.data.project.unix_name }}.function.Supplier-long-java.util.concurrent.TimeUnit-), which takes both a [Supplier]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/function/Supplier.html) function and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:
 
 ```java
 TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
@@ -144,11 +146,11 @@ TStream<Double> tempReadings = topology.poll(sensor, 1, TimeUnit.MILLISECONDS);
 
 Calling `topology.poll()` to define a source stream creates a `TStream<Double>` instance (because `TempSensor.get()` returns a `Double`), which represents the series of readings taken from the temperature sensor.
 
-A streaming application can run indefinitely, so the [`TStream`]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/topology/TStream.html) might see an arbitrarily large number of readings pass through it. Because a `TStream` represents the flow of your data, it supports a number of operations which allow you to modify your data.
+A streaming application can run indefinitely, so the [TStream]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/topology/TStream.html) might see an arbitrarily large number of readings pass through it. Because a `TStream` represents the flow of your data, it supports a number of operations which allow you to modify your data.
 
 ### Filtering a `TStream`
 
-In our example, we want to filter the stream of temperature readings, and remove any "uninteresting" or expected readings&mdash;specifically readings which are above 50 degrees and below 80 degrees. To do this, we call the `TStream`'s [`filter`]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#filter-org.apache.{{ site.data.project.unix_name }}.function.Predicate-) method and pass in a function that returns *true* if the data is interesting and *false* if the data is uninteresting:
+In our example, we want to filter the stream of temperature readings, and remove any "uninteresting" or expected readings&mdash;specifically readings which are above 50 degrees and below 80 degrees. To do this, we call the `TStream`'s [filter]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#filter-org.apache.{{ site.data.project.unix_name }}.function.Predicate-) method and pass in a function that returns *true* if the data is interesting and *false* if the data is uninteresting:
 
 ```java
 TStream<Double> filteredReadings = tempReadings.filter(reading -> reading < 50 || reading > 80);
@@ -158,7 +160,7 @@ As you can see, the function that is passed to `filter` operates on each tuple i
 
 ### Printing to output
 
-When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the [`TStream.print()`]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#print--) method, which prints using  `.toString()` on each tuple that passes through the stream:
+When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the [TStream.print()]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#print--) method, which prints using  `.toString()` on each tuple that passes through the stream:
 
 ```java
 filteredReadings.print();
@@ -168,7 +170,7 @@ Unlike `TStream.filter()`, `TStream.print()` does not produce another `TStream`.
 
 A real application typically publishes results to an MQTT server, IoT Hub, Kafka cluster, file, JDBC connection, or other external system. Edgent comes easy to use connectors for these. See the _connectors_ samples, [Edgent Javadoc]({{ site.docsurl }}), and _Edgent Cookbook_ for more information.
 
-You can define your own sink by invoking [`TStream.sink()`]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#sink-org.apache.{{ site.data.project.unix_name }}.function.Consumer-) and passing in your own function.
+You can define your own sink by invoking [TStream.sink()]({{ site.docsurl }}/org/apache/{{ site.data.project.unix_name }}/topology/TStream.html#sink-org.apache.{{ site.data.project.unix_name }}.function.Consumer-) and passing in your own function.
 
 ### Submitting your topology
 

@@ -4,7 +4,8 @@ title: FAQ
 
 ## What is Apache Edgent?
 
-Edgent provides APIs and a lightweight runtime enabling you to easily create event-driven applications to analyze streaming data at the edge.
+Edgent provides APIs and a lightweight runtime enabling you to easily create event-driven flow-graph style applications to analyze streaming data at the edge.
+ Check out [The Power of Edgent](power-of-edgent)!
 
 ## What do you mean by the edge?
 
@@ -16,7 +17,7 @@ While Edgent's design center is executing on constrained edge devices, Edgent ap
 
 ## How are applications developed?
 
-Applications are developed using a functional flow API to define operations on data streams that are executed as a flow graph in a lightweight embeddable runtime. Edgent provides capabilities like windowing, aggregation and connectors with an extensible model for the community to expand its capabilities.
+Applications are developed using a functional flow API to define operations on data streams that are executed as a flow graph in a lightweight embeddable runtime. Edgent provides capabilities like windowing, aggregation and connectors with an extensible model for the community to expand its capabilities. Check out [The Power of Edgent](power-of-edgent)!
 
 You can develop Edgent applications using an IDE of your choice. 
 
@@ -34,7 +35,7 @@ Edgent comes with some initial analytics for aggregation and filtering that you 
 
 ## What connectors does Apache Edgent support?
 
-Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.
+Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.  You can easily supply any code you want for ingesting data from and sinking data to external systems.
 
 ## What centralized streaming analytic systems does Apache Edgent support?
 
@@ -46,7 +47,9 @@ Edgent is designed for the edge. It has a small footprint, suitable for running 
 
 ## Why do I need Apache Edgent, rather than coding the complete application myself?
 
-Edgent is designed to accellerate your development of edge analytic applications - to make you more productive! Edgent provides a simple yet powerful consistent data model (streams and windows) and provides useful functionality, such as aggregations, joins, and numerous connectors. Using Edgent lets you to take advantage of this functionality, allowing you to focus on your application needs.  For example, you can create an Edgent application that periodically samples a sensor and publishes values to an MQTT server in about 10 lines of code!
+Edgent is designed to accellerate your development of edge analytic applications - to make you more productive! Edgent provides a simple yet powerful consistent data model (streams and windows) and provides useful functionality, such as aggregations, joins, and connectors. Using Edgent lets you to take advantage of this functionality, allowing you to focus on your application needs.  
+
+Check out what you can do in 10 lines of code [The Power of Edgent](power-of-edgent)!
 
 ## Where can I download Apache Edgent?
 
