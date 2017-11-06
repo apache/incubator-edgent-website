@@ -35,7 +35,7 @@ Edgent comes with some initial analytics for aggregation and filtering that you 
 
 ## What connectors does Apache Edgent support?
 
-Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.  You can easily supply any code you want for ingesting data from and sinking data to external systems.
+Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.  You can easily supply any code you want for ingesting data from and sinking data to external systems.  See [EDGENT-368](https://issues.apache.org/jira/browse/EDGENT-368) for a full code sample of publishing to Elasticsearch.
 
 ## Does Edgent have a Sensor Library?
 

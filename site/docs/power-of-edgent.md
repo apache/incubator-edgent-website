@@ -149,6 +149,8 @@ Want to sink to a log via slf4j or another logging system?  Just do it!
     readings.sync(reading -> logger.info("reading: {}", reading));
 ```
 
+Want to publish to Elasticsearch? See [EDGENT-368](https://issues.apache.org/jira/browse/EDGENT-368) for a full code example.
+
 ### More on Ingest
 
 You've seen how to periodically poll a function to get a some data.  
@@ -226,7 +228,7 @@ Or use the [Range]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project
 
 ```java
     Range<Double> range = Ranges.open(5, 30);
-    readings = readings.filter(reading -> !range.test(reading));
+    readings = readings.filter(reading -> !range.contains(reading));
 ```
 
 That alone isn't a very compelling use of Range but consider
