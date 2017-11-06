@@ -215,7 +215,7 @@ Let's get back to our original `ImpressiveEdgentExample`
 and explore making it smarter - push more analytics out
 to the edge!
 
-Want to only publish readings with values less than 5 and more than 30?
+Want to only publish readings with values less than 5 or more than 30?
 
 ```java
     // add this after the poll()
