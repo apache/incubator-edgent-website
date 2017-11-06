@@ -5,7 +5,7 @@ title: FAQ
 ## What is Apache Edgent?
 
 Edgent provides APIs and a lightweight runtime enabling you to easily create event-driven flow-graph style applications to analyze streaming data at the edge.
- Check out [The Power of Edgent](power-of-edgent)!
+ Check out [The Power of Edgent](power-of-edgent) to help you guickly gain an appreciation of how Edgent can help you.
 
 ## What do you mean by the edge?
 
@@ -37,9 +37,23 @@ Edgent comes with some initial analytics for aggregation and filtering that you 
 
 Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.  You can easily supply any code you want for ingesting data from and sinking data to external systems.
 
+## Does Edgent have a Sensor Library?
+
+No, Edgent does not come with a library for accessing a device's sensors.  The simplicity with which an Edgent application can poll or otherwise use existing APIs for reading a sensor value make such a library unnecessary.
+
 ## What centralized streaming analytic systems does Apache Edgent support?
 
 Edgent applications can publish and subscribe to message systems like MQTT or Kafka, or IoT Hubs like IBM Watson IoT Platform.  Centralized streaming analytic systems can do likewise to then consume Edgent application events and data, as well as control an Edgent application.  The centralized streaming analytic system could be Apache Spark, Apache Storm, Flink and samza, IBM Streams (on-premises or IBM Streaming Analytics on Bluemix), or any custom application of your choice.
+
+## Is there a distributed version of Edgent?
+
+The short answer is that a single Edgent Application's topologies all run in the same local JVM.  
+
+But sometimes this question is really asking "Can separate Edgent topologies communicate with each other?" and the answer to that is YES!
+
+Today, multiple topologies in a single Edgent application/JVM can communicate using the Edgent PublishSubscribe connector, or any other shared resource you choose to use (e.g., a java.util.concurrent.BlockingQueue).
+
+Edgent topologies in separate JVM's, or the same JVM, can communicate with each other by using existing connectors to a local or remote MQTT server for example.
 
 ## Why do I need Apache Edgent on the edge, rather than my streaming analytic system?
 
@@ -49,7 +63,7 @@ Edgent is designed for the edge. It has a small footprint, suitable for running 
 
 Edgent is designed to accellerate your development of edge analytic applications - to make you more productive! Edgent provides a simple yet powerful consistent data model (streams and windows) and provides useful functionality, such as aggregations, joins, and connectors. Using Edgent lets you to take advantage of this functionality, allowing you to focus on your application needs.  
 
-Check out what you can do in 10 lines of code [The Power of Edgent](power-of-edgent)!
+Check out [The Power of Edgent](power-of-edgent) to get a better appreciation of how Edgent can help you.
 
 ## Where can I download Apache Edgent?
 

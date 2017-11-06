@@ -6,7 +6,7 @@ Edgent is designed to accellerate your development of event driven flow-graph
 style analytic applications running on edge devices.  This is achieved by
 Edgent's combination of API, connectors, basic analytics, utilities, and openness!
 
-Let's have some fun with a shallow but broad glimpse into what you
+Let's have some fun with a shallow but broad view into what you
 can do in a few of lines of code... an introduction to Edgent's capabilities via
 a series of terse code fragments.
 
