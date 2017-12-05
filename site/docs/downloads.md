@@ -2,11 +2,11 @@
 title: Downloads
 ---
 
-Offical ASF Apache Edgent releases consist of source bundles and convenience binaries. There are two source bundles, one for the Edgent samples and one for the Edgent SDK/runtime.  Convenience binary jars for the Edgent SDK/runtime are available at the [ASF Nexus Releases Repository](https://repository.apache.org/content/repositories/releases/) and Maven Central.
+Official ASF Apache Edgent releases consist of a single Edgent SDK/runtime source bundle and convenience binaries. Convenience binary jars for the Edgent SDK/runtime are available at the [ASF Nexus Releases Repository](https://repository.apache.org/content/repositories/releases/) and Maven Central.  
 
-If you just want to use Edgent, simply download the Samples source bundle and use it to jump-start your application development, leveraging the distributed Edgent SDK/runtime jars. The samples source bundle includes additional information regarding application development and deployment, and tools. For more information, see [Quickstart with Edgent Samples](edgent-getting-started-samples).
+See [Quickstart with Edgent Samples](edgent-getting-started-samples) if you just want to use Edgent and jump-start your Edgent application development.
 
-Note, a separate binary bundle consisting of all of the Edgent jars is not released.  A tool is available in the samples source bundle that can create one.
+Note, a separate binary bundle consisting of all of the Edgent runtime jars is not released.  A tool is available in the samples that can create one.
 
 A source bundle contains a README describing how to build the sources.
 
@@ -18,7 +18,7 @@ See the [community](community) page for more information about contributing to E
 
 | Version           | Docs |
 |:-----------------:|:----:|
-| 1.2.0-incubating  | [JAVA_SUPPORT]({{ site.data.downloads.edgent_1-2-0_java_support_doc_location }}), [Javadoc]({{ site.data.downloads.edgent_1-2-0_doc_location }})  |
+| 1.2.0-incubating  | [JAVA_SUPPORT]({{ site.data.downloads.edgent_1-2-0_java_support_doc_location }}), [Javadoc]({{ site.data.downloads.edgent_1-2-0_doc_location }}), [Samples](edgent-getting-started-samples)  |
 
 It is essential that you verify the integrity of a downloaded bundle.  See [how to verify]({{ site.data.downloads.generic_how_to_verify_location }}) for details on verifying using downloaded KEYS, PGP signature, MD5, or SHA information.
 
@@ -26,9 +26,7 @@ Download the [KEYS]({{ site.data.downloads.edgent_keys_file_location }}) file fo
 
 | Version           | Date           | Bundles | Release Notes | PGP | MD5 | SHA   |
 |:-----------------:|:--------------:|:-------:|:-------------:|:---:|:---:|:-----:|
-| 1.2.0-incubating  | 2017-??-??     | [Samples]({{ site.data.downloads.edgent_1-2-0_samples_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_samples_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_samples_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_samples_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_samples_sha_location }}) |
-|                   |                |         |               | [zip-ASC]({{ site.data.downloads.edgent_1-2-0_samples_zip_asc_location  }}) | [zip-MD5]({{  site.data.downloads.edgent_1-2-0_samples_zip_md5_location }}) | [zip-SHA]({{  site.data.downloads.edgent_1-2-0_samples_zip_sha_location }}) |
-|                   |                | [Source]({{ site.data.downloads.edgent_1-2-0_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_sha_location }}) |
+| 1.2.0-incubating  | 2017-??-??     | [Source]({{ site.data.downloads.edgent_1-2-0_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_sha_location }}) |
 |                   |                |         |               | [zip-ASC]({{ site.data.downloads.edgent_1-2-0_zip_asc_location  }}) | [zip-MD5]({{  site.data.downloads.edgent_1-2-0_zip_md5_location }}) | [zip-SHA]({{  site.data.downloads.edgent_1-2-0_zip_sha_location }}) |
 
 ## Releases Prior to 1.2.0

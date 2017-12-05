@@ -23,7 +23,7 @@ If you want to get a developent environment setup quickly see the [Quickstart wi
 
 The _Edgent Cookbook_ topic includes many well documented recipies that are good for learning and jump-starting the development of your application.
 
-The rest of this page is an introduction to Edgent using a simple simulated Temperature Sensor application.
+The rest of this page is a detailed introduction to Edgent using a simple simulated Temperature Sensor application.
 
 
 ## Apache Edgent and streaming analytics

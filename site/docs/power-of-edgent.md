@@ -52,12 +52,15 @@ to keep reading!
 Edgent Applications need to create streams of data from external entities,
 termed ingest, and sink streams of data to external entities.  
 There are primitives for those operations and a collection of
-connectors to common external entities.
+connectors to common external entities,
+more Connectors contributions are welcome!
 
-Connectors are just code the make it easier to for an Edgent application
+Connectors are just code that make it easier for an Edgent application
 to integrate with an external entity.  They use Edgent ingest primitives
 like (`Topology.poll()`, `Topology.events()`, etc), and `TStream.sink()`
-like any other Edgent code.  But more Connectors contributions are welcome!
+like any other Edgent code.  A connector may provide `Supplier` and 
+`Consumer` functions, for ingest and sink respectively, that an 
+application can use directly with the Edgent API.
 
 OK... fewer words, more code!
 
@@ -146,7 +149,7 @@ Want to sink to a log via slf4j or another logging system?  Just do it!
     import org.slf4j.LoggerFactory;
     private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
 
-    readings.sync(reading -> logger.info("reading: {}", reading));
+    readings.sink(reading -> logger.info("reading: {}", reading));
 ```
 
 Want to publish to Elasticsearch? See [EDGENT-368](https://issues.apache.org/jira/browse/EDGENT-368) for a full code example.
@@ -172,7 +175,7 @@ Want readings from multiple sensors in a single stream tuple?
         }, 1, TimeUnit.SECONDS);
 ```
 
-Want to use define a class or use an existing one for a tuple?
+Want to define a class or use an existing one for a tuple?
 
 ```java
     public class SensorReading {
@@ -197,7 +200,7 @@ Want to use define a class or use an existing one for a tuple?
 Edgent provides some simple simulated sensors that can be helpful to get going.
 You've already seen `SimulatedTemperatureSensor` and
 `SimpleSimulatedSensor` - included in the Edgent Samples source release bundle.
-There are a couple of more in the same Java package.
+There are additional ones in the same Java package.
 
 #### Sensor library
 
@@ -229,6 +232,12 @@ Or use the [Range]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project
 ```java
     Range<Double> range = Ranges.open(5, 30);
     readings = readings.filter(reading -> !range.contains(reading));
+```
+
+Or
+
+```java
+    readings = readings.filter(Ranges.outsideOf(Ranges.open(5, 30)));
 ```
 
 That alone isn't a very compelling use of Range but consider
@@ -320,7 +329,7 @@ OK, maybe that one was a bit too large a code fragment for this introduction.
 ### Windowing and aggregation
 
 Want to do signal smoothing - create a continuously aggregated average over the last 10 readings?
-Each time a tuple is added to the window a new aggregated value computed and is added to the output stream.
+Here, each time a tuple is added to the window a new aggregated value computed and is added to the output stream.
 
 ```java
     TWindow<Double,Integer> window = readings.last(10, Functions.unpartitioned());
@@ -374,7 +383,7 @@ Want to compute several basic statistics and a regression for an aggregation? Us
 ```
 
 There's also support for multi-variable aggregations - independent statistic
-aggregations for multi variables in a list of tuples.  e.g., temperatures and
+aggregations for multiple variables in a list of tuples.  e.g., temperatures and
 pressures variables in each tuple.
 
 If the objects in the window are a JsonObject, [JsonAnalytics]({{ site.docsurl }}/index.html?org/apache/{{ site.data.project.unix_name }}/analytics/math3/json/JsonAnalytics.html) can be handy.
