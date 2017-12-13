@@ -2,7 +2,7 @@
 title: The Power of Apache Edgent
 ---
 
-Edgent is designed to accellerate your development of event driven flow-graph
+Edgent is designed to accelerate your development of event driven flow-graph
 style analytic applications running on edge devices.  This is achieved by
 Edgent's combination of API, connectors, basic analytics, utilities, and openness!
 
@@ -142,7 +142,7 @@ Or ingest a command's stdout/err?
 ```
 
 
-Want to sink to a log via slf4j or another logging system?  Just do it!
+Want to sink to a log via SLF4J or another logging system?  Just do it!
 
 ```java
     import org.slf4j.Logger;
