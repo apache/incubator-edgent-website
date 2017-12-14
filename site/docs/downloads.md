@@ -26,7 +26,7 @@ Download the [KEYS]({{ site.data.downloads.edgent_keys_file_location }}) file fo
 
 | Version           | Date           | Bundles | Release Notes | PGP | MD5 | SHA   |
 |:-----------------:|:--------------:|:-------:|:-------------:|:---:|:---:|:-----:|
-| 1.2.0-incubating  | 2017-??-??     | [Source]({{ site.data.downloads.edgent_1-2-0_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_sha_location }}) |
+| 1.2.0-incubating  | 2017-12-14     | [Source]({{ site.data.downloads.edgent_1-2-0_dist_location }}) | [1.2.0 Release]({{ site.data.downloads.edgent_1-2-0_release_note }}) | [tar-ASC]({{ site.data.downloads.edgent_1-2-0_asc_location  }}) | [tar-MD5]({{  site.data.downloads.edgent_1-2-0_md5_location }}) | [tar-SHA]({{  site.data.downloads.edgent_1-2-0_sha_location }}) |
 |                   |                |         |               | [zip-ASC]({{ site.data.downloads.edgent_1-2-0_zip_asc_location  }}) | [zip-MD5]({{  site.data.downloads.edgent_1-2-0_zip_md5_location }}) | [zip-SHA]({{  site.data.downloads.edgent_1-2-0_zip_sha_location }}) |
 
 ## Releases Prior to 1.2.0
