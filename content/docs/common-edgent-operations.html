@@ -160,12 +160,6 @@
                         
                         
                         
-                        <li><a href="samples">Samples</a></li>
-                        
-                        
-                        
-                        
-                        
                         <li><a href="faq">FAQ</a></li>
                         
                         
@@ -315,6 +309,26 @@ window.location.href = uri;
                     
                     
                     
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
                     <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
@@ -342,7 +356,37 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
                     
 
                     
@@ -510,33 +554,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Sample Programs</a>
-                <ul>
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/samples.html">Samples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Using the Console</a>
                 <ul>
                     
@@ -669,7 +686,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><code>TStream.map()</code> is arguably the most used method in the Edgent API. Its two main purposes are to perform stateful or stateless operations on a stream&#39;s tuples, and to produce a <code>TStream</code> with tuples of a different type from that of the calling stream.</p>
 
-<h3 id="changing-a-tstreams-tuple-type">Changing a TStream&#39;s tuple type</h3>
+<h3 id="changing-a-tstream-39-s-tuple-type">Changing a TStream&#39;s tuple type</h3>
 
 <p>In addition to filtering tuples, <code>TStream</code>s support operations that <em>transform</em> tuples from one Java type to another by invoking the <code>TStream.map()</code> method.</p>
 
@@ -702,7 +719,7 @@ $('#toc').on('click', 'a', function() {
 <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">streamOfStrings</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="k">new</span> <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;()</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Integer</span> <span class="n">apply</span><span class="o">(</span><span class="n">String</span> <span class="n">arg0</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
         <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
     <span class="o">}</span>
@@ -741,7 +758,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: May 15, 2017 <br/>
+            generated: Dec 15, 2017 <br/>
 
         </div>
     </div>

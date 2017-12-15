@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Sample programs  | Apache Edgent Documentation</title>
+<title>Getting started with Apache Edgent Samples  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -160,12 +160,6 @@
                         
                         
                         
-                        <li class="dropdownActive"><a href="samples">Samples</a></li>
-                        
-                        
-                        
-                        
-                        
                         <li><a href="faq">FAQ</a></li>
                         
                         
@@ -191,7 +185,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Apache Edgent Documentation feedback";
-var body = "I have some feedback about the Sample programs page: ";
+var body = "I have some feedback about the Getting started with Apache Edgent Samples page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -218,7 +212,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="Sample programs">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Getting started with Apache Edgent Samples">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -315,6 +309,26 @@ window.location.href = uri;
                     
                     
                     
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
                     <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
@@ -342,7 +356,37 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
                     
 
                     
@@ -510,33 +554,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Sample Programs</a>
-                <ul>
-                    
-                    
-                    
-                    
-                    <li class="active"><a href="../docs/samples.html">Samples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Using the Console</a>
                 <ul>
                     
@@ -629,7 +646,7 @@ $('#toc').on('click', 'a', function() {
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main">Sample programs</h1>
+   <h1 class="post-title-main">Getting started with Apache Edgent Samples</h1>
 </div>
 
 <div class="post-content">
@@ -661,72 +678,62 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/samples.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/edgent-getting-started-samples.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>The <a href="edgent-getting-started">Getting started guide</a> includes a step-by-step walkthrough of a simple Edgent application.</p>
+  <p>Getting started with the Edgent samples is a great way to start using Edgent and
+jump-start your Edgent application development.</p>
 
-<p>Edgent also includes a number of sample Java applications that demonstrate different ways that you can use and implement Edgent.</p>
+<p>Be sure to see <em>Additional Resources</em> below for more great info!</p>
 
-<p>If you are using a released version of Edgent, the samples are already compiled and ready to use. If you downloaded the source or the Git project, the samples are built when you build Edgent.</p>
+<h1 id="quickstart">Quickstart</h1>
 
-<h2 id="resources">Resources</h2>
+<p>Convenience binaries (jars) for the Edgent runtime releases are distributed
+to the ASF Nexus Repository and the Maven Central Repository.  You don&#39;t have
+to manually download the Edgent jars and there is no need to download the 
+Edgent runtime sources and build them unless you want to.</p>
 
-<p>The samples are currently available only for Java 8 environments. To use the samples, you&#39;ll need the resources in the following subdirectories of the Edgent package.:</p>
+<p>By default the samples depend on Java8.  Download and install Java8 if needed.</p>
+
+<h2 id="download-the-edgent-samples">Download the Edgent Samples</h2>
+
+<p>Get the Edgent Samples either by cloning or downloading the <a href="https://github.com/apache/incubator-edgent-samples">Edgent Samples GitHub repository</a>:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">git clone https://github.com/apache/incubator-edgent-samples
+<span class="nb">cd </span>incubator-edgent-samples
+git checkout develop
+</code></pre></div>
+<p>or to download:</p>
 
 <ul>
-<li>The <code>java8/samples</code> directory contains the Java code for the samples</li>
-<li>The <code>java8/scripts</code> directory contains the shell scripts that you need to run the samples</li>
+<li>Open the <em>Clone or download</em> pulldown at the <a href="https://github.com/apache/incubator-edgent-samples">Edgent Samples GitHub repository</a></li>
+<li>Click on <em>Download ZIP</em></li>
+<li>Unpack the downloaded ZIP</li>
 </ul>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">    unzip incubator-edgent-samples-develop.zip
+</code></pre></div>
+<h2 id="build-the-samples">Build the Samples</h2>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">cd</span> &lt;the cloned or unpacked downloaded samples folder&gt;
+./mvnw clean package  <span class="c"># build for Java8</span>
+</code></pre></div>
+<h2 id="run-the-helloedgent-sample">Run the HelloEdgent sample</h2>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">cd </span>topology
+./run-sample.sh HelloEdgent   <span class="c"># prints a hello message and terminates</span>
+  Hello
+  Edgent!
+  ...
+</code></pre></div>
+<h1 id="additional-resources">Additional Resources</h1>
 
-<p>If you use any of the samples in your own applications, ensure that you include the related Edgent JAR files in your <code>classpath</code>.</p>
+<p>See <a href="power-of-edgent">The Power of Edgent</a> to help you quickly start to get a sense of Edgent&#39;s capabilities.
+See the <a href="edgent-getting-started">Getting Started Guide</a> for a tutorial.</p>
 
-<h2 id="recommended-samples">Recommended samples</h2>
-
-<p>In addition to the sample application in the <a href="edgent-getting-started">Getting started guide</a>, the following samples can help you start developing with Edgent:</p>
-
-<ul>
-<li><strong>HelloEdgent</strong>
-
-<ul>
-<li>This simple program demonstrates the basic mechanics of declaring and executing a topology</li>
-</ul></li>
-<li><strong>PeriodicSource</strong>
-
-<ul>
-<li>This simple program demonstrates how to periodically poll a source for data to create a source stream</li>
-</ul></li>
-<li><strong>SimpleFilterTransform</strong>
-
-<ul>
-<li>This simple program demonstrates a simple analytics pipeline: <code>source -&gt; filter -&gt; transform -&gt; sink</code></li>
-</ul></li>
-<li><strong>SensorAnalytics</strong>
+<p>Much more information about the samples is available in the README.md at the <a href="https://github.com/apache/incubator-edgent-samples">Edgent Samples GitHub repository</a>, including:</p>
 
 <ul>
-<li>This more complex program demonstrates multiple facets of an Edgent application, including:
-
-<ul>
-<li>Configuration control</li>
-<li>Reading data from a device with multiple sensors</li>
-<li>Running common analytic algorithms</li>
-<li>Publishing results to MQTT server</li>
-<li>Receiving commands</li>
-<li>Logging results locally</li>
-<li>Conditional stream tracing</li>
-</ul></li>
-</ul></li>
-<li><strong>IBM Watson IoT Platform</strong>
-
-<ul>
-<li>Samples that demonstrate how to use IBM Watson IoT Platform as the IoT scale message hub between Edgent and back-end analytic systems:
-
-<ul>
-<li><a href="quickstart">Sample using the no-registration Quickstart service</a></li>
-</ul></li>
-</ul></li>
+<li>application development and packaging</li>
+<li>application template project</li>
+<li>list of samples</li>
+<li>using an IDE</li>
 </ul>
-
-<p>Additional samples are documented in the <a href="/javadoc/latest/overview-summary.html#overview.description">Edgent Overview</a> section of the Javadoc.</p>
 
 
 <div class="tags">
@@ -759,7 +766,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: May 15, 2017 <br/>
+            generated: Dec 15, 2017 <br/>
 
         </div>
     </div>

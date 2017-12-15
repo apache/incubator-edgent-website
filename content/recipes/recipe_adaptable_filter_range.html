@@ -160,12 +160,6 @@
                         
                         
                         
-                        <li><a href="samples">Samples</a></li>
-                        
-                        
-                        
-                        
-                        
                         <li><a href="faq">FAQ</a></li>
                         
                         
@@ -315,6 +309,26 @@ window.location.href = uri;
                     
                     
                     
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
                     <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
@@ -342,7 +356,37 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
                     
 
                     
@@ -510,33 +554,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Sample Programs</a>
-                <ul>
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/samples.html">Samples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Using the Console</a>
                 <ul>
                     
@@ -681,7 +698,7 @@ $('#toc').on('click', 'a', function() {
         <span class="k">new</span> <span class="n">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="n">DEFAULT_TEMP_RANGE</span><span class="o">);</span>
 </code></pre></div>
 <h2 id="define-a-method-to-change-the-range">Define a method to change the range</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="p">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Using optimal temperature range: "</span> <span class="o">+</span> <span class="n">range</span><span class="o">);</span>
     <span class="n">optimalTempRangeRef</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">range</span><span class="o">);</span>
 <span class="o">}</span>
@@ -727,7 +744,7 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">static</span> <span class="n">AtomicReference</span><span class="o">&lt;</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;&gt;</span> <span class="n">optimalTempRangeRef</span> <span class="o">=</span>
             <span class="k">new</span> <span class="n">AtomicReference</span><span class="o">&lt;&gt;(</span><span class="n">DEFAULT_TEMP_RANGE</span><span class="o">);</span>
 
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="n">setOptimalTempRange</span><span class="o">(</span><span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Using optimal temperature range: "</span> <span class="o">+</span> <span class="n">range</span><span class="o">);</span>
         <span class="n">optimalTempRangeRef</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">range</span><span class="o">);</span>
     <span class="o">}</span>
@@ -737,7 +754,7 @@ $('#toc').on('click', 'a', function() {
      * temperature readings (in Fahrenheit). Use a simple filter
      * to determine when the temperature is out of the optimal range.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 
@@ -804,7 +821,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: May 15, 2017 <br/>
+            generated: Dec 15, 2017 <br/>
 
         </div>
     </div>

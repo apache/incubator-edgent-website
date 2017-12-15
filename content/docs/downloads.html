@@ -160,12 +160,6 @@
                         
                         
                         
-                        <li><a href="samples">Samples</a></li>
-                        
-                        
-                        
-                        
-                        
                         <li><a href="faq">FAQ</a></li>
                         
                         
@@ -315,6 +309,26 @@ window.location.href = uri;
                     
                     
                     
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
                     <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
@@ -342,7 +356,37 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
+                    <li><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
                     
 
                     
@@ -510,33 +554,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Sample Programs</a>
-                <ul>
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/samples.html">Samples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Using the Console</a>
                 <ul>
                     
@@ -663,9 +680,11 @@ $('#toc').on('click', 'a', function() {
 
     <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/downloads.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <p>Official Apache Edgent releases are available for download from the ASF distribution site. A release consists of a source code bundle and a convenience binary bundle. See the table below for a release&#39;s download links.</p>
+  <p>Official ASF Apache Edgent releases consist of a single Edgent SDK/runtime source bundle and convenience binaries. Convenience binary jars for the Edgent SDK/runtime are available at the <a href="https://repository.apache.org/content/repositories/releases/">ASF Nexus Releases Repository</a> and Maven Central.  </p>
 
-<p>If you just want to use Edgent, it is easiest to download and unpack a binary bundle. The bundle includes the release&#39;s Javadoc. The Javadoc is also accessible online. For more information, please refer to the <a href="edgent-getting-started">Getting started guide</a>.</p>
+<p>See <a href="edgent-getting-started-samples">Quickstart with Edgent Samples</a> if you just want to use Edgent and jump-start your Edgent application development.</p>
+
+<p>Note, a separate binary bundle consisting of all of the Edgent runtime jars is not released.  A tool is available in the samples that can create one.</p>
 
 <p>A source bundle contains a README describing how to build the sources.</p>
 
@@ -674,6 +693,63 @@ $('#toc').on('click', 'a', function() {
 <p>See the <a href="community">community</a> page for more information about contributing to Edgent development.</p>
 
 <h2 id="apache-edgent-releases">Apache Edgent Releases</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Version</th>
+<th style="text-align: center">Docs</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">1.2.0-incubating</td>
+<td style="text-align: center"><a href="https://github.com/apache/incubator-edgent/blob/edgent-1.2.0/JAVA_SUPPORT.md">JAVA_SUPPORT</a>, <a href="https://edgent.incubator.apache.org/javadoc/r1.2.0/index.html">Javadoc</a>, <a href="edgent-getting-started-samples">Samples</a></td>
+</tr>
+</tbody></table>
+
+<p>It is essential that you verify the integrity of a downloaded bundle.  See <a href="https://www.apache.org/dyn/closer.cgi#verify">how to verify</a> for details on verifying using downloaded KEYS, PGP signature, MD5, or SHA information.</p>
+
+<p>Download the <a href="https://www.apache.org/dist/incubator/edgent/KEYS">KEYS</a> file for verifying a bundle&#39;s PGP signature.</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Version</th>
+<th style="text-align: center">Date</th>
+<th style="text-align: center">Bundles</th>
+<th style="text-align: center">Release Notes</th>
+<th style="text-align: center">PGP</th>
+<th style="text-align: center">MD5</th>
+<th style="text-align: center">SHA</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">1.2.0-incubating</td>
+<td style="text-align: center">2017-12-14</td>
+<td style="text-align: center"><a href="https://www.apache.org/dyn/closer.cgi/incubator/edgent/1.2.0-incubating">Source</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/RELEASE_NOTES">1.2.0 Release</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.tar.gz.asc">tar-ASC</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.tar.gz.md5">tar-MD5</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.tar.gz.sha512">tar-SHA</a></td>
+</tr>
+<tr>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.zip.asc">zip-ASC</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.zip.md5">zip-MD5</a></td>
+<td style="text-align: center"><a href="https://www.apache.org/dist/incubator/edgent/1.2.0-incubating/apache-edgent-1.2.0-incubating-source-release.zip.sha512">zip-SHA</a></td>
+</tr>
+</tbody></table>
+
+<h2 id="releases-prior-to-1-2-0">Releases Prior to 1.2.0</h2>
+
+<p>Official Apache Edgent releases are available for download from the ASF distribution site. A release consists of a source code bundle and a convenience binary bundle. See the table below for a release&#39;s download links.</p>
+
+<p>There is not a separate samples source bundle and convenience binary jars are not distributed to the ASF Nexus Repository or Maven Central.</p>
+
+<p>If you just want to use Edgent, it is easiest to download and unpack a binary bundle. The bundle includes the release&#39;s Javadoc. The Javadoc is also accessible online. For more information, please refer to the <a href="edgent-getting-started">Getting started guide</a>.</p>
+
+<p>A source bundle contains a README describing how to build the sources.</p>
 
 <p>It is essential that you verify the integrity of a downloaded bundle.  See <a href="https://www.apache.org/dyn/closer.cgi#verify">how to verify</a> for details on verifying using downloaded KEYS, PGP signature, MD5, or SHA information.</p>
 
@@ -764,7 +840,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: May 15, 2017 <br/>
+            generated: Dec 15, 2017 <br/>
 
         </div>
     </div>

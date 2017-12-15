@@ -8,6 +8,17 @@
 
 
 {
+"title": "Edgent Application Development, Packaging and Execution.",
+"tags": "",
+"keywords": "",
+"url": "../docs/application-development",
+"summary": ""
+},
+
+
+
+
+{
 "title": "Committers",
 "tags": "",
 "keywords": "",
@@ -63,6 +74,17 @@
 
 
 {
+"title": "Getting started with Apache Edgent Samples",
+"tags": "",
+"keywords": "",
+"url": "../docs/edgent-getting-started-samples",
+"summary": ""
+},
+
+
+
+
+{
 "title": "Getting started with Apache Edgent",
 "tags": "",
 "keywords": "",
@@ -96,8 +118,8 @@
 
 
 {
-"title": "Introduction",
-"tags": "getting_started",
+"title": "Apache Edgent Overview",
+"tags": "",
 "keywords": "",
 "url": "../docs/home",
 "summary": ""
@@ -118,10 +140,43 @@
 
 
 {
+"title": "Getting started with Apache Edgent pre-1.2.0",
+"tags": "",
+"keywords": "",
+"url": "../docs/old-edgent-getting-started",
+"summary": ""
+},
+
+
+
+
+{
+"title": "Sample programs",
+"tags": "",
+"keywords": "",
+"url": "../docs/old-samples",
+"summary": ""
+},
+
+
+
+
+{
 "title": "Overview",
 "tags": "",
 "keywords": "",
 "url": "../docs/overview",
+"summary": ""
+},
+
+
+
+
+{
+"title": "The Power of Apache Edgent",
+"tags": "",
+"keywords": "",
+"url": "../docs/power-of-edgent",
 "summary": ""
 },
 
@@ -279,17 +334,6 @@
 "tags": "",
 "keywords": "",
 "url": "../recipes/recipe_writing_a_connector",
-"summary": ""
-},
-
-
-
-
-{
-"title": "Sample programs",
-"tags": "",
-"keywords": "",
-"url": "../docs/samples",
 "summary": ""
 },
 

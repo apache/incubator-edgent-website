@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+  <head>
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>The Power of Apache Edgent  | Apache Edgent Documentation</title>
+<link rel="stylesheet" type="text/css" href="../css/syntax.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="../css/modern-business.css">
+<link rel="stylesheet" type="text/css" href="../css/lavish-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/customstyles.css">
+<link rel="stylesheet" type="text/css" href="../css/theme-blue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="../js/jquery.navgoco.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="../js/toc.js"></script>
+<script src="../js/customscripts.js"></script>
+<link rel="shortcut icon" href="../common_images/favicon.ico" type="image/x-icon">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+ 
+
+<script>
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
+
+  </head>
+
+<body>
+
+   <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="fa fa-home fa-lg navbar-brand" href="../docs/home.html">&nbsp;<span class="projectTitle"> Apache Edgent Documentation</span></a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+
+
+
+
+
+
+
+
+                <li class="dropdown">
+                    
+                    
+                    
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub Repos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        
+                        <li><a href="https://github.com/apache/incubator-edgent" target="_blank">Source code</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="https://github.com/apache/incubator-edgent-website" target="_blank">Website/Documentation</a></li>
+                        
+                        
+                        
+                        
+
+                    </ul>
+                </li>
+                
+                
+
+
+                <li class="dropdown">
+                    
+                    
+                    
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Javadoc<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        
+                        <li><a href="..\javadoc\latest">latest</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="..\javadoc\r1.1.0">1.1.0</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="..\javadoc\r1.0.0">1.0.0</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="..\javadoc\r0.4.0">0.4.0</a></li>
+                        
+                        
+                        
+                        
+
+                    </ul>
+                </li>
+                
+                
+
+
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+
+                <li class="dropdown">
+                    
+                    
+                    
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edgent Resources<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        
+                        <li><a href="downloads">Download</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li><a href="faq">FAQ</a></li>
+                        
+                        
+                        
+                        
+                        
+                        <li class="dropdownActive"><a href="/">edgent.apache.org</a></li>
+                        
+                        
+                        
+                        
+
+                    </ul>
+                </li>
+                
+                
+
+
+                <!-- special insertion -->
+
+               
+                <!-- Send feedback function -->
+<script>
+function SendLinkByMail(href) {
+var subject= "Apache Edgent Documentation feedback";
+var body = "I have some feedback about the The Power of Apache Edgent page: ";
+body += window.location.href;
+body += "";
+var uri = "mailto:?subject=";
+uri += encodeURIComponent(subject);
+uri += "&body=";
+uri += encodeURIComponent(body);
+window.location.href = uri;
+}
+</script>
+
+<li><a href="mailto:dev@edgent.incubator.apache.org" target="_blank"><i class="fa fa-envelope-o"></i> Feedback</a></li>
+
+
+                <!--uncomment this block if you want simple search instead of algolia-->
+                <li>
+                     <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="../js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        SimpleJekyllSearch.init({
+                            searchInput: document.getElementById('search-input'),
+                            resultsContainer: document.getElementById('results-container'),
+                            dataSource: '../search.json',
+                            searchResultTemplate: '<li><a href="{url}" title="The Power of Apache Edgent">{title}</a></li>',
+                        noResultsText: 'No results found.',
+                                limit: 10,
+                                fuzzy: true,
+                        })
+                    </script>
+                     <!--end search-->
+                </li>
+
+            
+        </div>
+        <!-- /.container -->
+</nav>
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="col-lg-12">&nbsp;</div>
+
+
+<!-- Content Row -->
+<div class="row">
+    <!-- Sidebar Column -->
+    <div class="col-md-3">
+
+        <script>
+
+            $(document).ready(function() {
+                // Initialize navgoco with default options
+                $("#mysidebar").navgoco({
+                    caretHtml: '',
+                    accordion: true,
+                    openClass: 'active', // open
+                    save: true,
+                    cookie: {
+                        name: 'navgoco',
+                        expires: false,
+                        path: '/'
+                    },
+                    slide: {
+                        duration: 400,
+                        easing: 'swing'
+                    }
+                });
+
+                $("#collapseAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', false);
+                });
+
+                $("#expandAll").click(function(e) {
+                    e.preventDefault();
+                    $("#mysidebar").navgoco('toggle', true);
+                });
+
+            });
+
+        </script>
+
+
+        
+
+
+
+
+
+
+
+
+
+        <ul id="mysidebar" class="nav">
+
+            <span class="siteTagline">Edgent</span>
+            <span class="versionTagline">Version 1.1.0-incubating</span>
+
+            
+            
+            
+                
+            
+            <li><a href="#">Overview</a>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent_index.html">Introduction</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/faq.html">FAQ</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
+            <li><a href="#">Get Started</a>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/downloads.html">Downloads</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/streaming-concepts.html">Streaming concepts</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/common-edgent-operations.html">Common operations</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
+            <li><a href="#">Edgent Cookbook</a>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_hello_edgent.html">Hello Edgent!</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_source_function.html">Writing a source function</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_value_out_of_range.html">Detecting a sensor value out of expected range</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_different_processing_against_stream.html">Applying different processing against a single stream</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_combining_streams_processing_results.html">Splitting a stream to apply different processing and combining the results into a single stream</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_external_filter_range.html">Using an external configuration file for filter ranges</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_adaptable_filter_range.html">Changing a filter's range</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_adaptable_polling_source.html">Changing a polled source stream's period</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_adaptable_deadtime_filter.html">Using an adaptable deadtime filter</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_dynamic_analytic_control.html">Dynamically enabling analytic flows</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_parallel_analytics.html">How can I run analytics on several tuples in parallel?</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_concurrent_analytics.html">How can I run several analytics on a tuple concurrently?</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../recipes/recipe_writing_a_connector.html">How do I write a connector?</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
+            <li><a href="#">Using the Console</a>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/console.html">Using the console</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+            
+            <li><a href="#">Get Involved</a>
+                <ul>
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/community.html">How to participate</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/committers.html">Committers</a></li>
+                    
+
+                    
+
+                    
+                    
+                </ul>
+                
+                
+                
+
+
+                <!-- if you aren't using the accordion, uncomment this block:
+
+                     <p class="external">
+                         <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+                     </p>
+                 -->
+				 <br/>
+			</li>
+		</ul>
+		<div class="row">
+		<div class="col-md-12">
+			
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+		</div>
+	</div>
+	</div>
+	
+    <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+    <script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+            <!-- Content Column -->
+            <div class="col-md-9">
+                
+                <div class="post-header">
+   <h1 class="post-title-main">The Power of Apache Edgent</h1>
+</div>
+
+<div class="post-content">
+
+   
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+
+<div id="toc"></div>
+
+
+    
+
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/power-of-edgent.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    
+  <p>Edgent is designed to accelerate your development of event driven flow-graph
+style analytic applications running on edge devices.  This is achieved by
+Edgent&#39;s combination of API, connectors, basic analytics, utilities, and openness!</p>
+
+<p>Let&#39;s have some fun with a shallow but broad view into what you
+can do in a few of lines of code... an introduction to Edgent&#39;s capabilities via
+a series of terse code fragments.</p>
+
+<p>See the <a href="edgent-getting-started">Getting Started Guide</a> for a step by step introduction,
+and information about full samples and recipies.</p>
+
+<p>Let&#39;s start with a complete application that periodically samples a sensor
+and publishes its values to an Enterprise IoT Hub in less than 10 lines of code</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ImpressiveEdgentExample</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">DirectProvider</span> <span class="n">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
+    <span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
+
+    <span class="n">IotDevice</span> <span class="n">iotConnector</span> <span class="o">=</span> <span class="n">IotpDevice</span><span class="o">.</span><span class="na">quickstart</span><span class="o">(</span><span class="n">top</span><span class="o">,</span> <span class="s">"edgent-intro-device-2"</span><span class="o">);</span>
+    <span class="c1">// open https://quickstart.internetofthings.ibmcloud.com/#/device/edgent-intro-device-2</span>
+
+    <span class="c1">// ingest -&gt; transform -&gt; publish</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span><span class="k">new</span> <span class="n">SimulatedTemperatureSensor</span><span class="o">(),</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">JsonFunctions</span><span class="o">.</span><span class="na">valueOfNumber</span><span class="o">(</span><span class="s">"temp"</span><span class="o">));</span>
+    <span class="n">iotConnector</span><span class="o">.</span><span class="na">events</span><span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="s">"readingEvents"</span><span class="o">,</span> <span class="n">QoS</span><span class="o">.</span><span class="na">FIRE_AND_FORGET</span><span class="o">);</span>
+
+    <span class="n">provider</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Ok, that was 11 lines and it omitted the imports, but there are only 7 lines in main()!</p>
+
+<p>That leveraged the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/iotp/IotpDevice.html">IotpDevice</a>
+connector to the 
+IBM Watson IoT Platform and the platform&#39;s Quickstart feature. 
+The value of its Quickstart feature is no account or device 
+preregistration and the ability to open a browser to see the
+data being published.  Great to quickly get started.</p>
+
+<p>Hopefully that had enough of a wow factor to encourage you
+to keep reading!</p>
+
+<h3 id="connectors-ingest-and-sink">Connectors, Ingest and Sink</h3>
+
+<p>Edgent Applications need to create streams of data from external entities,
+termed ingest, and sink streams of data to external entities.<br>
+There are primitives for those operations and a collection of
+connectors to common external entities,
+more Connectors contributions are welcome!</p>
+
+<p>Connectors are just code that make it easier for an Edgent application
+to integrate with an external entity.  They use Edgent ingest primitives
+like (<code>Topology.poll()</code>, <code>Topology.events()</code>, etc), and <code>TStream.sink()</code>
+like any other Edgent code.  A connector may provide <code>Supplier</code> and 
+<code>Consumer</code> functions, for ingest and sink respectively, that an 
+application can use directly with the Edgent API.</p>
+
+<p>OK... fewer words, more code!</p>
+
+<p>You&#39;ve already seen publishing using the <code>IotpDevice</code> connector.</p>
+
+<p>Want to receive <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/iot/IotDevice.html">IotDevice</a> device commands? Simple!</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">iotConnector</span><span class="o">.</span><span class="na">commands</span><span class="o">();</span>
+    <span class="n">cmds</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">cmd</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"I should handle received cmd: "</span><span class="o">+</span><span class="n">cmd</span><span class="o">));</span>
+
+    <span class="n">or</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">xzyCmds</span> <span class="o">=</span> <span class="n">iotConnector</span><span class="o">.</span><span class="na">command</span><span class="o">(</span><span class="s">"xyzCmds"</span><span class="o">);</span>
+</code></pre></div>
+<p>There&#39;s an <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/iot/IotGateway.html">IotGateway</a> device model too.</p>
+
+<p>Don&#39;t want no stinkin <code>IotDevice</code> model and just
+want to pub/sub to an MQTT server?  No worries! Use the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/mqtt/MqttStreams.html">MqttStreams</a> connector</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="c1">//IotDevice iotConnector = IotpDevice.quickstart(top, "edgent-intro-device-2");</span>
+    <span class="n">MqttStreams</span> <span class="n">iotConnector</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MqttStreams</span><span class="o">(</span><span class="n">top</span><span class="o">,</span> <span class="s">"ssl://myMqttServer:8883"</span><span class="o">,</span> <span class="s">"my-device-client-id"</span><span class="o">);</span>
+
+    <span class="o">...</span>
+
+    <span class="c1">//iotConnector.events(events, "readingEvents", QoS.FIRE_AND_FORGET);</span>
+    <span class="n">iotConnector</span><span class="o">.</span><span class="na">publish</span><span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="s">"readingEvents"</span><span class="o">,</span> <span class="n">QoS</span><span class="o">.</span><span class="na">FIRE_AND_FORGET</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">xyzTopicMsgs</span> <span class="o">=</span> <span class="n">iotConnector</span><span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="s">"xyzTopic"</span><span class="o">);</span>
+</code></pre></div>
+<p>Want to connect to Kafka?  Use the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/kafka/KafkaProducer.html">KafkaProducer</a> and <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/kafka/KafkaConsumer.html">KafkaConsumer</a> connectors with similar ease.</p>
+
+<p>There&#39;s a <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/jdbc/JdbcStreams.html">JdbcStreams</a> connector too.</p>
+
+<p>Want to sink a <code>TStream</code> to rolling text files?  Use the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/file/FileStreams.html">FileStreams</a> connector.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="k">new</span> <span class="nf">File</span><span class="p">(</span><span class="s">"/tmp/MY-DEMO-FILES"</span><span class="o">).</span><span class="na">mkdir</span><span class="o">();</span>
+    <span class="n">FileStreams</span><span class="o">.</span><span class="na">textFileWriter</span><span class="o">(</span><span class="n">events</span><span class="o">.</span><span class="na">asString</span><span class="o">(),</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="s">"/tmp/MY-DEMO-FILES/READINGS"</span><span class="o">);</span>
+
+    <span class="c1">// tail -f /tmp/MY-DEMO-FILES/.READINGS</span>
+</code></pre></div>
+<p>Or watch for, ingest and process text files?  <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/csv/Csv.html">Csv</a> can be useful if your input lines of comma separated values</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">   <span class="n">String</span> <span class="n">watchedDir</span> <span class="o">=</span> <span class="s">"/some/directory/path"</span><span class="o">;</span>
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">csvFieldNames</span> <span class="o">=</span> <span class="o">...</span>
+   <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pathnames</span> <span class="o">=</span> <span class="n">FileStreams</span><span class="o">.</span><span class="na">directoryWatcher</span><span class="o">(</span><span class="n">top</span><span class="o">,</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="n">watchedDir</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+   <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">lines</span> <span class="o">=</span> <span class="n">FileStreams</span><span class="o">.</span><span class="na">textFileReader</span><span class="o">(</span><span class="n">pathnames</span><span class="o">);</span>
+   <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">parsedLines</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">line</span> <span class="o">-&gt;</span> <span class="n">Csv</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">Csv</span><span class="o">.</span><span class="na">parseCsv</span><span class="o">(</span><span class="n">line</span><span class="o">),</span> <span class="n">csvFieldNames</span><span class="o">));</span>
+</code></pre></div>
+<p>Want to sink to a command&#39;s stdin?  Use the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/command/CommandStreams.html">CommandStreams</a> connector</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">MyEvent</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">ProcessBuilder</span> <span class="n">cmd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessBuilder</span><span class="o">(</span><span class="s">"cat"</span><span class="o">).</span><span class="na">redirectOutput</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/dev/stdout"</span><span class="o">));</span>
+    <span class="n">CommandStreams</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">events</span><span class="o">.</span><span class="na">asString</span><span class="o">(),</span> <span class="n">cmd</span><span class="o">);</span>
+</code></pre></div>
+<p>Or ingest a command&#39;s stdout/err?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">ProcessBuilder</span> <span class="n">cmd</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessBuilder</span><span class="o">(</span><span class="s">"date"</span><span class="o">,</span> <span class="s">"-R"</span><span class="o">);</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">CommandStreams</span><span class="o">.</span><span class="na">periodicSource</span><span class="o">(</span><span class="n">top</span><span class="o">,</span> <span class="n">cmd</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span>
+        <span class="n">readings</span>
+          <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">list</span> <span class="o">-&gt;</span> <span class="n">list</span><span class="o">)</span>
+          <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">JsonFunctions</span><span class="o">.</span><span class="na">valueOfString</span><span class="o">(</span><span class="s">"date"</span><span class="o">));</span>
+
+    <span class="c1">// also note TStream support for a fluent programming style</span>
+    <span class="c1">// and use of TStream.flatmap() to transform in input list to</span>
+    <span class="c1">// an output list and then add each output list item as a separate</span>
+    <span class="c1">// tuple to the output stream</span>
+</code></pre></div>
+<p>Want to sink to a log via SLF4J or another logging system?  Just do it!</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+    <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">MyClass</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="n">readings</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="n">logger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"reading: {}"</span><span class="o">,</span> <span class="n">reading</span><span class="o">));</span>
+</code></pre></div>
+<p>Want to publish to Elasticsearch? See <a href="https://issues.apache.org/jira/browse/EDGENT-368">EDGENT-368</a> for a full code example.</p>
+
+<h3 id="more-on-ingest">More on Ingest</h3>
+
+<p>You&#39;ve seen how to periodically poll a function to get a some data.<br>
+That&#39;s just one of the methods defined in <a href="/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html">Topology</a> for ingesting data - for creating source streams.</p>
+
+<p>Also note that the tuples (a.k.a. events, data, objects) in a <a href="/javadoc/latest/index.html?org/apache/edgent/topology/TStream.html">TStream</a> can be any type. There&#39;s no special Edgent tuple type hierarchy.</p>
+
+<p>Want readings from multiple sensors in a single stream tuple?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">SimulatedTemperatureSensor</span> <span class="n">tempSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulatedTemperatureSensor</span><span class="o">();</span>
+    <span class="n">SimpleSimulatedSensor</span> <span class="n">pressureSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleSimulatedSensor</span><span class="o">();</span>
+
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+          <span class="n">JsonObject</span> <span class="n">jo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+          <span class="n">jo</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"temp"</span><span class="o">,</span> <span class="n">tempSensor</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+          <span class="n">jo</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"pressure"</span><span class="o">,</span> <span class="n">pressureSensor</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+          <span class="k">return</span> <span class="n">jo</span><span class="o">;</span>
+        <span class="o">},</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+</code></pre></div>
+<p>Want to define a class or use an existing one for a tuple?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SensorReading</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="kt">double</span> <span class="n">pressure</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="n">SensorReading</span><span class="o">(</span><span class="kt">double</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">double</span> <span class="n">pressure</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">pressure</span> <span class="o">=</span> <span class="n">pressure</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">SimulatedTemperatureSensor</span> <span class="n">tempSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimulatedTemperatureSensor</span><span class="o">();</span>
+    <span class="n">SimpleSimulatedSensor</span> <span class="n">pressureSensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleSimulatedSensor</span><span class="o">();</span>
+
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">SensorReading</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span>
+        <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Reading</span><span class="o">(</span><span class="n">tempSensor</span><span class="o">.</span><span class="na">get</span><span class="o">(),</span> <span class="n">pressureSensor</span><span class="o">.</span><span class="na">get</span><span class="o">()),</span>
+        <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">);</span>
+</code></pre></div>
+<h4 id="simulated-sensors">Simulated Sensors</h4>
+
+<p>Edgent provides some simple simulated sensors that can be helpful to get going.
+You&#39;ve already seen <code>SimulatedTemperatureSensor</code> and
+<code>SimpleSimulatedSensor</code> - included in the Edgent Samples source release bundle.
+There are additional ones in the same Java package.</p>
+
+<h4 id="sensor-library">Sensor library</h4>
+
+<p>Wondering if Edgent has a sensor library?  It does not
+because there seems to be little value in supplying one.</p>
+
+<p>Using Edgent&#39;s stream ingest primitives (e.g., <code>Topology.poll(), Topology.events()</code>,
+etc) it&#39;s trivial for you to call the sensor&#39;s APIs to get 
+readings and compose them into a stream data object of your
+choosing to be added a <code>TStream</code>.</p>
+
+<h3 id="filtering">Filtering</h3>
+
+<p>Let&#39;s get back to our original <code>ImpressiveEdgentExample</code>
+and explore making it smarter - push more analytics out
+to the edge!</p>
+
+<p>Want to only publish readings with values less than 5 or more than 30?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="c1">// add this after the poll()</span>
+    <span class="n">readings</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">tuple</span> <span class="o">-&gt;</span> <span class="n">tuple</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="n">d</span> <span class="o">||</span> <span class="n">tuple</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="n">d</span><span class="o">);</span>
+</code></pre></div>
+<p>Your filter predicate function can do what ever it needs to do!</p>
+
+<p>Or use the <a href="/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Range.html">Range</a> utility</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Ranges</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+    <span class="n">readings</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">range</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">reading</span><span class="o">));</span>
+</code></pre></div>
+<p>Or</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">readings</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">Ranges</span><span class="o">.</span><span class="na">outsideOf</span><span class="o">(</span><span class="n">Ranges</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">30</span><span class="o">)));</span>
+</code></pre></div>
+<p>That alone isn&#39;t a very compelling use of Range but consider
+a larger context.
+A Range has a simple String representation (e.g., the above is <code>&quot;(5d,30d)&quot;</code>)
+so that value could be read from an application configuration file
+on startup, or received from a device command to create a
+dynamically configurable application.</p>
+
+<p><a href="/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Filters.html">Filters.deadband</a>
+offers a more sophisticated filter.
+There&#39;s a nice graphic depection of the filter behavior in the method&#39;s javadoc.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">Range</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">range</span> <span class="o">=</span> <span class="n">Ranges</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+    <span class="n">readings</span> <span class="o">=</span> <span class="n">Filters</span><span class="o">.</span><span class="na">deadband</span><span class="o">(</span><span class="n">readings</span><span class="o">,</span> <span class="n">reading</span> <span class="o">-&gt;</span> <span class="n">reading</span><span class="o">,</span> <span class="n">range</span><span class="o">);</span>
+</code></pre></div>
+<p>There&#39;s also a <a href="/javadoc/latest/index.html?org/apache/edgent/analytics/sensors/Filters.html">Filters.deadtime</a> filter can can come in handy.</p>
+
+<h3 id="split">Split</h3>
+
+<p>Want to split a TStream into multiple TStreams - e.g., to handle
+different categories of tuples differently?  <code>TStream.split()</code>
+is essentially an efficient group of multiple filters.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;&gt;</span> <span class="n">twoStreams</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">d</span> <span class="o">-&gt;</span> <span class="n">range</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="n">d</span><span class="o">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">inRange</span> <span class="o">=</span> <span class="n">twoStreams</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">outOfRange</span> <span class="o">=</span> <span class="n">twoStreams</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</code></pre></div>
+<p>Your split function can yield as many output streams as you need.
+There&#39;s also a form of <code>split()</code> that works with <code>Enum</code> identifiers.</p>
+
+<h3 id="transforms">Transforms</h3>
+
+<p>Want to convert a value that&#39;s in Centigrade to Farenheit?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">readings</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">reading</span> <span class="o">*</span> <span class="mf">1.8</span><span class="o">)</span> <span class="o">+</span> <span class="mi">32</span><span class="o">);</span>
+</code></pre></div>
+<p>Your map function can do what ever it needs to do!
+E.g., a tuple could be a video image frame and the map
+function could generate face detection events.</p>
+
+<p>We&#39;ve already seen converting a numeric value to a JsonObject using <a href="/javadoc/latest/index.html?org/apache/edgent/topology/json/JsonFunctions.html">JsonFunctions</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">JsonFunctions</span><span class="o">.</span><span class="na">valueOfNumber</span><span class="o">(</span><span class="s">"temp"</span><span class="o">));</span>
+</code></pre></div>
+<p>What about scoring against a model?  Edgent doesn&#39;t have
+anything special for that at least at this time.<br>
+But it&#39;s easy to integrate the use of some scoring model
+system into an Edgent application.<br>
+Imagine a package defined something like:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Model</span> <span class="o">{</span>
+      <span class="c1">// load model from a File</span>
+      <span class="kd">public</span> <span class="n">Model</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">};</span>
+      <span class="c1">// score String s against the model</span>
+      <span class="c1">// return a confidence score between 0.0 and 1.0</span>
+      <span class="kd">public</span> <span class="n">Double</span> <span class="n">score</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div>
+<p>An Edgent application might use such a model in this manner</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">final</span> <span class="n">Model</span> <span class="n">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Model</span><span class="o">(...);</span>
+
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">events</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">scoredEvents</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="n">Double</span> <span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">score</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+        <span class="n">JsonObject</span> <span class="n">jo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+        <span class="n">jo</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"event"</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
+        <span class="n">jo</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"score"</span><span class="o">,</span> <span class="n">score</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">jo</span><span class="o">;</span>
+        <span class="o">};</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">interestingEvents</span> <span class="o">=</span> 
+        <span class="n">scoredEvents</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">jo</span> <span class="o">-&gt;</span> <span class="n">jo</span><span class="o">.</span><span class="na">getAsJsonPrimitive</span><span class="o">.</span><span class="na">getAsDouble</span><span class="o">(</span><span class="s">"score"</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mf">0.75</span><span class="o">);</span>
+</code></pre></div>
+<p>OK, maybe that one was a bit too large a code fragment for this introduction.</p>
+
+<h3 id="windowing-and-aggregation">Windowing and aggregation</h3>
+
+<p>Want to do signal smoothing - create a continuously aggregated average over the last 10 readings?
+Here, each time a tuple is added to the window a new aggregated value computed and is added to the output stream.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TWindow</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">window</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">last</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">Functions</span><span class="o">.</span><span class="na">unpartitioned</span><span class="o">());</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="na">aggregate</span><span class="o">((</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">partition</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+          <span class="kt">double</span> <span class="n">avg</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+          <span class="k">for</span> <span class="o">(</span><span class="n">Double</span> <span class="n">d</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="n">avg</span> <span class="o">+=</span> <span class="n">d</span><span class="o">;</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="n">avg</span> <span class="o">/=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+          <span class="k">return</span> <span class="n">avg</span><span class="o">;</span>
+        <span class="o">});</span>
+</code></pre></div>
+<p>Want a window over the last 10 seconds instead?</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="c1">// TWindow&lt;Double,Integer&gt; window = readings.last(10, Functions.unpartitioned());</span>
+    <span class="n">TWindow</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">window</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">last</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">SECONDS</span><span class="o">,</span> <span class="n">Functions</span><span class="o">.</span><span class="na">unpartitioned</span><span class="o">());</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>Or want to do data reduction - reduce the readings to one average value every window batch?
+Once the window is full, the batch of tuples is aggregated, the result is added to the output
+stream and the window is cleared.  The next aggregation isn&#39;t generated until the window
+is full again.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="na">batch</span><span class="o">((</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">partition</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+          <span class="kt">double</span> <span class="n">avg</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+          <span class="k">for</span> <span class="o">(</span><span class="n">Double</span> <span class="n">d</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="n">avg</span> <span class="o">+=</span> <span class="n">d</span><span class="o">;</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="n">avg</span> <span class="o">/=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+          <span class="k">return</span> <span class="n">avg</span><span class="o">;</span>
+        <span class="o">});</span>
+</code></pre></div>
+<p>Or use <a href="/javadoc/latest/index.html?org/apache/edgent/analytics/math3/Aggregations.html">Aggregations</a> for simple statistics</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="na">batch</span><span class="o">((</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">partition</span><span class="o">)</span> <span class="o">-&gt;</span>
+          <span class="n">Aggregations</span><span class="o">.</span><span class="na">aggregate</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">Statistics2</span><span class="o">.</span><span class="na">MEAN</span><span class="o">));</span>
+</code></pre></div>
+<p>Want to compute several basic statistics and a regression for an aggregation? Use <a href="/javadoc/latest/index.html?org/apache/edgent/analytics/math3/AggregationsN.html">AggregationsN</a></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TWindow</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">window</span> <span class="o">=</span> <span class="n">readings</span><span class="o">.</span><span class="na">last</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="n">Functions</span><span class="o">.</span><span class="na">unpartitioned</span><span class="o">());</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">ResultMap</span><span class="o">&gt;</span> <span class="n">aggResults</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="na">batch</span><span class="o">((</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">Integer</span> <span class="n">partition</span><span class="o">)</span> <span class="o">-&gt;</span> 
+                       <span class="n">AggregationsN</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">Statistic2</span><span class="o">.</span><span class="na">MIN</span><span class="o">,</span> <span class="n">Statistic2</span><span class="o">.</span><span class="na">MAX</span><span class="o">,</span>
+                                     <span class="n">Statistic2</span><span class="o">.</span><span class="na">SUM</span><span class="o">,</span> <span class="n">Statistic2</span><span class="o">.</span><span class="na">STDDEV</span><span class="o">,</span>
+                                     <span class="n">Statistic2</span><span class="o">.</span><span class="na">COUNT</span><span class="o">,</span> <span class="n">Regression2</span><span class="o">.</span><span class="na">SLOPE</span><span class="o">));</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">joAggResults</span> <span class="o">=</span> <span class="n">aggResults</span><span class="o">(</span><span class="n">ResultMap</span><span class="o">.</span><span class="na">toJsonObject</span><span class="o">());</span> <span class="c1">// optional</span>
+</code></pre></div>
+<p>There&#39;s also support for multi-variable aggregations - independent statistic
+aggregations for multiple variables in a list of tuples.  e.g., temperatures and
+pressures variables in each tuple.</p>
+
+<p>If the objects in the window are a JsonObject, <a href="/javadoc/latest/index.html?org/apache/edgent/analytics/math3/json/JsonAnalytics.html">JsonAnalytics</a> can be handy.</p>
+
+<h3 id="misc">Misc</h3>
+
+<p>Want to run an expensive computation on multiple tuples in parallel?<br>
+Easy with <a href="/javadoc/latest/index.html?org/apache/edgent/topology/plumbing/PlumbingStreams.html">PlumbingStreams.parallel()</a>!</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">SensorReading</span><span class="o">&gt;</span> <span class="n">readings</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="c1">// 3 parallel channels - i.e., can process 3 tuples simultaneously on separate theads</span>
+    <span class="n">TStream</span><span class="o">&lt;</span><span class="n">MyData</span><span class="o">&gt;</span> <span class="n">analyzed</span> <span class="o">=</span> <span class="n">PlumbingStreams</span><span class="o">.</span><span class="na">parallel</span><span class="o">(</span><span class="n">readings</span><span class="o">,</span>
+                   <span class="mi">3</span><span class="o">,</span> <span class="n">PlumbingStreams</span><span class="o">.</span><span class="na">roundRobinSplitter</span><span class="o">(),</span>
+                   <span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">channel</span><span class="o">,</span> <span class="n">output</span><span class="o">)</span> <span class="o">-&gt;</span>
+                     <span class="n">input</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="n">myExpensiveComputation</span><span class="o">(</span><span class="n">reading</span><span class="o">)));</span>
+</code></pre></div>
+<p>See <a href="/javadoc/latest/index.html?org/apache/edgent/topology/plumbing/PlumbingStreams.html">PlumbingStreams.parallelBalanced</a> for a load balanced form that will assigns
+a tuple to any idle channel.</p>
+
+<p>There are a variety of useful features in <a href="/javadoc/latest/index.html?org/apache/edgent/topology/plumbing/PlumbingStreams.html">PlumbingStreams</a>.</p>
+
+<h3 id="wrap-up">Wrap up</h3>
+
+<p>We touched on a lot, but not all, of Edgent.
+Hopefully you&#39;re convinced that the combination of Edgent&#39;s API, connectors, etc are powerful and easy to use.</p>
+
+<p>See the full <a href="/javadoc/latest">Edgent APIs Javadoc</a>
+and <a href="edgent-getting-started">Getting Started Guide</a> for more information including pointers to more introductory
+material and samples and recipies.</p>
+
+
+<div class="tags">
+    
+</div>
+
+<!-- 
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'idrbwjekyll'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ -->
+
+</div>
+
+
+
+<footer>
+    <div class="row">
+        <div class="col-lg-12 footer">
+
+             Site last
+            generated: Dec 15, 2017 <br/>
+
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="small">Apache Edgent is an effort undergoing Incubation at The Apache Software
+                Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects
+                until a further review indicates that the infrastructure, communications, and decision making process
+                have stabilized in a manner consistent with other successful ASF projects. While incubation status is
+                not necessarily a reflection of the completeness or stability of the code, it does indicate that the
+                project has yet to be fully endorsed by the ASF.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="small">Copyright © 2016 The Apache Software Foundation. Licensed under the Apache
+                License, Version 2.0.
+                Apache, the Apache Feather logo, and the Apache Incubator project logo are trademarks of The Apache
+                Software Foundation. All other marks mentioned may be trademarks or registered trademarks of their
+                respective owners.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div>
+            <img class="img-responsive center-block" src="../img/edgent_incubation.png" style="display: block; margin: auto;"alt="">
+        </div>
+    </div>
+</footer>
+
+            </div><!-- /.row -->
+
+    </div>    <!-- /.container -->
+
+</body>
+
+
+</html>
+

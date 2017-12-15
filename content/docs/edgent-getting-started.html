@@ -160,12 +160,6 @@
                         
                         
                         
-                        <li><a href="samples">Samples</a></li>
-                        
-                        
-                        
-                        
-                        
                         <li><a href="faq">FAQ</a></li>
                         
                         
@@ -315,6 +309,26 @@ window.location.href = uri;
                     
                     
                     
+                    <li><a href="../docs/home.html">Edgent Overview</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/power-of-edgent.html">The Power of Edgent</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
                     <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
@@ -342,7 +356,37 @@ window.location.href = uri;
                     
                     
                     
-                    <li class="active"><a href="../docs/edgent-getting-started.html">Getting started guide</a></li>
+                    <li class="active"><a href="../docs/edgent-getting-started.html">Getting Started Guide</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/edgent-getting-started-samples.html">Quickstart with Edgent Samples</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
                     
 
                     
@@ -510,33 +554,6 @@ window.location.href = uri;
                 
                 
             
-            <li><a href="#">Sample Programs</a>
-                <ul>
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/samples.html">Samples</a></li>
-                    
-
-                    
-
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="../docs/quickstart.html">Quickstart IBM Watson IoT Platform</a></li>
-                    
-
-                    
-
-                    
-                    
-                </ul>
-                
-                
-            
             <li><a href="#">Using the Console</a>
                 <ul>
                     
@@ -672,9 +689,23 @@ $('#toc').on('click', 'a', function() {
 <li>Reduce the amount of data that you store</li>
 </ul>
 
-<p>For more information, see the <a href="home">Edgent overview</a>.</p>
+<p>Edgent accellerates your development of applications to push data analytics and machine learning to <em>edge devices</em>. (Edge devices include things like routers, gateways, machines, equipment, sensors, appliances, or vehicles that are connected to a network.) Edgent applications process data locally&mdash;such as, in a car, on an Android phone, or on a Raspberry Pi&mdash;before it sends data over a network.</p>
 
-<h3 id="apache-edgent-and-streaming-analytics">Apache Edgent and streaming analytics</h3>
+<p>For example, if your device takes temperature readings from a sensor 1,000 times per second, it is more efficient to process the data locally and send only interesting or unexpected results over the network.</p>
+
+<p>See <a href="power-of-edgent">The Power of Edgent</a> to help you quickly start to get a sense of Edgent&#39;s capabilities.</p>
+
+<p>Releases of Edgent prior to 1.2.0 distributed Edgent and the samples differently than today.  See <a href="old-edgent-getting-started">Old Getting Started</a> if you are trying to use an older version.</p>
+
+<p>There&#39;s a lot of information available to get started with Edgent and no &quot;best order&quot; for navigating it.  See the navigation sidebar on the left hand side of this page.  In particular it is recommended that you review and visit the various items under <em>Get Started</em>.</p>
+
+<p>If you want to get a developent environment setup quickly see the <a href="edgent-getting-started-samples">Quickstart with Edgent Samples</a> item. </p>
+
+<p>The <em>Edgent Cookbook</em> topic includes many well documented recipies that are good for learning and jump-starting the development of your application.</p>
+
+<p>The rest of this page is a detailed introduction to Edgent using a simple simulated Temperature Sensor application.</p>
+
+<h2 id="apache-edgent-and-streaming-analytics">Apache Edgent and streaming analytics</h2>
 
 <p>The fundamental building block of an Edgent application is a <strong>stream</strong>: a continuous sequence of tuples (messages, events, sensor readings, and so on).</p>
 
@@ -682,87 +713,35 @@ $('#toc').on('click', 'a', function() {
 
 <p>Source streams are streams that originate data for analysis, such as readings from a device&#39;s temperature sensor.</p>
 
-<p>Streams are terminated using sink functions that can perform local device control or send information to centralized analytic systems through a message hub.</p>
+<p>Streams are terminated using sink functions that can perform local device control or send information to external services such as centralized analytic systems through a message hub.</p>
 
-<p>Edgent&#39;s primary API is functional where streams are sourced, transformed, analyzed or sinked though functions, typically represented as lambda expressions, such as <code>reading -&gt; reading &lt; 50 || reading &gt; 80</code> to filter temperature readings in Fahrenheit.</p>
+<p>Edgent&#39;s primary API is functional where streams are sourced, transformed, analyzed or sinked though functions, typically represented as Java8 lambda expressions, such as <code>reading -&gt; reading &lt; 50 || reading &gt; 80</code> to filter temperature readings in Fahrenheit.</p>
 
-<h3 id="downloading-apache-edgent">Downloading Apache Edgent</h3>
+<p>A <strong>topology</strong> is a graph of streams and their processing transformations. A <strong>provider</strong> is a factory for creating and executing topologies.</p>
 
-<p>To use Edgent, you need the Edgent JAR files, which you may obtain by completing the following steps.</p>
-
-<ol>
-<li>Locate the Edgent release you would like to use on the <a href="downloads">downloads page</a></li>
-<li>In the Bundles column for the desired release:
-
-<ul>
-<li>Click on the <em>Binary</em> link if you simply want to use Edgent. This is the easiest method is to get up and running as it contains a pre-built version of Edgent.</li>
-<li>Click on the <em>Source</em> link if you would like access to the Edgent source files. If you choose this method, you must manually build Edgent yourself.</li>
-</ul></li>
-<li>Download the .tgz file from one of the mirror sites</li>
-<li>Unpack the downloaded file: <code>tar zxvf apache-edgent-X.X.X-incubating-XXX.tgz</code></li>
-<li>Obtain the JARs
-
-<ul>
-<li>If you are using a binary bundle, then the Java 8 JARs are located in <code>edgent-X.X.X/java8</code></li>
-<li>If you are using a source bundle, build the source code:
+<p>Basic Edgent Applications follow a common structure:</p>
 
 <ol>
-<li>Install <a href="https://gradle.org/">Gradle</a> if it is not yet installed</li>
-<li>Navigate to the unpacked directory: <code>cd edgent-X.X.X-src</code></li>
-<li>Run <code>gradle</code> to initialize the Gradle wrapper</li>
-<li>Build the code and Javadoc: <code>./gradlew assemble</code></li>
-<li>The Java 8 JARs are located in <code>edgent-X.X.X-src/build/distributions/java8</code></li>
-</ol></li>
-</ul></li>
+<li>Get a provider</li>
+<li>Create the topology and compose its processing graph</li>
+<li>Submit the topology for execution</li>
 </ol>
 
-<h3 id="setting-up-your-environment">Setting up your environment</h3>
+<p>More sophisticated applications may consist of multiple topologies that may be dynamically created and started and stopped using commands from external  applications.</p>
 
-<p>Ensure that you are running a supported environment. For more information, see the <a href="home">Edgent overview</a>. This guide assumes you&#39;re running Java 8. The Edgent Java 8 JAR files are located in either the <code>edgent-X.X.X/java8</code> or <code>edgent-X.X.X-src/build/distributions/java8</code> directory, depending on whether you downloaded a binary or source bundle.</p>
-
-<ol>
-<li><p>Create a new Java project in Eclipse, and specify Java 8 as the execution environment JRE:</p>
-
-<p><img src="images/New_Java_Project.jpg"></p></li>
-<li><p>Include one or more Edgent JARs in your project&#39;s build path depending on what features your application uses:</p>
-
-<ol>
-<li>Include one or more of the topology providers:
-
-<ul>
-<li><code>java8/lib/edgent.providers.development.jar</code> (if using the <a href="/javadoc/latest/org/apache/edgent/providers/development/DevelopmentProvider.html">DevelopmentProvider</a>)</li>
-<li><code>java8/lib/edgent.providers.direct.jar</code>(if using the <a href="/javadoc/latest/org/apache/edgent/providers/direct/DirectProvider.html">DirectProvider</a>)</li>
-<li><code>java8/lib/edgent.providers.iot.jar</code> (if using the <a href="/javadoc/latest/org/apache/edgent/providers/iot/IotProvider.html">IotProvider</a>)</li>
-</ul></li>
-<li>Include the JARs for any Edgent connectors or analytic features you use in <code>java8/connectors</code> and <code>java8/analytics</code>, respectively</li>
-<li>Include the JARs for any Edgent utility features you use:
-
-<ul>
-<li><code>java8/utils/metrics/lib/edgent.utils.metrics.jar</code> (for the <a href="/javadoc/latest/org/apache/edgent/metrics/package-summary.html">org.apache.edgent.metrics</a> package)</li>
-<li><code>java8/utils/streamscope/lib/edgent.utils.streamscope.jar</code> (for the <a href="/javadoc/latest/org/apache/edgent/streamscope/package-summary.html">org.apache.edgent.streamscope</a> package)</li>
-</ul></li>
-<li>Include the JAR for the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html">java.util.logging</a> framework for <a href="https://www.slf4j.org/">SLF4J</a>: <code>java8/ext/slf4j-jdk14-X.X.X.jar</code></li>
-</ol>
-
-<p><img src="images/Build_Path_JARs.jpg"></p></li>
-</ol>
-
-<p>Your environment is set up! You can start writing your first Edgent application.</p>
-
-<h2 id="creating-a-simple-application">Creating a simple application</h2>
+<h2 id="temperature-sensor-application">Temperature Sensor Application</h2>
 
 <p>If you&#39;re new to Edgent or to writing streaming applications, the best way to get started is to write a simple program.</p>
 
-<p>Edgent is a framework that pushes data analytics and machine learning to <em>edge devices</em>. (Edge devices include things like routers, gateways, machines, equipment, sensors, appliances, or vehicles that are connected to a network.) Edgent enables you to process data locally&mdash;such as, in a car engine, on an Android phone, or on a Raspberry Pi&mdash;before you send data over a network.</p>
+<p>First we&#39;ll go over the details of the application, then we&#39;ll run it.</p>
 
-<p>For example, if your device takes temperature readings from a sensor 1,000 times per second, it is more efficient to process the data locally and send only interesting or unexpected results over the network. To simulate this, let&#39;s define a (simulated) TempSensor class:</p>
+<p>Let&#39;s create a simple Temperature Sensor Application. The application takes temperature readings from a sensor 1,000 times per second. Instead of reporting each reading, it is more efficient to process the data locally and send only interesting or unexpected results over the network.</p>
+
+<p>To simulate this, let&#39;s define a (simulated) TempSensor class:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.apache.edgent.function.Supplier</span><span class="o">;</span>
 
-<span class="cm">/**
- * Every time get() is called, TempSensor generates a temperature reading.
- */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensor</span> <span class="kd">implements</span> <span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="kt">double</span> <span class="n">currentTemp</span> <span class="o">=</span> <span class="mf">65.0</span><span class="o">;</span>
     <span class="n">Random</span> <span class="n">rand</span><span class="o">;</span>
@@ -772,7 +751,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">Double</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Double</span> <span class="n">get</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">// Change the current temperature some random amount</span>
         <span class="kt">double</span> <span class="n">newTemp</span> <span class="o">=</span> <span class="n">rand</span><span class="o">.</span><span class="na">nextGaussian</span><span class="o">()</span> <span class="o">+</span> <span class="n">currentTemp</span><span class="o">;</span>
         <span class="n">currentTemp</span> <span class="o">=</span> <span class="n">newTemp</span><span class="o">;</span>
@@ -780,9 +759,9 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
-<p>Every time you call <code>TempSensor.get()</code>, it returns a new temperature reading. The continuous temperature readings are a stream of data that an Edgent application can process.</p>
+<p>Every time <code>TempSensor.get()</code> is called, it returns a new temperature reading.</p>
 
-<p>Our sample Edgent application processes this stream by filtering the data and printing the results. Let&#39;s define a TempSensorApplication class for the application:</p>
+<p>Our application composes a topology that creates a continuous stream of temperature readings and processes this stream by filtering the data and printing the results. Let&#39;s define a TempSensorApplication class for the application:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.apache.edgent.providers.direct.DirectProvider</span><span class="o">;</span>
@@ -790,69 +769,76 @@ $('#toc').on('click', 'a', function() {
 <span class="kn">import</span> <span class="nn">org.apache.edgent.topology.Topology</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TempSensorApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
         <span class="n">TempSensor</span> <span class="n">sensor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TempSensor</span><span class="o">();</span>
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
         <span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
+
         <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">tempReadings</span> <span class="o">=</span> <span class="n">topology</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span><span class="n">sensor</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
         <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">filteredReadings</span> <span class="o">=</span> <span class="n">tempReadings</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="n">reading</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="o">||</span> <span class="n">reading</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="o">);</span>
-
         <span class="n">filteredReadings</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
+
         <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">topology</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
-<p>To understand how the application processes the stream, let&#39;s review each line.</p>
+<p>Let&#39;s review each line.</p>
 
 <h3 id="specifying-a-provider">Specifying a provider</h3>
 
-<p>Your first step when you write an Edgent application is to create a <a href="/javadoc/latest/index.html?org/apache/edgent/providers/direct/DirectProvider.html"><code>DirectProvider</code></a>:</p>
+<p>Your first step when you write an Edgent application is to create a <em>Provider</em>.  In this case we&#39;re using a <a href="/javadoc/latest/index.html?org/apache/edgent/providers/direct/DirectProvider.html">DirectProvider</a>:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
 </code></pre></div>
-<p>A <code>Provider</code> is an object that contains information on how and where your Edgent application will run. A <code>DirectProvider</code> is a type of Provider that runs your application directly within the current virtual machine when its <a href="/javadoc/latest/org/apache/edgent/providers/direct/DirectProvider.html#submit-org.apache.edgent.topology.Topology-"><code>submit()</code></a> method is called.</p>
+<p>A <code>Provider</code> is an object that contains information on how and where your Edgent application will run. A <code>DirectProvider</code> is a type of Provider that runs your application directly within the current virtual machine when its <a href="/javadoc/latest/org/apache/edgent/providers/direct/DirectProvider.html#submit-org.apache.edgent.topology.Topology-">submit()</a> method is called.</p>
+
+<p>The <a href="/javadoc/latest/index.html?org/apache/edgent/providers/iot/IotProvider.html">IotProvider</a> is an alternative that offers very useful and powerful capabilities.</p>
 
 <h3 id="creating-a-topology">Creating a topology</h3>
 
-<p>Additionally, a Provider is used to create a <a href="/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html"><code>Topology</code></a> instance:</p>
+<p>The Provider is used to create a <a href="/javadoc/latest/index.html?org/apache/edgent/topology/Topology.html">Topology</a> instance:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 </code></pre></div>
-<p>In Edgent, <code>Topology</code> is a container that describes the structure of your application:</p>
+<p>In Edgent, <code>Topology</code> is a container that describes the structure of your processing graph:</p>
 
 <ul>
 <li>Where the streams in the application come from</li>
 <li>How the data in the stream is modified</li>
 </ul>
 
-<p>In the TempSensorApplication class above, we have exactly one data source: the <code>TempSensor</code> object. We define the source stream by calling <a href="/javadoc/latest/org/apache/edgent/topology/Topology.html#poll-org.apache.edgent.function.Supplier-long-java.util.concurrent.TimeUnit-"><code>topology.poll()</code></a>, which takes both a <a href="/javadoc/latest/index.html?org/apache/edgent/function/Supplier.html"><code>Supplier</code></a> function and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:</p>
+<p>Our application then composes the topology&#39;s progessing graph.</p>
+
+<h3 id="creating-a-source-tstream">Creating a source <code>TStream</code></h3>
+
+<p>In the <code>TempSensorApplication</code> class above, we have exactly one data source: the <code>TempSensor</code> object. We define the source stream by calling <a href="/javadoc/latest/org/apache/edgent/topology/Topology.html#poll-org.apache.edgent.function.Supplier-long-java.util.concurrent.TimeUnit-">topology.poll()</a>, which takes both a <a href="/javadoc/latest/index.html?org/apache/edgent/function/Supplier.html">Supplier</a> function and a time parameter to indicate how frequently readings should be taken. In our case, we read from the sensor every millisecond:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">tempReadings</span> <span class="o">=</span> <span class="n">topology</span><span class="o">.</span><span class="na">poll</span><span class="o">(</span><span class="n">sensor</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
 </code></pre></div>
-<h3 id="defining-the-tstream-object">Defining the <code>TStream</code> object</h3>
+<p>Calling <code>topology.poll()</code> to define a source stream creates a <code>TStream&lt;Double&gt;</code> instance (because <code>TempSensor.get()</code> returns a <code>Double</code>), which represents the series of readings taken from the temperature sensor.</p>
 
-<p>Calling <code>topology.poll()</code> to define a source stream creates a <code>TStream&lt;Double&gt;</code> instance, which represents the series of readings taken from the temperature sensor.</p>
-
-<p>A streaming application can run indefinitely, so the <a href="/javadoc/latest/index.html?org/apache/edgent/topology/TStream.html"><code>TStream</code></a> might see an arbitrarily large number of readings pass through it. Because a <code>TStream</code> represents the flow of your data, it supports a number of operations which allow you to modify your data.</p>
+<p>A streaming application can run indefinitely, so the <a href="/javadoc/latest/index.html?org/apache/edgent/topology/TStream.html">TStream</a> might see an arbitrarily large number of readings pass through it. Because a <code>TStream</code> represents the flow of your data, it supports a number of operations which allow you to modify your data.</p>
 
 <h3 id="filtering-a-tstream">Filtering a <code>TStream</code></h3>
 
-<p>In our example, we want to filter the stream of temperature readings, and remove any &quot;uninteresting&quot; or expected readings&mdash;specifically readings which are above 50 degrees and below 80 degrees. To do this, we call the <code>TStream</code>&#39;s <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#filter-org.apache.edgent.function.Predicate-"><code>filter</code></a> method and pass in a function that returns <em>true</em> if the data is interesting and <em>false</em> if the data is uninteresting:</p>
+<p>In our example, we want to filter the stream of temperature readings, and remove any &quot;uninteresting&quot; or expected readings&mdash;specifically readings which are above 50 degrees and below 80 degrees. To do this, we call the <code>TStream</code>&#39;s <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#filter-org.apache.edgent.function.Predicate-">filter</a> method and pass in a function that returns <em>true</em> if the data is interesting and <em>false</em> if the data is uninteresting:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">filteredReadings</span> <span class="o">=</span> <span class="n">tempReadings</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">reading</span> <span class="o">-&gt;</span> <span class="n">reading</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="o">||</span> <span class="n">reading</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="o">);</span>
 </code></pre></div>
-<p>As you can see, the function that is passed to <code>filter</code> operates on each tuple individually. Unlike data streaming frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, which operate on a collection of data in batch mode, Edgent achieves low latency processing by manipulating each piece of data as soon as it becomes available. Filtering a <code>TStream</code> produces another <code>TStream</code> that contains only the filtered tuples; for example, the <code>filteredReadings</code> stream.</p>
+<p>As you can see, the function that is passed to <code>filter</code> operates on each tuple individually. Unlike data streaming frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, which operate on a collection of data in batch mode, Edgent achieves low latency processing by manipulating each piece of data as soon as it becomes available. Filtering a <code>TStream</code> produces another <code>TStream</code> that contains only the filtered tuples; in this case, the <code>filteredReadings</code> stream.</p>
 
 <h3 id="printing-to-output">Printing to output</h3>
 
-<p>When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#print--"><code>TStream.print()</code></a> method, which prints using  <code>.toString()</code> on each tuple that passes through the stream:</p>
+<p>When our application detects interesting data (data outside of the expected parameters), we want to print results. You can do this by calling the <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#print--">TStream.print()</a> method, which prints using  <code>.toString()</code> on each tuple that passes through the stream:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">filteredReadings</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
 </code></pre></div>
 <p>Unlike <code>TStream.filter()</code>, <code>TStream.print()</code> does not produce another <code>TStream</code>. This is because <code>TStream.print()</code> is a <strong>sink</strong>, which represents the terminus of a stream.</p>
 
-<p>In addition to <code>TStream.print()</code> there are other sink operations that send tuples to an MQTT server, JDBC connection, file, or Kafka cluster. Additionally, you can define your own sink by invoking <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#sink-org.apache.edgent.function.Consumer-"><code>TStream.sink()</code></a> and passing in your own function.</p>
+<p>A real application typically publishes results to an MQTT server, IoT Hub, Kafka cluster, file, JDBC connection, or other external system. Edgent comes easy to use connectors for these. See the <em>connectors</em> samples, <a href="/javadoc/latest">Edgent Javadoc</a>, and <em>Edgent Cookbook</em> for more information.</p>
 
-<h3 id="submitting-your-application">Submitting your application</h3>
+<p>You can define your own sink by invoking <a href="/javadoc/latest/org/apache/edgent/topology/TStream.html#sink-org.apache.edgent.function.Consumer-">TStream.sink()</a> and passing in your own function.</p>
 
-<p>Now that your application has been completely declared, the final step is to run your application.</p>
+<h3 id="submitting-your-topology">Submitting your topology</h3>
 
-<p><code>DirectProvider</code> contains a <code>submit()</code> method, which runs your application directly within the current virtual machine:</p>
+<p>Now that your topology / processing graph has been completely declared, the final step is to run it.</p>
+
+<p><code>DirectProvider</code> contains a <code>submit()</code> method, which runs a topology directly within the current virtual machine:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">topology</span><span class="o">);</span>
 </code></pre></div>
 <p>After you run your program, you should see output containing only &quot;interesting&quot; data coming from your sensor:</p>
@@ -865,17 +851,84 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <p>As you can see, all temperatures are outside the 50-80 degree range. In terms of a real-world application, this would prevent a device from sending superfluous data over a network, thereby reducing communication costs.</p>
 
-<h2 id="further-examples">Further examples</h2>
+<h3 id="building-and-running">Building and Running</h3>
 
-<p>This example demonstrates a small piece of Edgent&#39;s functionality. Edgent supports more complicated topologies, such as topologies that require merging and splitting data streams, or perform operations which aggregate the last <em>N</em> seconds of data (for example, calculating a moving average).</p>
+<p>Its easiest to use the Edgent Samples Source release to get started.</p>
 
-<p>For more complex examples, see:</p>
+<p>If you just want to see this application in action, it&#39;s one of the provided samples!</p>
+
+<p>Go to <a href="edgent-getting-started-samples">Getting Started with Samples</a> to get and build the samples.</p>
+
+<p>Then you can run this application from the command line:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">cd</span> &lt;the-unpacked-samples-root-folder&gt;
+<span class="nb">cd </span>topology; ./run-sample.sh TempSensorApplication
+  46.59272336309031
+  46.681544551652934
+  ...
+^C to terminate it
+</code></pre></div>
+<p>If you setup an Eclipse workspace with the samples, you can run the application from Eclipse:</p>
+
+<ol>
+<li>From the Eclipse <em>Navigate</em> menu, select <em>Open Type</em>
 
 <ul>
-<li><a href="samples">Edgent sample programs</a></li>
-<li><a href="streaming-concepts">Stream processing concepts</a></li>
-<li><a href="common-edgent-operations">Common Edgent operations</a></li>
+<li>enter type type name <code>TempSensorApplication</code> and click <em>OK</em></li>
+</ul></li>
+<li>right click on the <code>TempSensorApplication</code> class name and from the context menu
+
+<ul>
+<li>click on <em>Run As</em>, then <em>Java application</em>.<br>
+<code>TempSensorApplication</code> runs and prints to the Console view.
+Click on the <code>terminate</code> control in the Console view to stop the application.</li>
+</ul></li>
+</ol>
+
+<h3 id="creating-your-own-project">Creating your own project</h3>
+
+<p>In this flow we&#39;ll take you though creating a new project for this application.
+Its easiest to use the <code>template</code> project in the Edgent Samples to get started.</p>
+
+<p>Go to <a href="edgent-getting-started-samples">Getting Started with Samples</a> and follow the steps to</p>
+
+<ul>
+<li>do the general samples setup</li>
+<li>clone the <code>template</code> project to use for this application</li>
 </ul>
+
+<p>Then create the <code>TempSensor.java</code> and <code>TempSensorApplication.java</code> files in the project, copying in the above code.</p>
+
+<p>To build and run from the command line, see the new project&#39;s README.md (copied in from the template).
+In the project&#39;s folder (adjust the package name below if appropriate)</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">./mvnw clean package
+./app-run.sh --main com.mycompany.app.TempSensorApplication
+  46.59272336309031
+  46.681544551652934
+  ...
+^C to terminate it
+</code></pre></div>
+<p>If you setup the cloned template in an Eclipse workspace:</p>
+
+<ol>
+<li>From the Eclipse <em>Navigate</em> menu, select <em>Open Type</em>
+
+<ul>
+<li>enter type type name <code>TempSensorApplication</code> and click <em>OK</em></li>
+</ul></li>
+<li>right click on the <code>TempSensorApplication</code> class name and from the context menu
+
+<ul>
+<li>click on <em>Run As</em>, then <em>Java application</em>.<br>
+<code>TempSensorApplication</code> runs and prints to the Console view.
+Click on the <code>terminate</code> control in the Console view to stop the application.</li>
+</ul></li>
+</ol>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>This introduction demonstrates a small piece of Edgent&#39;s functionality. Edgent supports more complicated topologies, such as topologies that require merging and splitting data streams, or perform operations which aggregate the last <em>N</em> seconds of data (for example, calculating a moving average). Typically your application will want to publish to an IoT hub and be controlled by applications in a data center.</p>
+
+<p>There are many more useful resources under the <em>Get Started</em> and <em>Edgent Cookbook</em> topics in the navigation sidebar on the left hand side of this page.</p>
 
 
 <div class="tags">
@@ -908,7 +961,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: May 15, 2017 <br/>
+            generated: Dec 15, 2017 <br/>
 
         </div>
     </div>

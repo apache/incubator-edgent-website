@@ -32,6 +32,16 @@
                         
                      
                          
+                            http://edgent.incubator.apache.org/docs/home.html
+                                  
+                        
+                     
+                         
+                            http://edgent.incubator.apache.org/docs/power-of-edgent.html
+                                  
+                        
+                     
+                         
                             http://edgent.incubator.apache.org/docs/faq.html
                                   
                         
@@ -47,6 +57,21 @@
                      
                          
                             http://edgent.incubator.apache.org/docs/edgent-getting-started.html
+                                  
+                        
+                     
+                         
+                            http://edgent.incubator.apache.org/docs/edgent-getting-started-samples.html
+                                  
+                        
+                     
+                         
+                            http://edgent.incubator.apache.org/docs/application-development.html
+                                  
+                        
+                     
+                         
+                            http://edgent.incubator.apache.org/docs/quickstart.html
                                   
                         
                      
@@ -126,20 +151,6 @@
                      
                          
                             http://edgent.incubator.apache.org/recipes/recipe_writing_a_connector.html
-                                  
-                        
-                     
-              
-          
-              
-                      
-                         
-                            http://edgent.incubator.apache.org/docs/samples.html
-                                  
-                        
-                     
-                         
-                            http://edgent.incubator.apache.org/docs/quickstart.html
                                   
                         
                      

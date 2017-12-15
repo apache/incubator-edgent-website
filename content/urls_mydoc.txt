@@ -25,6 +25,20 @@
 
 
  
+/docs/home:
+  title: "Edgent Overview"
+  url: "../docs/home.html"
+  link: "<a href='../docs/home.html'>Edgent Overview</a>"
+
+
+ 
+/docs/power-of-edgent:
+  title: "The Power of Edgent"
+  url: "../docs/power-of-edgent.html"
+  link: "<a href='../docs/power-of-edgent.html'>The Power of Edgent</a>"
+
+
+ 
 /docs/faq:
   title: "FAQ"
   url: "../docs/faq.html"
@@ -42,9 +56,30 @@
 
  
 /docs/edgent-getting-started:
-  title: "Getting started guide"
+  title: "Getting Started Guide"
   url: "../docs/edgent-getting-started.html"
-  link: "<a href='../docs/edgent-getting-started.html'>Getting started guide</a>"
+  link: "<a href='../docs/edgent-getting-started.html'>Getting Started Guide</a>"
+
+
+ 
+/docs/edgent-getting-started-samples:
+  title: "Quickstart with Edgent Samples"
+  url: "../docs/edgent-getting-started-samples.html"
+  link: "<a href='../docs/edgent-getting-started-samples.html'>Quickstart with Edgent Samples</a>"
+
+
+ 
+/docs/application-development:
+  title: "Understanding App Development"
+  url: "../docs/application-development.html"
+  link: "<a href='../docs/application-development.html'>Understanding App Development</a>"
+
+
+ 
+/docs/quickstart:
+  title: "Quickstart IBM Watson IoT Platform"
+  url: "../docs/quickstart.html"
+  link: "<a href='../docs/quickstart.html'>Quickstart IBM Watson IoT Platform</a>"
 
 
  
@@ -157,22 +192,6 @@
 
 
  
-/docs/samples:
-  title: "Samples"
-  url: "../docs/samples.html"
-  link: "<a href='../docs/samples.html'>Samples</a>"
-
-
- 
-/docs/quickstart:
-  title: "Quickstart IBM Watson IoT Platform"
-  url: "../docs/quickstart.html"
-  link: "<a href='../docs/quickstart.html'>Quickstart IBM Watson IoT Platform</a>"
-
-
-
-
- 
 /docs/console:
   title: "Using the console"
   url: "../docs/console.html"
@@ -209,13 +228,6 @@ downloads:
   title: "Download"
   url: "..downloads"
   link: "<a href='..downloads'>Download</a>"
-
-
-
-samples:
-  title: "Samples"
-  url: "..samples"
-  link: "<a href='..samples'>Samples</a>"
 
 
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>FAQ  | Apache Edgent Documentation</title>
+<title>Edgent Application Development, Packaging and Execution.  | Apache Edgent Documentation</title>
 <link rel="stylesheet" type="text/css" href="../css/syntax.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">-->
@@ -160,7 +160,7 @@
                         
                         
                         
-                        <li class="dropdownActive"><a href="faq">FAQ</a></li>
+                        <li><a href="faq">FAQ</a></li>
                         
                         
                         
@@ -185,7 +185,7 @@
 <script>
 function SendLinkByMail(href) {
 var subject= "Apache Edgent Documentation feedback";
-var body = "I have some feedback about the FAQ page: ";
+var body = "I have some feedback about the Edgent Application Development, Packaging and Execution. page: ";
 body += window.location.href;
 body += "";
 var uri = "mailto:?subject=";
@@ -212,7 +212,7 @@ window.location.href = uri;
                             searchInput: document.getElementById('search-input'),
                             resultsContainer: document.getElementById('results-container'),
                             dataSource: '../search.json',
-                            searchResultTemplate: '<li><a href="{url}" title="FAQ">{title}</a></li>',
+                            searchResultTemplate: '<li><a href="{url}" title="Edgent Application Development, Packaging and Execution.">{title}</a></li>',
                         noResultsText: 'No results found.',
                                 limit: 10,
                                 fuzzy: true,
@@ -329,7 +329,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li class="active"><a href="../docs/faq.html">FAQ</a></li>
+                    <li><a href="../docs/faq.html">FAQ</a></li>
                     
 
                     
@@ -376,7 +376,7 @@ window.location.href = uri;
                     
                     
                     
-                    <li><a href="../docs/application-development.html">Understanding App Development</a></li>
+                    <li class="active"><a href="../docs/application-development.html">Understanding App Development</a></li>
                     
 
                     
@@ -646,7 +646,7 @@ $('#toc').on('click', 'a', function() {
             <div class="col-md-9">
                 
                 <div class="post-header">
-   <h1 class="post-title-main">FAQ</h1>
+   <h1 class="post-title-main">Edgent Application Development, Packaging and Execution.</h1>
 </div>
 
 <div class="post-content">
@@ -678,115 +678,175 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/faq.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/apache/incubator-edgent-website/blob/master/site/docs/application-development.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
     
-  <h2 id="what-is-apache-edgent">What is Apache Edgent?</h2>
+  <p>To develop Edgent applications you will utilize the 
+Edgent SDK/runtime jars and package your application
+artifacts for deploying to an edge device or gateway for execution.</p>
 
-<p>Edgent provides APIs and a lightweight runtime enabling you to easily create event-driven flow-graph style applications to analyze streaming data at the edge.
- Check out <a href="power-of-edgent">The Power of Edgent</a> to help you guickly gain an appreciation of how Edgent can help you.</p>
+<p>The Edgent SDK/runtime jars are published to the 
+<a href="https://repository.apache.org/content/repositories/releases/">ASF Nexus Releases Repository</a>
+and the Maven Central Repository.
+Alternatively, you can build the Edgent SDK yourself from a source release
+and the resulting jars will be added to your local maven repository.</p>
 
-<h2 id="what-do-you-mean-by-the-edge">What do you mean by the edge?</h2>
+<p>There are a set of Edgent jars for each supported platform: java8, java7, and android.
+The maven artifact groupIds for the Edgent jars are:</p>
 
-<p>The edge includes devices, gateways, equipment, vehicles, systems, appliances and sensors of all kinds as part of the Internet of Things.</p>
+<ul>
+<li><code>org.apache.edgent</code>  - for java8,</li>
+<li><code>org.apache.edgent.java7</code></li>
+<li><code>org.apache.edgent.android</code></li>
+</ul>
 
-<p>It&#39;s easy for for Edgent applications to connect to other entities such as an enterprise IoT hub.</p>
+<p>Note, the Java package names for Edgent components do not incorporate
+the platform kind; the package names are the same regardless of the platform.</p>
 
-<p>While Edgent&#39;s design center is executing on constrained edge devices, Edgent applications can run on any system meeting minimal requirements such as a Java runtime.</p>
+<p>See the release&#39;s <code>JAVA_SUPPORT</code> information in <a href="downloads">downloads</a>
+for more information on artifact coordinates, etc.</p>
 
-<h2 id="how-are-applications-developed">How are applications developed?</h2>
+<h2 id="writing-your-application">Writing Your Application</h2>
 
-<p>Applications are developed using a functional flow API to define operations on data streams that are executed as a flow graph in a lightweight embeddable runtime. Edgent provides capabilities like windowing, aggregation and connectors with an extensible model for the community to expand its capabilities. Check out <a href="power-of-edgent">The Power of Edgent</a>!</p>
+<p>The Edgent API is most easily used by using Java8 lambda expressions.
+If you only want to deploy your Edgent application to a java8 environment
+then your application may use any java8 features it chooses.  You compile
+and run against the Edgent java8 jars.</p>
 
-<p>You can develop Edgent applications using an IDE of your choice. </p>
+<p>If you want to deploy your Edgent application to a java7 or android
+environment, it&#39;s still easiest to write your application using the Edgent APIs
+with java8 lambda expressions.  You compile with java8 but constrain 
+your application to using java7 features plus java8 lambda expressions.
+The Retrolambda tool is used to convert your application&#39;s generated 
+class files to java7.
+The Edgent java7 and android platform jars were created in that manner too.
+Your application would then be run against the appropriate
+Edgent platform jars. </p>
 
-<p>Generally, mechanisms for deploying an Edgent application to a device are beyond the scope of Edgent; they are often device specific or may be defined by an enterprise IoT system.  To deploy an Edgent application to a device like a Raspberry Pi, you could just FTP the application to the device and modify the device to start the application upon startup or on command.   See <a href="application-development">Edgent application Development</a>.</p>
+<p>Alternatively you can forgo the use of lambda
+expressions and write your application in java7 and compile
+and run against the appropriate Edgent platform jars.</p>
 
-<h2 id="what-environments-does-apache-edgent-support">What environments does Apache Edgent support?</h2>
+<p>For convenience it&#39;s easiest to build your Edgent application using 
+maven-repository-enabled build tooling (e.g., maven, maven-enabled
+Eclipse or IntelliJ).  The tooling transparently downloads the 
+required Edgent jars from the maven repository if they aren&#39;t
+already present in your local maven repository.</p>
 
-<p>Currently, Edgent provides APIs and runtime for Java and Android. Support for additional languages, such as Python, is likely as more developers get involved. Please consider joining the Edgent open source development community to accelerate the contributions of additional APIs.</p>
+<h3 id="edgent-application-template">Edgent Application Template</h3>
 
-<h2 id="what-type-of-analytics-can-be-done-with-apache-edgent">What type of analytics can be done with Apache Edgent?</h2>
+<p>You can clone the <code>template</code> project as a starting point for your
+Edgent application. See <a href="edgent-getting-started-samples">Quickstart with Edgent Samples</a>
+for information about the template sample.</p>
 
-<p>The core Edgent APIs make it easy to incorporate any analytics you want into the stream processing graph. It&#39;s trivial to create windows and trigger aggregation functions you supply. It&#39;s trivial to specify whatever filtering and transformation functions you want to supply. The functions you supply can use existing libraries.</p>
+<p>TODO: we would like to provide a maven Edgent Application archetype
+that users can use to create an application project template.</p>
 
-<p>Edgent comes with some initial analytics for aggregation and filtering that you may find useful. It uses Apache Common Math to provide simple analytics aimed at device sensors. In the future, Edgent will include more analytics, either exposing more functionality from Apache Common Math, other libraries or hand-coded analytics.</p>
+<h3 id="using-non-maven-integrated-tooling">Using Non-maven-integrated Tooling</h3>
 
-<h2 id="what-connectors-does-apache-edgent-support">What connectors does Apache Edgent support?</h2>
+<p>If you can&#39;t or don&#39;t want to use maven-repository-enabled tooling
+you will need to get a local copy of the Edgent jars and their
+dependencies and add them to your compile classpath.  This case
+is covered in subsequent sections.</p>
 
-<p>Edgent provides easy to use connectors for MQTT, HTTP, JDBC, File, Apache Kafka and IBM Watson IoT Platform. Edgent is extensible; you can create connectors.  You can easily supply any code you want for ingesting data from and sinking data to external systems.  See <a href="https://issues.apache.org/jira/browse/EDGENT-368">EDGENT-368</a> for a full code sample of publishing to Elasticsearch.</p>
+<h2 id="packaging-and-execution">Packaging and Execution</h2>
 
-<h2 id="does-edgent-have-a-sensor-library">Does Edgent have a Sensor Library?</h2>
+<p>Edgent doesn&#39;t provide any &quot;deployment&quot; mechanisms other than its primitive
+&quot;register jar&quot; feature (see the <code>IotProvider</code> javadoc).  Generally, managing
+the deployment of application and Edgent jars to edge devices is left to 
+others (as an example, the IBM Watson IoT Platform has device APIs to
+support &quot;firmware&quot; download/update).</p>
 
-<p>No, Edgent does not come with a library for accessing a device&#39;s sensors.  The simplicity with which an Edgent application can poll or otherwise use existing APIs for reading a sensor value make such a library unnecessary.</p>
+<p>To deploy an Edgent application to a device like a Raspberry Pi, 
+you could just FTP the application to the device and modify the
+device to start the application upon startup or on command.
+Also see the <code>cron</code> folder in the Edgent samples.</p>
 
-<h2 id="what-centralized-streaming-analytic-systems-does-apache-edgent-support">What centralized streaming analytic systems does Apache Edgent support?</h2>
+<p>To run your Edgent application on an edge device, your application
+jar(s) need to be on the device.  Additionally, the application&#39;s 
+dependent Edgent jars (and their transitive dependencies) need to
+be on the device.  It&#39;s unlikely the device will be able to retrieve
+the dependencies directly from a remote maven repository such as
+maven central.</p>
 
-<p>Edgent applications can publish and subscribe to message systems like MQTT or Kafka, or IoT Hubs like IBM Watson IoT Platform.  Centralized streaming analytic systems can do likewise to then consume Edgent application events and data, as well as control an Edgent application.  The centralized streaming analytic system could be Apache Spark, Apache Storm, Flink and Samza, IBM Streams (on-premises or IBM Streaming Analytics on Bluemix), or any custom application of your choice.</p>
+<p>Here are three options for dealing with this.</p>
 
-<h2 id="is-there-a-distributed-version-of-edgent">Is there a distributed version of Edgent?</h2>
+<h3 id="option-1-create-an-uber-jar-for-your-application">Option 1: Create an uber-jar for your application</h3>
 
-<p>The short answer is that a single Edgent application&#39;s topologies all run in the same local JVM.  </p>
+<p>The uber jar is a standalone entity containing
+everything that&#39;s needed to run your application.</p>
 
-<p>But sometimes this question is really asking &quot;Can separate Edgent topologies communicate with each other?&quot; and the answer to that is YES!</p>
+<p>The uber jar contains the application&#39;s classes and
+the application&#39;s dependent Edgent classes and their
+transitive dependencies.</p>
 
-<p>Today, multiple topologies in a single Edgent application/JVM can communicate using the Edgent PublishSubscribe connector, or any other shared resource you choose to use (e.g., a java.util.concurrent.BlockingQueue).</p>
+<p>The template project&#39;s pom and
+the Edgent samples poms contain configuration information
+that generates an uber jar in addition to the standard
+application jar.  Eclipse can also export an uber jar.</p>
 
-<p>Edgent topologies in separate JVM&#39;s, or the same JVM, can communicate with each other by using existing connectors to a local or remote MQTT server for example.</p>
+<p>You run your application like:
+    <code>java -cp &lt;path-to-uber-jar&gt; &lt;full-classname-of-main-class&gt;</code></p>
 
-<h2 id="why-do-i-need-apache-edgent-on-the-edge-rather-than-my-streaming-analytic-system">Why do I need Apache Edgent on the edge, rather than my streaming analytic system?</h2>
+<h3 id="option-2-separately-manage-the-application-and-edgent-jars">Option 2: Separately manage the application and Edgent jars</h3>
 
-<p>Edgent is designed for the edge. It has a small footprint, suitable for running on constrained devices. Edgent applications can analyze data on the edge and to only send to the centralized system if there is a need, reducing communication costs.</p>
+<p>Copy the application&#39;s jars to the device.
+Get a copy of the Edgent jars and their dependencies
+onto the device. It&#39;s possible for multiple Edgent
+applications to share the Edgent jars.</p>
 
-<h2 id="why-do-i-need-apache-edgent-rather-than-coding-the-complete-application-myself">Why do I need Apache Edgent, rather than coding the complete application myself?</h2>
+<p>The Apache Edgent project does not release a
+binary bundle containing all of the Edgent jars
+and their dependencies.  The binary artifacts
+are only released to maven central.</p>
 
-<p>Edgent is designed to accelerate your development of edge analytic applications - to make you more productive! Edgent provides a simple yet powerful consistent data model (streams and windows) and provides useful functionality, such as aggregations, joins, and connectors. Using Edgent lets you to take advantage of this functionality, allowing you to focus on your application needs.  </p>
+<p>See <code>get-edgent-jars-project/README.md</code> in the Edgent samples 
+for a tool to get a copy of the Edgent jars.</p>
 
-<p>Check out <a href="power-of-edgent">The Power of Edgent</a> to get a better appreciation of how Edgent can help you.</p>
+<h3 id="option-3-create-an-application-package-bundle">Option 3: Create an application package bundle</h3>
 
-<h2 id="where-can-i-download-apache-edgent">Where can I download Apache Edgent?</h2>
+<p>The bundle is a standalone entity containing
+everything that&#39;s needed to run your application.</p>
 
-<p>Releases include Edgent samples source code and Edgent API and runtime source code.  Convenience binaries are released to Maven Central.  The source code is also available on GitHub.  The <a href="downloads">downloads</a> page has all of the details.</p>
+<p>The bundle is copied to the device and unpacked.
+A run script forms the appropriate <code>CLASSPATH</code>
+to the package&#39;s jars and starts the application.</p>
 
-<h2 id="how-do-i-get-started">How do I get started?</h2>
+<p>The <code>package-app.sh</code> script included with the
+Edgent samples creates an application bundle.</p>
 
-<p>Getting started is simple. See <a href="edgent-getting-started-samples">Quickstart with Edgent Samples</a> to jump right in or see the <a href="edgent-getting-started">Getting Started Guide</a> if you prefer a bit of an introduction and tutorial first.</p>
+<p>The application bundle contains the application&#39;s jar,
+the application&#39;s dependent Edgent jars (as specified in
+the application&#39;s pom) and the Edgent jars&#39; dependencies,
+and a run-app.sh script.</p>
 
-<h2 id="how-can-i-get-involved">How can I get involved?</h2>
+<p>The application&#39;s dependent Edgent runtime jars and 
+their dependencies are retrieved from a local or remote
+maven repository.</p>
 
-<p>We would love to have your help! Visit <a href="community">Get Involved</a> to learn more about how to get involved.</p>
+<p>If the application&#39;s execution environment is
+java7 or android, use the appropriate script options
+to retrieve the appropriate Edgent platform jars for
+execution.</p>
 
-<h2 id="how-can-i-contribute-code">How can I contribute code?</h2>
+<p>The generated run-app.sh script configures the CLASSPATH
+and runs the application.</p>
 
-<p>Just submit a <a href="https://github.com/apache/incubator-edgent/pulls">pull request</a> and wait for a committer to review. For more information, visit our <a href="committers">committer page</a> and read <a href="https://github.com/apache/incubator-edgent/blob/master/DEVELOPMENT.md">DEVELOPMENT.md</a> at the top of the code tree.</p>
-
-<h2 id="can-i-become-a-committer">Can I become a committer?</h2>
-
-<p>Read about Edgent committers and how to become a committer <a href="committers">here</a>.</p>
-
-<h2 id="can-i-take-a-copy-of-the-code-and-fork-it-for-my-own-use">Can I take a copy of the code and fork it for my own use?</h2>
-
-<p>Yes. Edgent is available under the Apache 2.0 license which allows you to fork the code. We hope you will contribute your changes back to the Edgent community.</p>
-
-<h2 id="how-do-i-suggest-new-features">How do I suggest new features?</h2>
-
-<p>Click <a href="https://issues.apache.org/jira/browse/EDGENT">Issues</a> to submit requests for new features. You may browse or query the Issues database to see what other members of the Edgent community have already requested.</p>
-
-<h2 id="how-do-i-submit-bug-reports">How do I submit bug reports?</h2>
-
-<p>Click <a href="https://issues.apache.org/jira/browse/EDGENT">Issues</a> to submit a bug report.</p>
-
-<h2 id="how-do-i-ask-questions-about-apache-edgent">How do I ask questions about Apache Edgent?</h2>
-
-<p>Use the <a href="mailto:dev@edgent.incubator.apache.org">dev list</a> to submit questions to the Edgent community.</p>
-
-<h2 id="why-is-apache-edgent-open-source">Why is Apache Edgent open source?</h2>
-
-<p>With the growth of the Internet of Things there is a need to execute analytics at the edge. Edgent was developed to address requirements for analytics at the edge for IoT use cases that were not addressed by central analytic solutions. These capabilities will be useful to many organizations and that the diverse nature of edge devices and use cases is best addressed by an open community. Our goal is to develop a vibrant community of developers and users to expand the capabilities and real-world use of Edgent by companies and individuals to enable edge analytics and further innovation for the IoT space.</p>
-
-<h2 id="i-see-references-to-quot-quarks-quot-how-does-it-relate-to-apache-edgent">I see references to &quot;Quarks.&quot; How does it relate to Apache Edgent?</h2>
-
-<p>Up until July 2016, Edgent was known as Quarks. Quarks was renamed due to the name not being unique enough.</p>
-
+<p>E.g.,</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">cd </span>MyApp <span class="c"># the application's project directory</span>
+package-app.sh --mainClass com.mycompany.app.MyApp --appjar target/my-app-1.0-SNAPSHOT.jar
+<span class="c">##### get the app specific dependencies...</span>
+...
+<span class="c">##### create target/app-run.sh...</span>
+<span class="c">##### create target/app-pkg.tar...</span>
+<span class="c">##### Copy target/app-pkg.tar to the destination system"</span>
+<span class="c">##### To run the app:"</span>
+<span class="c">#####     mkdir app-pkg"</span>
+<span class="c">#####     tar xf app-pkg.tar -C app-pkg"</span>
+<span class="c">#####     (cd app-pkg; ./app-run.sh)"</span>
+</code></pre></div>
+<p>For more usage information:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">./package-app.sh -h
+</code></pre></div>
 
 <div class="tags">
     
