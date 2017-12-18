@@ -68,6 +68,14 @@ javadoc_dropdowns:
           version: all
           output: web
 
+        - title: 1.2.0
+          url: /..\/javadoc\/r1.2.0
+          audience: writers, designers
+          platform: all
+          product: all
+          version: all
+          output: web
+
         - title: 1.1.0
           url: /..\/javadoc\/r1.1.0
           audience: writers, designers
