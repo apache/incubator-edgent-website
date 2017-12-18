@@ -37,7 +37,7 @@ disqus_shortname: idrbwjekyll
 # variables
 
 sidebar_tagline: Edgent
-sidebar_version: Version 1.1.0-incubating
+sidebar_version: Version 1.2.0-incubating
 theme_file: theme-blue.css
 
 # the algolia entries here are experimental only.
