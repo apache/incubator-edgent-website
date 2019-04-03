@@ -706,7 +706,7 @@ and information about full samples and recipies.</p>
 <p>Let&#39;s start with a complete application that periodically samples a sensor
 and publishes its values to an Enterprise IoT Hub in less than 10 lines of code</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ImpressiveEdgentExample</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">DirectProvider</span> <span class="n">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DirectProvider</span><span class="o">();</span>
     <span class="n">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="na">newTopology</span><span class="o">();</span>
 
@@ -779,7 +779,7 @@ want to pub/sub to an MQTT server?  No worries! Use the <a href="/javadoc/latest
 <p>There&#39;s a <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/jdbc/JdbcStreams.html">JdbcStreams</a> connector too.</p>
 
 <p>Want to sink a <code>TStream</code> to rolling text files?  Use the <a href="/javadoc/latest/index.html?org/apache/edgent/connectors/file/FileStreams.html">FileStreams</a> connector.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="k">new</span> <span class="nf">File</span><span class="p">(</span><span class="s">"/tmp/MY-DEMO-FILES"</span><span class="o">).</span><span class="na">mkdir</span><span class="o">();</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"/tmp/MY-DEMO-FILES"</span><span class="o">).</span><span class="na">mkdir</span><span class="o">();</span>
     <span class="n">FileStreams</span><span class="o">.</span><span class="na">textFileWriter</span><span class="o">(</span><span class="n">events</span><span class="o">.</span><span class="na">asString</span><span class="o">(),</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="s">"/tmp/MY-DEMO-FILES/READINGS"</span><span class="o">);</span>
 
     <span class="c1">// tail -f /tmp/MY-DEMO-FILES/.READINGS</span>
@@ -841,7 +841,7 @@ That&#39;s just one of the methods defined in <a href="/javadoc/latest/index.htm
 <div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">SensorReading</span> <span class="o">{</span>
         <span class="kt">double</span> <span class="n">temp</span><span class="o">;</span>
         <span class="kt">double</span> <span class="n">pressure</span><span class="o">;</span>
-        <span class="kd">public</span> <span class="n">SensorReading</span><span class="o">(</span><span class="kt">double</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">double</span> <span class="n">pressure</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="nf">SensorReading</span><span class="o">(</span><span class="kt">double</span> <span class="n">temp</span><span class="o">,</span> <span class="kt">double</span> <span class="n">pressure</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">this</span><span class="o">.</span><span class="na">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
             <span class="k">this</span><span class="o">.</span><span class="na">pressure</span> <span class="o">=</span> <span class="n">pressure</span><span class="o">;</span>
         <span class="o">}</span>
@@ -936,10 +936,10 @@ system into an Edgent application.<br>
 Imagine a package defined something like:</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Model</span> <span class="o">{</span>
       <span class="c1">// load model from a File</span>
-      <span class="kd">public</span> <span class="n">Model</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">};</span>
+      <span class="kd">public</span> <span class="nf">Model</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">};</span>
       <span class="c1">// score String s against the model</span>
       <span class="c1">// return a confidence score between 0.0 and 1.0</span>
-      <span class="kd">public</span> <span class="n">Double</span> <span class="n">score</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">);</span>
+      <span class="kd">public</span> <span class="n">Double</span> <span class="nf">score</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">);</span>
     <span class="o">}</span>
 </code></pre></div>
 <p>An Edgent application might use such a model in this manner</p>
@@ -1060,7 +1060,7 @@ material and samples and recipies.</p>
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Dec 18, 2017 <br/>
+            generated: Apr 3, 2019 <br/>
 
         </div>
     </div>

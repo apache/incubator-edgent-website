@@ -716,20 +716,20 @@ $('#toc').on('click', 'a', function() {
 </code></pre></div>
 <p>It&#39;s also a good practice to add tags to streams to improve the usability of the development mode Edgent console.</p>
 
-<h2 id="create-a-deadtime-filtered-stream-mdash-initially-no-deadtime">Create a deadtime filtered stream&mdash;initially no deadtime</h2>
+<h2 id="create-a-deadtime-filtered-streaminitially-no-deadtime">Create a deadtime filtered stream&mdash;initially no deadtime</h2>
 
 <p>In this recipe we&#39;ll just filter the direct <code>engineTemp</code> sensor reading stream. In practice this filtering would be performed after some analytics stages and used as the input to <code>IotDevice.event()</code> or some other connector publish operation.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">deadtime</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Deadtime</span><span class="o">&lt;&gt;();</span>
 <span class="n">TStream</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">deadtimeFilteredEngineTemp</span> <span class="o">=</span> <span class="n">engineTemp</span><span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">deadtime</span><span class="o">)</span>
                               <span class="o">.</span><span class="na">tag</span><span class="o">(</span><span class="s">"deadtimeFilteredEngineTemp"</span><span class="o">);</span>
 </code></pre></div>
-<h2 id="define-a-quot-set-deadtime-period-quot-method">Define a &quot;set deadtime period&quot; method</h2>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+<h2 id="define-a-set-deadtime-period-method">Define a &quot;set deadtime period&quot; method</h2>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Setting deadtime period="</span><span class="o">+</span><span class="n">period</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">unit</span><span class="o">);</span>
     <span class="n">deadtime</span><span class="o">.</span><span class="na">setPeriod</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">unit</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></div>
-<h2 id="process-the-quot-set-deadtime-period-quot-command-stream">Process the &quot;set deadtime period&quot; command stream</h2>
+<h2 id="process-the-set-deadtime-period-command-stream">Process the &quot;set deadtime period&quot; command stream</h2>
 
 <p>Our commands are on the <code>TStream&lt;JsonObject&gt; cmds</code> stream. Each <code>JsonObject</code> tuple is a command with the properties &quot;period&quot; and &quot;unit&quot;.</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">cmds</span><span class="o">.</span><span class="na">sink</span><span class="o">(</span><span class="n">json</span> <span class="o">-&gt;</span> <span class="n">setDeadtimePeriod</span><span class="o">(</span><span class="n">deadtimeFilteredEngineTemp</span><span class="o">,</span>
@@ -767,7 +767,7 @@ $('#toc').on('click', 'a', function() {
      * Respond to a simulated command stream to change the deadtime window
      * duration.
      */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
 
         <span class="n">DirectProvider</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DevelopmentProvider</span><span class="o">();</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"development console url: "</span>
@@ -801,12 +801,12 @@ $('#toc').on('click', 'a', function() {
         <span class="n">dp</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="n">top</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="n">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kt">void</span> <span class="nf">setDeadtimePeriod</span><span class="o">(</span><span class="n">Deadtime</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">deadtime</span><span class="o">,</span> <span class="kt">long</span> <span class="n">period</span><span class="o">,</span> <span class="n">TimeUnit</span> <span class="n">unit</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Setting deadtime period="</span><span class="o">+</span><span class="n">period</span><span class="o">+</span><span class="s">" "</span><span class="o">+</span><span class="n">unit</span><span class="o">);</span>
         <span class="n">deadtime</span><span class="o">.</span><span class="na">setPeriod</span><span class="o">(</span><span class="n">period</span><span class="o">,</span> <span class="n">unit</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">simulatedSetDeadtimePeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="nf">simulatedSetDeadtimePeriodCmds</span><span class="o">(</span><span class="n">Topology</span> <span class="n">top</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">AtomicInteger</span> <span class="n">lastPeriod</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
         <span class="n">TStream</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">&gt;</span> <span class="n">cmds</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="na">poll</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>
                 <span class="c1">// don't change on first invocation</span>
@@ -859,7 +859,7 @@ $('#toc').on('click', 'a', function() {
         <div class="col-lg-12 footer">
 
              Site last
-            generated: Dec 18, 2017 <br/>
+            generated: Apr 3, 2019 <br/>
 
         </div>
     </div>
